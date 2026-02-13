@@ -340,8 +340,7 @@
                         href="mailto:contacto@innerdata.cl"
                         style="color: var(--primary); font-weight: 600;">contacto@innerdata.cl</a></p>
 
-                <form id="contact-form" onsubmit="return handleContactForm(event)"
-                    style="text-align: left; display: grid; gap: 1rem;">
+                <form id="contact-form" style="text-align: left; display: grid; gap: 1rem;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre" required
                             style="padding: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%;">
@@ -517,6 +516,8 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 

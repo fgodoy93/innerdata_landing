@@ -132,37 +132,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     };
 
-    // Global Contact Form Handler
-    window.handleContactForm = function (e) {
-        e.preventDefault();
-
-        const contactForm = document.getElementById('contact-form');
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const empresa = document.getElementById('empresa_cargo').value;
-        const mensaje = document.getElementById('mensaje').value;
-
-        // Simple validation check (HTML attributes handles most)
-        if (!nombre || !email || !mensaje) {
-            showToast('Por favor, complete todos los campos obligatorios.', 'error');
-            return false;
-        }
-
-        const subject = `Nuevo contacto desde web: ${nombre} - ${empresa}`;
-        const body = `Nombre: ${nombre}%0D%0ACorreo: ${email}%0D%0AEmpresa/Cargo: ${empresa}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
-
-        // Construct the mailto URL
-        const mailtoUrl = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-        // Show feedback immediately
-        showToast('Abriendo su cliente de correo para enviar mensaje...', 'success');
-        if (contactForm) contactForm.reset();
-
-        // Delay the mailto action slightly to ensure UI updates and doesn't block
-        setTimeout(() => {
-            window.location.href = mailtoUrl;
-        }, 1000);
-
-        return false;
+    // EmailJS Configuration
+    const EMAILJS_CONFIG = {
+        PUBLIC_KEY: 'g5_BbsKMsEyrrbKN1',
+        SERVICE_ID: 'service_s85hr3h',
+        TEMPLATE_ID: 'template_jzfwy1w'
     };
+
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    }
+
+    // Contact Form Handler with EmailJS
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: document.getElementById('nombre').value,
+                from_email: document.getElementById('email').value,
+                empresa_cargo: document.getElementById('empresa_cargo').value,
+                message: document.getElementById('mensaje').value,
+                to_email: 'contacto@innerdata.cl'
+            };
+
+            // Send email using EmailJS
+            emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ID,
+                templateParams
+            )
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showToast('¡Mensaje enviado con éxito! Te contactaremos pronto.', 'success');
+                    contactForm.reset();
+                })
+                .catch(function (error) {
+                    console.error('FAILED...', error);
+                    showToast('Error al enviar el mensaje. Por favor, intenta nuevamente o escríbenos directamente a contacto@innerdata.cl', 'error');
+                })
+                .finally(function () {
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                });
+        });
+    }
 });
