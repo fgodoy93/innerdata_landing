@@ -142,13 +142,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS
     if (typeof emailjs !== 'undefined') {
         emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        console.log('✅ EmailJS initialized successfully');
+    } else {
+        console.error('❌ EmailJS SDK not loaded!');
     }
 
     // Contact Form Handler with EmailJS
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        console.log('✅ Form found, attaching event listener');
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            console.log('📧 Form submitted, sending via EmailJS...');
 
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
