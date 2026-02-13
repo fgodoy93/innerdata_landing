@@ -111,17 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const subject = `Nuevo contacto desde web: ${nombre} - ${empresa}`;
             const body = `Nombre: ${nombre}%0D%0ACorreo: ${email}%0D%0AEmpresa/Cargo: ${empresa}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
 
-            // Try to open mail client
-            try {
-                window.location.href = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
+            // Construct the mailto URL
+            const mailtoUrl = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-                // Show success message assuming window.location succeeded
-                showToast('Abriendo su cliente de correo para enviar mensaje...', 'success');
-                contactForm.reset();
-            } catch (error) {
-                console.error('Error al intentar abrir cliente de correo:', error);
-                showToast('Hubo un error al intentar abrir su correo. Por favor, escríbanos a contacto@innerdata.cl', 'error');
-            }
+            // Show feedback immediately
+            showToast('Abriendo su cliente de correo para enviar mensaje...', 'success');
+            contactForm.reset();
+
+            // Delay the mailto action slightly to ensure UI updates and doesn't block
+            setTimeout(() => {
+                window.location.href = mailtoUrl;
+            }, 1000);
         });
     }
 
