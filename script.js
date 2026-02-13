@@ -90,4 +90,26 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElems.forEach(elem => {
         appearOnScroll.observe(elem);
     });
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const empresa = document.getElementById('empresa_cargo').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const subject = `Nuevo contacto desde web: ${nombre} - ${empresa}`;
+            const body = `Nombre: ${nombre}%0D%0ACorreo: ${email}%0D%0AEmpresa/Cargo: ${empresa}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+
+            window.location.href = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Optional: feedback to user
+            alert('Gracias. Se abrirá su cliente de correo para enviar el mensaje.');
+            contactForm.reset();
+        });
+    }
 });
