@@ -91,42 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(elem);
     });
 
-    // Contact Form Handler
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const empresa = document.getElementById('empresa_cargo').value;
-            const mensaje = document.getElementById('mensaje').value;
-
-            // Simple validation check (HTML attributes handles most)
-            if (!nombre || !email || !mensaje) {
-                showToast('Por favor, complete todos los campos obligatorios.', 'error');
-                return;
-            }
-
-            const subject = `Nuevo contacto desde web: ${nombre} - ${empresa}`;
-            const body = `Nombre: ${nombre}%0D%0ACorreo: ${email}%0D%0AEmpresa/Cargo: ${empresa}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
-
-            // Construct the mailto URL
-            const mailtoUrl = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            // Show feedback immediately
-            showToast('Abriendo su cliente de correo para enviar mensaje...', 'success');
-            contactForm.reset();
-
-            // Delay the mailto action slightly to ensure UI updates and doesn't block
-            setTimeout(() => {
-                window.location.href = mailtoUrl;
-            }, 1000);
-        });
-    }
-
-    // Toast Notification Function
-    function showToast(message, type = 'success') {
+    // Toast Notification Function (Global)
+    window.showToast = function (message, type = 'success') {
         // Create container if not exists
         let container = document.querySelector('.toast-container');
         if (!container) {
@@ -164,5 +130,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 400); // Wait for transition
         }, 4000);
-    }
+    };
+
+    // Global Contact Form Handler
+    window.handleContactForm = function (e) {
+        e.preventDefault();
+
+        const contactForm = document.getElementById('contact-form');
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const empresa = document.getElementById('empresa_cargo').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        // Simple validation check (HTML attributes handles most)
+        if (!nombre || !email || !mensaje) {
+            showToast('Por favor, complete todos los campos obligatorios.', 'error');
+            return false;
+        }
+
+        const subject = `Nuevo contacto desde web: ${nombre} - ${empresa}`;
+        const body = `Nombre: ${nombre}%0D%0ACorreo: ${email}%0D%0AEmpresa/Cargo: ${empresa}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+
+        // Construct the mailto URL
+        const mailtoUrl = `mailto:contacto@innerdata.cl?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        // Show feedback immediately
+        showToast('Abriendo su cliente de correo para enviar mensaje...', 'success');
+        if (contactForm) contactForm.reset();
+
+        // Delay the mailto action slightly to ensure UI updates and doesn't block
+        setTimeout(() => {
+            window.location.href = mailtoUrl;
+        }, 1000);
+
+        return false;
+    };
 });
