@@ -4,9 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnerData | Analítica y Gestión</title>
+
+    <!-- Primary Meta Tags -->
+    <title>InnerData | Consultoría en Analítica Avanzada y Optimización de Procesos</title>
+    <meta name="title" content="InnerData | Consultoría en Analítica Avanzada y Optimización de Procesos">
     <meta name="description"
-        content="Socios estratégicos en analítica, ingeniería y gestión para empresas que buscan excelencia operacional.">
+        content="Transformamos datos en rentabilidad. Socios estratégicos en Ciencia de Datos, Inteligencia Artificial, Ingeniería de Procesos y Desarrollo de Software para empresas que buscan excelencia operacional.">
+    <meta name="keywords"
+        content="Analítica de Datos, Ciencia de Datos, Machine Learning, Inteligencia Artificial, Optimización de Procesos, Consultoría de Gestión, Business Intelligence, Desarrollo de Software, Chile, InnerData, Eficiencia Operacional">
+    <meta name="author" content="InnerData">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.innerdata.cl/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.innerdata.cl/">
+    <meta property="og:title" content="InnerData | Consultoría en Analítica Avanzada y Optimización de Procesos">
+    <meta property="og:description"
+        content="Transformamos datos en rentabilidad. Socios estratégicos en Ciencia de Datos, Inteligencia Artificial, Ingeniería de Procesos y Desarrollo de Software para empresas que buscan excelencia operacional.">
+    <meta property="og:image" content="https://www.innerdata.cl/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.innerdata.cl/">
+    <meta property="twitter:title" content="InnerData | Consultoría en Analítica Avanzada y Optimización de Procesos">
+    <meta property="twitter:description"
+        content="Transformamos datos en rentabilidad. Socios estratégicos en Ciencia de Datos, Inteligencia Artificial, Ingeniería de Procesos y Desarrollo de Software para empresas que buscan excelencia operacional.">
+    <meta property="twitter:image" content="https://www.innerdata.cl/assets/og-image.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Consultant",
+      "name": "InnerData",
+      "alternateName": "Inner Data",
+      "url": "https://www.innerdata.cl",
+      "logo": "https://www.innerdata.cl/assets/logo.png",
+      "description": "Consultora experta en Ciencia de Datos, Inteligencia Artificial, Optimización de Procesos y Desarrollo de Software.",
+      "sameAs": [
+        "https://www.linkedin.com/company/innerdatacl/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contacto@innerdata.cl",
+        "contactType": "customer service",
+        "areaServed": "CL",
+        "availableLanguage": ["Spanish", "English"]
+      },
+      "knowsAbout": ["Data Science", "Process Optimization", "Business Intelligence", "Software Development", "Machine Learning"]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +76,7 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header class="glass-header">
         <div class="container">
             <nav>
                 <div class="logo">
@@ -45,13 +97,19 @@
         </div>
     </header>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56956678642" target="_blank" class="floating-cta" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Hero Section -->
     <section id="inicio" class="hero fade-in">
+        <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 style="margin-bottom: 0.5rem;">InnerData</h1>
                 <p class="text-gradient-copper" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 600;">
-                    Transformamos la complejidad en ventaja competitiva</p>
+                    Transformamos <span id="typing-text" class="typing">la complejidad</span> en ventaja competitiva</p>
                 <p>Somos su socio estratégico en ingeniería, analítica y gestión. Elevamos el estándar de su operación
                     con rigor técnico y metodologías de vanguardia.</p>
                 <div class="hero-buttons">
@@ -64,9 +122,9 @@
 
 
 
-
     <!-- Why InnerData Section -->
-    <section class="why-innerdata fade-in" style="background-color: #F8FAFC; padding-bottom: 0;">
+    <section class="why-innerdata fade-in" style="background-color: #F8FAFC;">
+        <!-- ... content remains ... -->
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Nuestra Diferencia</span>
@@ -103,7 +161,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+
     <section id="nosotros" class="about fade-in">
         <div class="container">
 
@@ -119,7 +177,8 @@
                     <h3>Convergencia Técnica y Estratégica</h3>
                     <p>Combinamos la potencia de la ciencia de datos, la precisión de la ingeniería y la visión
                         estratégica de la gestión empresarial para resolver problemas complejos.</p>
-                    <p>Nos integramos con sus equipos para transferir capacidades y asegurar que las soluciones no solo
+                    <p>Nos integramos con sus equipos para transferir capacidades y asegurar que las soluciones no
+                        solo
                         se implementen, sino que perduren en el tiempo.</p>
 
                     <div class="values-grid">
@@ -169,14 +228,17 @@
                     <h3>Analítica y Ciencia de Datos</h3>
                     <p>Convertimos datos en conocimiento estratégico para la toma de decisiones.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Business
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Business
                             Intelligence (BI) & Dashboards</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Modelos
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Modelos
                             Predictivos Avanzados</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
                             Automatización de
                             Reportes</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> KPIs y
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> KPIs
+                            y
                             Medición
                             de Desempeño</li>
                     </ul>
@@ -192,10 +254,12 @@
                     <h3>Control de Gestión y Procesos</h3>
                     <p>Diseño y mejora del desempeño organizacional para aumentar eficiencia.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Mapeo de
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Mapeo
+                            de
                             Procesos
                             (AS-IS / TO-BE)</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Control
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Control
                             de
                             Gestión y Costos</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
@@ -217,7 +281,8 @@
                     <h3>Simulación y Optimización</h3>
                     <p>Análisis operacional avanzado para evaluar escenarios y optimizar recursos.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Modelos
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Modelos
                             Matemáticos</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
                             Simulación de
@@ -225,7 +290,8 @@
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
                             Optimización
                             Logística y de Rutas</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Gestión
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Gestión
                             Avanzada
                             de Inventarios</li>
                     </ul>
@@ -241,7 +307,8 @@
                     <h3>Desarrollo Web y Soluciones Digitales</h3>
                     <p>Presencia digital profesional alineada a objetivos de negocio.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Landing
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Landing
                             Pages
                             Corporativas</li>
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
@@ -250,7 +317,8 @@
                         <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
                             Integraciones
                             Digitales Básicas</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i> Presencia
+                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                            Presencia
                             Web
                             Funcional</li>
                     </ul>
@@ -292,8 +360,10 @@
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div class="testimonial-card"
                     style="padding: 2rem; background: #F8FAFC; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <p style="font-style: italic; color: var(--secondary); margin-bottom: 1.5rem;">"InnerData transformó
-                        nuestra capacidad de ver el negocio. Pasamos de reportes manuales mensuales a un dashboard en
+                    <p style="font-style: italic; color: var(--secondary); margin-bottom: 1.5rem;">"InnerData
+                        transformó
+                        nuestra capacidad de ver el negocio. Pasamos de reportes manuales mensuales a un dashboard
+                        en
                         tiempo real que nos ahorra 40 horas al mes."</p>
                     <div class="client-info" style="display: flex; align-items: center; gap: 1rem;">
                         <div
@@ -333,7 +403,8 @@
             <div class="contact-container">
                 <span class="section-label">Conversemos</span>
                 <h2>¿Listo para optimizar su negocio?</h2>
-                <p style="margin-bottom: 1rem; color: var(--secondary);">Agenda una reunión de diagnóstico gratuita para
+                <p style="margin-bottom: 1rem; color: var(--secondary);">Agenda una reunión de diagnóstico gratuita
+                    para
                     evaluar sus necesidades.</p>
 
                 <p style="margin-bottom: 2rem; color: var(--secondary);">O escríbenos directamente a: <a
@@ -409,20 +480,28 @@
                 <h3>Analítica y Ciencia de Datos</h3>
             </div>
             <div class="modal-body">
-                <p>Convertimos sus datos en el activo más valioso de su organización. Nuestro enfoque va más allá del
-                    reporte tradicional; implementamos soluciones de inteligencia artificial y analítica avanzada que
+                <p>Convertimos sus datos en el activo más valioso de su organización. Nuestro enfoque va más allá
+                    del
+                    reporte tradicional; implementamos soluciones de inteligencia artificial y analítica avanzada
+                    que
                     permiten predecir comportamientos y prescribir acciones óptimas.</p>
                 <h4>Servicios Especializados</h4>
                 <ul>
-                    <li><strong>Business Intelligence Corporativo:</strong> Diseño e implementación de arquitecturas de
-                        datos escalables y dashboards ejecutivos en Power BI, Tablaeu o LookerStudio. Democratizamos el
+                    <li><strong>Business Intelligence Corporativo:</strong> Diseño e implementación de arquitecturas
+                        de
+                        datos escalables y dashboards ejecutivos en Power BI, Tablaeu o LookerStudio. Democratizamos
+                        el
                         acceso a la información.</li>
-                    <li><strong>Modelos Predictivos (Machine Learning):</strong> Desarrollo de algoritmos de regresión,
-                        clasificación y clustering para forecast de ventas, churn prediction y segmentación avanzada de
+                    <li><strong>Modelos Predictivos (Machine Learning):</strong> Desarrollo de algoritmos de
+                        regresión,
+                        clasificación y clustering para forecast de ventas, churn prediction y segmentación avanzada
+                        de
                         clientes.</li>
-                    <li><strong>Ingeniería de Datos & ETL:</strong> Construcción de pipelines robustos con Python y SQL
+                    <li><strong>Ingeniería de Datos & ETL:</strong> Construcción de pipelines robustos con Python y
+                        SQL
                         para la ingesta, limpieza y transformación automática de grandes volúmenes de datos.</li>
-                    <li><strong>Auditoría Analítica:</strong> Evaluación de la madurez de datos de la empresa y hoja de
+                    <li><strong>Auditoría Analítica:</strong> Evaluación de la madurez de datos de la empresa y hoja
+                        de
                         ruta para la transformación data-driven.</li>
                 </ul>
             </div>
@@ -441,16 +520,22 @@
                     eliminando cuellos de botella y asegurando la consistencia en cada entrega.</p>
                 <h4>Servicios Especializados</h4>
                 <ul>
-                    <li><strong>Reingeniería de Procesos (BPM):</strong> Levantamiento exhaustivo, modelado en BPMN y
+                    <li><strong>Reingeniería de Procesos (BPM):</strong> Levantamiento exhaustivo, modelado en BPMN
+                        y
                         rediseño de flujos de trabajo orientados a la reducción de tiempos de ciclo y eliminación de
                         tareas sin valor agregado.</li>
-                    <li><strong>Control de Gestión Estratégico:</strong> Diseño de Balanced Scorecards, alineación de
-                        incentivos y estructuración de centros de responsabilidad para asegurar el cumplimiento de la
+                    <li><strong>Control de Gestión Estratégico:</strong> Diseño de Balanced Scorecards, alineación
+                        de
+                        incentivos y estructuración de centros de responsabilidad para asegurar el cumplimiento de
+                        la
                         estrategia.</li>
-                    <li><strong>Excelencia Operacional (Lean/Six Sigma):</strong> Implementación de sistemas de mejora
-                        continua, herramientas 5S, SMED y análisis de variabilidad para estabilizar procesos críticos.
+                    <li><strong>Excelencia Operacional (Lean/Six Sigma):</strong> Implementación de sistemas de
+                        mejora
+                        continua, herramientas 5S, SMED y análisis de variabilidad para estabilizar procesos
+                        críticos.
                     </li>
-                    <li><strong>Documentación y Compliance:</strong> Creación de manuales de procedimientos robustos e
+                    <li><strong>Documentación y Compliance:</strong> Creación de manuales de procedimientos robustos
+                        e
                         instructivos de trabajo para estandarizar el conocimiento organizacional.</li>
                 </ul>
             </div>
@@ -470,15 +555,19 @@
                 <h4>Servicios Especializados</h4>
                 <ul>
                     <li><strong>Optimización Matemática:</strong> Resolución de problemas complejos de asignación de
-                        turnos, corte de materiales, o mezcla de productos mediante Programación Lineal y Entera (Python
+                        turnos, corte de materiales, o mezcla de productos mediante Programación Lineal y Entera
+                        (Python
                         Optimization / Solver).</li>
                     <li><strong>Simulación de Eventos Discretos:</strong> Creación de "Gemelos Digitales" de sus
-                        procesos para testear escenarios de cambio (layout, capacidad, staffing) sin riesgo operativo
+                        procesos para testear escenarios de cambio (layout, capacidad, staffing) sin riesgo
+                        operativo
                         real.</li>
                     <li><strong>Network Design Logístico:</strong> Definición óptima de la ubicación de centros de
                         distribución y ruteo estratégico de última milla.</li>
-                    <li><strong>Gestión Científica de Inventarios:</strong> Modelos estocásticos para determinar stocks
-                        de seguridad y puntos de reorden que maximizan el nivel de servicio minimizando el capital de
+                    <li><strong>Gestión Científica de Inventarios:</strong> Modelos estocásticos para determinar
+                        stocks
+                        de seguridad y puntos de reorden que maximizan el nivel de servicio minimizando el capital
+                        de
                         trabajo.</li>
                 </ul>
             </div>
@@ -497,13 +586,18 @@
                     Desarrollamos soluciones digitales ágiles que conectan y automatizan.</p>
                 <h4>Servicios Especializados</h4>
                 <ul>
-                    <li><strong>Desarrollo Web Corporativo:</strong> Sitios web de alto rendimiento, optimizados para
-                        SEO y conversión, diseñados para transmitir autoridad y confianza (HTML5, React, Modern CSS).
+                    <li><strong>Desarrollo Web Corporativo:</strong> Sitios web de alto rendimiento, optimizados
+                        para
+                        SEO y conversión, diseñados para transmitir autoridad y confianza (HTML5, React, Modern
+                        CSS).
                     </li>
-                    <li><strong>Automatización de Flujos (RPA/Integrations):</strong> Conexión de aplicaciones dispares
-                        (CRM, ERP, Email) mediante APIs (Zapier, Power Automate, Custom Scripts) para eliminar la doble
+                    <li><strong>Automatización de Flujos (RPA/Integrations):</strong> Conexión de aplicaciones
+                        dispares
+                        (CRM, ERP, Email) mediante APIs (Zapier, Power Automate, Custom Scripts) para eliminar la
+                        doble
                         digitación.</li>
-                    <li><strong>Aplicaciones Web a Medida:</strong> Desarrollo de portales de proveedores, sistemas de
+                    <li><strong>Aplicaciones Web a Medida:</strong> Desarrollo de portales de proveedores, sistemas
+                        de
                         agenda o herramientas de cotización específicas para su lógica de negocio.</li>
                     <li><strong>Digitalización de Formularios:</strong> Eliminación del papel mediante soluciones de
                         captura de datos en terreno con sincronización en tiempo real.</li>
@@ -513,12 +607,9 @@
     </div>
 
 
-    <a href="https://wa.me/56956678642" target="_blank" class="floating-cta" title="Contáctanos por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 
