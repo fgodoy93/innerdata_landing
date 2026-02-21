@@ -160,6 +160,12 @@ header {
     transition: all 0.3s ease;
 }
 
+header.scrolled {
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md);
+}
+
 /* Glassmorphism adjustment on scroll if needed, but the base style above covers it */
 
 nav {
@@ -173,8 +179,21 @@ nav {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
-    /* text-transform: uppercase; */
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: height 0.3s ease;
+}
+
+header.scrolled .logo img {
+    height: 35px;
 }
 
 .logo span {
@@ -297,6 +316,28 @@ nav {
     /* Slate 300 */
     margin-bottom: 2.5rem;
     max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
 
 .hero-buttons {
