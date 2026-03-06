@@ -649,6 +649,7 @@ footer {
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .modal-content {
