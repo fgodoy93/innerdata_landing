@@ -377,6 +377,25 @@ section {
     font-size: 1.125rem;
 }
 
+/* Why InnerData Section */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+@media (min-width: 640px) and (max-width: 980px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .why-grid > .why-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: 450px;
+        justify-self: center;
+    }
+}
+
 /* About Us */
 .about {
     background-color: var(--bg-white);
@@ -436,13 +455,12 @@ section {
 
 .services-grid {
     display: grid;
-    /* Configured for 4 items: use a 2-column grid to ensure a balanced 2x2 layout */
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     justify-content: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
     }
