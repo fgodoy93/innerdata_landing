@@ -800,6 +800,52 @@ body.modal-open {
     opacity: 1 !important;
 }
 
+/* --- Added Responsive Utilities --- */
+
+.grid-responsive {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.portfolio-hero {
+    min-height: 60vh !important;
+    height: auto !important;
+    padding-top: 160px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    .portfolio-hero {
+        padding-top: 120px !important;
+        padding-bottom: 40px !important;
+        min-height: 40vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    .portfolio-hero {
+        padding-top: 100px !important;
+        padding-bottom: 30px !important;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+}
+
 .floating-cta:hover {
     transform: scale(1.1);
     background-color: #128C7E;
