@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Portafolio | Proyectos Detacados - InnerData</title>
+    <meta name="title" content="Portafolio | Proyectos Detacados - InnerData">
+    <meta name="description"
+        content="Explora nuestros proyectos destacados en Ciencia de Datos, Simulación de Procesos y Optimización Operacional. Casos de éxito con impacto real en la toma de decisiones.">
+    <meta name="author" content="InnerData">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .portfolio-gallery {
+            padding: 8rem 0 5rem;
+            background-color: var(--bg-body);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .project-card p {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            background: #F1F5F9;
+            color: var(--primary);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 576px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="InnerData Logo" style="height: 40px; margin-right: 10px;">
+                    Inner<span>Data</span>
+                </a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="portafolio.html" class="active">Portafolio</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li class="cta-nav"><a href="index.html#contacto" class="btn btn-primary">Agendar Reunión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56956678642" target="_blank" class="floating-cta" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Portfolio Header -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <span class="section-label">Casos de Éxito</span>
+                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Nuestro Portafolio</h1>
+                <p>Una selección de proyectos donde la analítica avanzada y la ingeniería de procesos han generado valor real para nuestros clientes.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Pensiones -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/SerieTiempoInner.webp" alt="Análisis de Fondos de Pensiones">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Data Science · Finance</span>
+                        <h3>Fondos de Pensiones y Volatilidad</h3>
+                        <p>Análisis de la evolución del Fondo A de AFP chilenas (2019-2024), identificando patrones de dependencia y riesgo real frente a índices bursátiles globales.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Series de Tiempo</span>
+                            <span class="tech-badge">yfinance</span>
+                        </div>
+                        <a href="portafolio-pensiones.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Simulación SAR -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/graficos.webp" alt="Simulación de Procesos de Urgencia">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Procesos · Simulación</span>
+                        <h3>Optimización de Urgencias SAR</h3>
+                        <p>Simulación estocástica para optimizar el flujo de pacientes en un Servicio de Urgencia de Alta Resolutividad, reduciendo tiempos de espera y mejorando la asignación de recursos.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">SIMIO 10</span>
+                            <span class="tech-badge">Optimización</span>
+                            <span class="tech-badge">Procesos</span>
+                            <span class="tech-badge">Estadística</span>
+                        </div>
+                        <a href="portafolio-simulacion.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>InnerData</h2>
+                    <p>Analítica y Gestión para el mundo empresarial moderno.</p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                        <a href="https://www.linkedin.com/company/innerdatacl/" target="_blank" title="LinkedIn"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:contacto@innerdata.cl" title="Contacto"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="index.html#servicios">Analítica de Datos</a></li>
+                            <li><a href="index.html#servicios">Ingeniería</a></li>
+                            <li><a href="index.html#servicios">Optimización</a></li>
+                            <li><a href="index.html#servicios">Consultoría</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Compañía</h4>
+                        <ul>
+                            <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+                            <li><a href="index.html#contacto">Contacto</a></li>
+                            <li><a href="portafolio.html">Portafolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InnerData. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
