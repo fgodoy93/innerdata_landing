@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Portafolio | Sostenibilidad Organizacional - Alimar - InnerData</title>
+    <meta name="title" content="Portafolio | Sostenibilidad Organizacional - Alimar - InnerData">
+    <meta name="description"
+        content="Análisis integral de sostenibilidad organizacional para empresa pesquero-industrial. Indicadores ASG, huella hídrica y gestión ambiental.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Portfolio Tags */
+        .portfolio-tag {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Map existing tag classes to the site's color variables */
+        .tag-green {
+            background: rgba(200, 117, 51, 0.10); /* subtle copper */
+            color: var(--accent);
+            border: 1px solid rgba(200, 117, 51, 0.22);
+        }
+
+        .tag-blue {
+            background: rgba(12, 36, 68, 0.08); /* navy subtle */
+            color: var(--primary-light);
+            border: 1px solid rgba(12, 36, 68, 0.12);
+        }
+
+        .tag-amber {
+            background: rgba(166, 94, 40, 0.10);
+            color: var(--accent-hover);
+            border: 1px solid rgba(166, 94, 40, 0.18);
+        }
+
+        /* Hero Section Customization */
+        .portfolio-hero {
+            /* Use global primary palette for hero and keep subtle depth */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 25% 30%, rgba(200, 117, 51, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(166, 94, 40, 0.06) 0%, transparent 45%);
+            pointer-events: none;
+        }
+
+        .portfolio-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Framework/Methodology Display */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .framework-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .framework-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(200, 117, 51, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .framework-card h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .framework-card p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        /* Indicators Section */
+        .indicator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .indicator-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .indicator-card.environmental {
+            border-left-color: var(--accent);
+        }
+
+        .indicator-card.social {
+            border-left-color: var(--primary);
+        }
+
+        .indicator-card.governance {
+            border-left-color: var(--secondary);
+        }
+
+        .indicator-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .indicator-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .indicator-label.environmental {
+            color: var(--accent);
+        }
+
+        .indicator-label.social {
+            color: var(--primary);
+        }
+
+        .indicator-label.governance {
+            color: var(--secondary);
+        }
+
+        .indicator-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .indicator-metric {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .indicator-card p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        /* Roadmap Section */
+        .roadmap-container {
+            margin: 3rem 0;
+        }
+
+        .roadmap-step {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-step:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .roadmap-step-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'IBM Plex Mono', monospace;
+            min-width: 80px;
+        }
+
+        .roadmap-step-content h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .roadmap-step-content p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+
+        .priority-alta {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .priority-media {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--primary);
+            line-height: 1.8;
+        }
+
+        .pull-quote p {
+            margin-bottom: 1rem;
+        }
+
+        .pull-quote cite {
+            display: block;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-top: 1rem;
+        }
+
+        /* Methodology Pills */
+        .tech-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .tech-pill {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary);
+            font-family: 'IBM Plex Mono', monospace;
+            transition: all 0.2s ease;
+        }
+
+        .tech-pill:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Results Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin: 2rem 0;
+        }
+
+        thead tr {
+            background: var(--bg-body);
+            color: var(--primary);
+        }
+
+        thead th {
+            padding: 1rem;
+            text-align: left;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        tbody td {
+            padding: 1rem;
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        tbody td:first-child {
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Conclusion Cards */
+        .conclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .conclusion-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.75rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #22c55e;
+            transition: all 0.3s ease;
+        }
+
+        .conclusion-card:nth-child(2) {
+            border-top-color: #3b82f6;
+        }
+
+        .conclusion-card:nth-child(3) {
+            border-top-color: #f59e0b;
+        }
+
+        .conclusion-card:nth-child(4) {
+            border-top-color: var(--accent);
+        }
+
+        .conclusion-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .conclusion-card h4 {
+            color: var(--bg-white);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .conclusion-card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .roadmap-step {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .roadmap-step-number {
+                min-width: auto;
+            }
+
+            .framework-grid,
+            .indicator-grid,
+            .conclusion-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pull-quote {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (standardized to index navbar) -->
+    <header class="glass-header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="InnerData Logo" style="height: 40px; margin-right: 10px;">
+                    Inner<span>Data</span>
+                </a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="portafolio.html">Portafolio</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li class="cta-nav"><a href="index.html#contacto" class="btn btn-primary">Agendar Reunión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="portfolio-hero fade-in" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container portfolio-content">
+            <div style="max-width: 800px;">
+                <div style="margin-bottom: 1.5rem;">
+                    <span class="portfolio-tag tag-green">
+                        <i class="fas fa-leaf"></i> Sostenibilidad
+                    </span>
+                    <span class="portfolio-tag tag-blue" style="margin-left: 0.5rem;">
+                        <i class="fas fa-industry"></i> Pesquero-Industrial
+                    </span>
+                </div>
+
+                <h1 style="font-size: 2.5rem; color: white; margin-bottom: 1rem; line-height: 1.2;">
+                    Sostenibilidad Organizacional
+                </h1>
+                <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 1.5rem; line-height: 1.7;">
+                    Análisis integral de indicadores ASG, huella hídrica y gestión ambiental para empresa procesadora
+                    con operaciones en el sector pesquero-industrial.
+                </p>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#metodologia" class="btn btn-primary">
+                        <i class="fas fa-arrow-down" style="margin-right: 8px;"></i> Ver Análisis
+                    </a>
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Volver
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context Section -->
+    <section class="fade-in" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">Contexto</span>
+                <h2>El desafío de la sostenibilidad en la industria pesquera</h2>
+            </div>
+
+            <div class="grid-responsive">
+                <div class="service-card">
+                    <div style="margin-bottom: 1rem;">
+                        <span
+                            style="font-family: 'IBM Plex Mono', monospace; background: #22c55e; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Ambiental</span>
+                    </div>
+                    <h4>Presión regulatoria creciente</h4>
+                    <p>Las operaciones pesquero-industriales enfrentan regulaciones cada vez más estrictas sobre consumo
+                        de agua, energía y emisiones. El monitoreo de estos indicadores es crítico para cumplimiento
+                        normativo.</p>
+                </div>
+
+                <div class="service-card">
+                    <div style="margin-bottom: 1rem;">
+                        <span
+                            style="font-family: 'IBM Plex Mono', monospace; background: #3b82f6; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Social</span>
+                    </div>
+                    <h4>Competitividad en mercados sensibles</h4>
+                    <p>Clientes internacionales demandan transparencia en prácticas ASG. La producción sostenible se
+                        convierte en diferenciador de mercado y protección de precios.</p>
+                </div>
+
+                <div class="service-card">
+                    <div style="margin-bottom: 1rem;">
+                        <span
+                            style="font-family: 'IBM Plex Mono', monospace; background: #f59e0b; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Gobernanza</span>
+                    </div>
+                    <h4>Falta de visibilidad operacional</h4>
+                    <p>Datos desagregados, sin estándares homogéneos. Los indicadores dispersos impiden tomar decisiones
+                        estratégicas basadas en evidencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="metodologia" class="fade-in"
+        style="padding-top: 4rem; padding-bottom: 4rem; background-color: var(--bg-body);">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">Metodología</span>
+                <h2>Marcos y herramientas aplicadas</h2>
+            </div>
+
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <h4><i class="fas fa-chart-line"></i> Análisis FODA ESG</h4>
+                    <p>Evaluación integral de fortalezas, debilidades, oportunidades y amenazas en materia ambiental,
+                        social y de gobernanza.</p>
+                </div>
+
+                <div class="framework-card">
+                    <h4><i class="fas fa-users"></i> Mapeo de Stakeholders</h4>
+                    <p>Identificación y análisis de actores clave internos y externos, sus intereses y expectativas de
+                        sostenibilidad.</p>
+                </div>
+
+                <div class="framework-card">
+                    <h4><i class="fas fa-gauge-high"></i> Indicadores ASG Normalizados</h4>
+                    <p>Desarrollo de KPIs homogéneos y comparables, expresados en unidades relativas (intensidad, ratio,
+                        normalización por tonelada).</p>
+                </div>
+
+                <div class="framework-card">
+                    <h4><i class="fas fa-droplet"></i> Huella Hídrica</h4>
+                    <p>Cuantificación del consumo de agua en el ciclo productivo, expresado en litros por tonelada de
+                        producto.</p>
+                </div>
+
+                <div class="framework-card">
+                    <h4><i class="fas fa-bolt"></i> Intensidad Energética</h4>
+                    <p>Monitoreo del consumo eléctrico y combustibles por unidad producida, identificando oportunidades
+                        de reducción.</p>
+                </div>
+
+                <div class="framework-card">
+                    <h4><i class="fas fa-people-group"></i> Productividad Laboral</h4>
+                    <p>Análisis de eficiencia de recursos humanos mediante métricas de ton/persona y relación con
+                        indicadores sociales.</p>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 3rem; padding: 2rem; background: var(--bg-white); border-radius: 8px; border: 1px solid var(--border-color);">
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.7;">
+                    <strong>Estándares de referencia:</strong> GRI 302-1 (Energía), GRI 303-5 (Consumo de agua), ODS 6,
+                    7, 9, 12, 16.
+                    El análisis se alinea con marcos internacionales de reportería de sostenibilidad y objetivos de
+                    desarrollo sostenible de Naciones Unidas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análisis Detallado: Proceso Productivo -->
+    <section class="fade-in" style="padding-top: 4rem; padding-bottom: 4rem; background-color: var(--bg-body);">
+        <div class="container">
+            <div class="section-header" style="max-width: 900px; margin: 0 auto 2rem;">
+                <span class="section-label">Análisis Detallado</span>
+                <h2>Flujo de Proceso Industrial: Cadena de Valor Harina y Aceite</h2>
+                <p style="font-size: 1rem; color: var(--secondary); margin-top: 1rem; line-height: 1.7;">
+                    Mapeo completo del flujo productivo desde la recepción de materia prima hasta el despacho de productos terminados (harina y aceite). Identifica puntos críticos, cuellos de botella y oportunidades de optimización en cada etapa.
+                </p>
+            </div>
+
+            <!-- Leyenda de Colores -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <div style="padding: 1rem; border-radius: 8px; border-left: 5px solid #0c2444; background: #eaf3fb; font-size: 0.85rem;">
+                    <strong style="color: #0c2444; font-size: 0.95rem;">✓ Proceso/Actividad</strong>
+                    <p style="color: var(--secondary); margin: 0.25rem 0 0; font-size: 0.8rem;">Etapa operativa del flujo</p>
+                </div>
+                <div style="padding: 1rem; border-radius: 8px; border-left: 5px solid #c87533; background: #fff4eb; font-size: 0.85rem;">
+                    <strong style="color: #c87533; font-size: 0.95rem;">◆ Decisión/Bifurcación</strong>
+                    <p style="color: var(--secondary); margin: 0.25rem 0 0; font-size: 0.8rem;">Punto de evaluación o división</p>
+                </div>
+                <div style="padding: 1rem; border-radius: 8px; border-left: 5px solid #a05a2c; background: #fff9f5; border: 1px dashed #a05a2c; font-size: 0.85rem;">
+                    <strong style="color: #7a3e20; font-size: 0.95rem;">⏳ Espera/Pausa</strong>
+                    <p style="color: var(--secondary); margin: 0.25rem 0 0; font-size: 0.8rem;">Recurso no disponible - ciclo de esperaep</p>
+                </div>
+                <div style="padding: 1rem; border-radius: 8px; border-left: 5px solid #c87533; background: linear-gradient(135deg, #0c2444, #1e3a63); font-size: 0.85rem;">
+                    <strong style="color: #fff; font-size: 0.95rem;">◎ Inicio/Fin</strong>
+                    <p style="color: #cbd5e1; margin: 0.25rem 0 0; font-size: 0.8rem;">Punto de inicio o salida final</p>
+                </div>
+            </div>
+
+            <div style="position: relative; background: var(--bg-white); padding: 3rem 2rem; border-radius: 12px; border: 2px solid #eaf3fb; box-shadow: 0 4px 20px rgba(12, 36, 68, 0.08); overflow: visible;">
+                
+                <!-- Layout 2x2 para las etapas -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1400px; margin: 0 auto;">
+                    
+                    <!-- ETAPA 1: Arriba Izquierda -->
+                    <div style="position: relative;">
+                        <div class="mermaid">
+                            graph TD
+                                classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+                                classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+                                classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+                                classDef finish fill:#0c2444,stroke:#c87533,stroke-width:3px,color:#fff;
+                                classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+                                
+                                A(["⚓ ETAPA 1<br/>RECEPCIÓN"]):::titulo
+                                A --> B["Pesca<br/>Materia Prima"]:::etapa
+                                B --> C["Llegada<br/>Embarcación"]:::etapa
+                                C --> D{¿Muelle?}:::decision
+                                D -->|No| E["Espera<br/>Puerto"]:::espera
+                                E --> D
+                                D -->|Sí| F["Inspección<br/>Calidad"]:::etapa
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 2: Arriba Derecha -->
+                    <div style="position: relative;">
+                        <div class="mermaid">
+                            graph TD
+                                classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+                                classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+                                classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+                                classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+                                
+                                A(["🚚 ETAPA 2<br/>LOGÍSTICA"]):::titulo
+                                A --> B{¿Camiones?}:::decision
+                                B -->|No| C["Espera<br/>Transporte"]:::espera
+                                C --> B
+                                B -->|Sí| D["Carga y<br/>Transporte"]:::etapa
+                                D --> E["Almacenaje<br/>Temporal"]:::etapa
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda fila de etapas -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 8rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
+                    
+                    <!-- ETAPA 3: Abajo Izquierda -->
+                    <div style="position: relative;">
+                        <div class="mermaid">
+                            graph TD
+                                classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+                                classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+                                classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+                                classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+                                
+                                A(["🏭 ETAPA 3<br/>PROCESAMIENTO"]):::titulo
+                                A --> B{¿Capacidad?}:::decision
+                                B -->|No| C["Espera<br/>Planta"]:::espera
+                                C --> B
+                                B -->|Sí| D["Descarga<br/>Pozas"]:::etapa
+                                D --> E["Trat.<br/>Preliminar"]:::etapa
+                                E --> F["Procesamiento<br/>Térmico"]:::etapa
+                                F --> G["Separación<br/>Fases"]:::etapa
+                                G --> H["Filtración y<br/>Purificación"]:::etapa
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 4: Abajo Derecha -->
+                    <div style="position: relative;">
+                        <div class="mermaid">
+                            graph TD
+                                classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+                                classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+                                classDef finish fill:#0c2444,stroke:#c87533,stroke-width:3px,color:#fff;
+                                classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+                                
+                                A(["📦 ETAPA 4<br/>PRODUCTO"]):::titulo
+                                A --> B{¿Línea?}:::decision
+                                B -->|Harina| C["Molienda<br/>Fina"]:::etapa
+                                C --> D["Ensacado"]:::etapa
+                                D --> E["Control QC"]:::etapa
+                                E --> F(["Despacho<br/>Harina"]):::finish
+                                B -->|Aceite| G["Refinado"]:::etapa
+                                G --> H["Tanques<br/>Almacén"]:::etapa
+                                H --> I["Control QC"]:::etapa
+                                I --> J(["Exportación<br/>Aceite"]):::finish
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de Etapas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; max-width: 1300px; margin-left: auto; margin-right: auto;">
+                <div style="padding: 1.5rem; background: var(--bg-white); border-radius: 8px; border-top: 4px solid #0c2444; box-shadow: 0 2px 12px rgba(12, 36, 68, 0.08);">
+                    <h4 style="font-size: 0.9rem; color: #0c2444; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.2rem;">⚓</span>Etapa 1</h4>
+                    <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.6; margin: 0;"><strong>Recepción y Puerto</strong><br/>Pesca, llegada de embarcación, decisión de disponibilidad de muelle y espera si es necesario, inspección de calidad.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-white); border-radius: 8px; border-top: 4px solid #c87533; box-shadow: 0 2px 12px rgba(12, 36, 68, 0.08);">
+                    <h4 style="font-size: 0.9rem; color: #0c2444; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.2rem;">🚚</span>Etapa 2</h4>
+                    <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.6; margin: 0;"><strong>Logística y Transporte</strong><br/>Decisión de disponibilidad de camiones, espera si es necesario, carga, transporte hacia planta y almacenaje temporal.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-white); border-radius: 8px; border-top: 4px solid #0c2444; box-shadow: 0 2px 12px rgba(12, 36, 68, 0.08);">
+                    <h4 style="font-size: 0.9rem; color: #0c2444; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.2rem;">🏭</span>Etapa 3</h4>
+                    <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.6; margin: 0;"><strong>Procesamiento en Planta</strong><br/>Validación de capacidad, descarga, tratamiento preliminar, cocción, separación de fases y filtración de productos.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-white); border-radius: 8px; border-top: 4px solid #c87533; box-shadow: 0 2px 12px rgba(12, 36, 68, 0.08);">
+                    <h4 style="font-size: 0.9rem; color: #0c2444; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.2rem;">📦</span>Etapa 4</h4>
+                    <p style="font-size: 0.85rem; color: var(--secondary); line-height: 1.6; margin: 0;"><strong>Producto Terminado</strong><br/>Bifurcación por tipo: molienda/ensacado de harina o refinado/tanques de aceite, con control de calidad y despacho/exportación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Indicators Section -->
+    <section class="fade-in" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">Indicadores Clave</span>
+                <h2>Baseline de desempeño ASG</h2>
+            </div>
+
+            <div class="indicator-grid">
+                <!-- Ambiental -->
+                <div class="indicator-card environmental">
+                    <span class="indicator-label environmental">Ambiental</span>
+                    <h4>Intensidad Energética</h4>
+                    <div class="indicator-metric">42.5 kWh/ton</div>
+                    <p>Consumo eléctrico normalizado. Benchmark industrial: 38–50 kWh/ton. Requiere reducción del 15%
+                        para competitividad.</p>
+                </div>
+
+                <div class="indicator-card environmental">
+                    <span class="indicator-label environmental">Ambiental</span>
+                    <h4>Huella Hídrica</h4>
+                    <div class="indicator-metric">1,280 L/ton</div>
+                    <p>Consumo de agua en proceso productivo. Incluye circuitos de refrigeración y procesamiento.
+                        Oportunidad: sistemas de recirculación.</p>
+                </div>
+
+                <div class="indicator-card environmental">
+                    <span class="indicator-label environmental">Ambiental</span>
+                    <h4>Cumplimiento Normativo</h4>
+                    <div class="indicator-metric">94%</div>
+                    <p>Porcentaje de estándares ambientales cumplidos según auditorías internas. Brechas identificadas
+                        en monitoreo de efluentes.</p>
+                </div>
+
+                <!-- Social -->
+                <div class="indicator-card social">
+                    <span class="indicator-label social">Social</span>
+                    <h4>Productividad Laboral</h4>
+                    <div class="indicator-metric">8.2 ton/persona</div>
+                    <p>Ratio de producción por trabajador. Indicador de eficiencia operacional y gestión de recursos
+                        humanos.</p>
+                </div>
+
+                <div class="indicator-card social">
+                    <span class="indicator-label social">Social</span>
+                    <h4>Retención de Talento</h4>
+                    <div class="indicator-metric">87%</div>
+                    <p>Tasa de permanencia anual. Fortaleza en estabilidad laboral. Oportunidad: vincular incentivos a
+                        objetivos ASG.</p>
+                </div>
+
+                <div class="indicator-card social">
+                    <span class="indicator-label social">Social</span>
+                    <h4>Seguridad Operacional</h4>
+                    <div class="indicator-metric">2.1 / 200k hrs</div>
+                    <p>Índice de accidentes (TRIFR). Dentro de estándares, pero requiere fortalecimiento en capacitación
+                        ASG.</p>
+                </div>
+
+                <!-- Gobernanza -->
+                <div class="indicator-card governance">
+                    <span class="indicator-label governance">Gobernanza</span>
+                    <h4>Madurez ASG</h4>
+                    <div class="indicator-metric">Nivel 2/5</div>
+                    <p>Sistemas básicos implementados. Transición hacia integración estratégica de indicadores en toma
+                        de decisiones.</p>
+                </div>
+
+                <div class="indicator-card governance">
+                    <span class="indicator-label governance">Gobernanza</span>
+                    <h4>Visibilidad Datos</h4>
+                    <div class="indicator-metric">62%</div>
+                    <p>Cobertura de sistemas de recopilación de datos. Requiere estandarización y automatización de
+                        reportería.</p>
+                </div>
+
+                <div class="indicator-card governance">
+                    <span class="indicator-label governance">Gobernanza</span>
+                    <h4>Integración Estratégica</h4>
+                    <div class="indicator-metric">Iniciando</div>
+                    <p>Vinculación de objetivos ASG a desempeño organizacional y compensación. Requiere alineación
+                        ejecutiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <section class="fade-in" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container">
+            <blockquote class="pull-quote">
+                <p>
+                    "Un indicador sin unidad de medida homogénea no es un indicador — es una opinión.
+                    Normalizar por tonelada producida convierte el consumo en información accionable para la gestión y
+                    el control estratégico."
+                </p>
+                <cite>— Principio aplicado en el diseño de indicadores ASG</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="fade-in" style="padding-top: 4rem; padding-bottom: 4rem; background-color: var(--bg-body);">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">Hoja de Ruta</span>
+                <h2>3 pasos priorizados de sostenibilidad</h2>
+            </div>
+
+            <div class="roadmap-container">
+                <!-- Step 1 -->
+                <div class="roadmap-step fade-in">
+                    <div class="roadmap-step-number">01</div>
+                    <div class="roadmap-step-content">
+                        <h4>Eficiencia energética y control de insumos</h4>
+                        <p>
+                            Sistematizar el monitoreo de consumo eléctrico y combustibles con metas de reducción del
+                            15%.
+                            Implementar dashboards en tiempo real para visualización de consumo por línea de producción.
+                        </p>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">
+                            <strong>Dimensión:</strong> Ambiental / Gobernanza |
+                            <strong>ODS:</strong> 7, 9, 12 |
+                            <strong>Impacto:</strong> Palanca directa sobre costos operacionales
+                        </p>
+                        <span class="priority-badge priority-alta">Prioridad Alta</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step fade-in">
+                    <div class="roadmap-step-number">02</div>
+                    <div class="roadmap-step-content">
+                        <h4>Gestión hídrica como ventaja competitiva</h4>
+                        <p>
+                            Formalizar el seguimiento del indicador L/ton con políticas preventivas e implementación de
+                            sistemas de recirculación. Desarrollar baseline de huella hídrica para benchmarking
+                            internacional.
+                        </p>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">
+                            <strong>Dimensión:</strong> Ambiental |
+                            <strong>ODS:</strong> 6, 12 |
+                            <strong>Impacto:</strong> Diferenciador en mercados sensibles al uso de agua
+                        </p>
+                        <span class="priority-badge priority-alta">Prioridad Media-Alta</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step fade-in">
+                    <div class="roadmap-step-number">03</div>
+                    <div class="roadmap-step-content">
+                        <h4>Integración ASG en toma de decisiones</h4>
+                        <p>
+                            Vincular indicadores a objetivos operacionales, desempeño de capital humano y control de
+                            riesgos.
+                            Fortalecer gobernanza y cultura organizacional con reportes GRI 302-1 y 303-5.
+                        </p>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">
+                            <strong>Dimensión:</strong> Gobernanza / Social |
+                            <strong>ODS:</strong> 8, 12, 16 |
+                            <strong>Impacto:</strong> Transformación de cultura organizacional
+                        </p>
+                        <span class="priority-badge priority-media">Prioridad Media</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Pills -->
+    <section class="fade-in" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                <span class="section-label">Metodologías Aplicadas</span>
+                <h2>Marcos y herramientas de diagnóstico</h2>
+            </div>
+
+            <div class="tech-row">
+                <span class="tech-pill">Análisis FODA ESG</span>
+                <span class="tech-pill">Mapeo de stakeholders</span>
+                <span class="tech-pill">Indicadores ASG</span>
+                <span class="tech-pill">Huella hídrica (L/ton)</span>
+                <span class="tech-pill">Intensidad eléctrica (kWh/ton)</span>
+                <span class="tech-pill">Productividad laboral (ton/persona)</span>
+                <span class="tech-pill">GRI 302-1 · GRI 303-5</span>
+                <span class="tech-pill">Objetivos de Desarrollo Sostenible</span>
+                <span class="tech-pill">Análisis de materialidad</span>
+                <span class="tech-pill">Diagnóstico de madurez ASG</span>
+                <span class="tech-pill">Control de gestión integrado</span>
+                <span class="tech-pill">Reporte de sostenibilidad</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusions -->
+    <section class="fade-in"
+        style="background-color: var(--primary); padding-top: 5rem; padding-bottom: 5rem; color: var(--bg-body);">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label" style="color: #4ade80;">Hallazgos Principales</span>
+                <h2 style="color: var(--bg-white);">Lo que el análisis demuestra</h2>
+            </div>
+
+            <div class="conclusion-grid">
+                <div class="conclusion-card">
+                    <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i> Sistema operacional funcional
+                    </h4>
+                    <p>
+                        Los procesos actuales cumplen regulaciones ambientales. Existe infraestructura disponible para
+                        mejora incremental sin inversión estructural mayor.
+                    </p>
+                </div>
+
+                <div class="conclusion-card">
+                    <h4><i class="fas fa-chart-line" style="margin-right: 8px;"></i> Oportunidad de diferenciación</h4>
+                    <p>
+                        La gestión hídrica y energética no está sistematizada. Implementar indicadores normalizados
+                        genera ventaja competitiva en mercados internacionales.
+                    </p>
+                </div>
+
+                <div class="conclusion-card">
+                    <h4><i class="fas fa-lightbulb" style="margin-right: 8px;"></i> Palanca rápida de retorno</h4>
+                    <p>
+                        Reducción de 15% en consumo energético genera ahorro inmediato. Integración con incentivos
+                        laborales alinea objetivos ASG con desempeño.
+                    </p>
+                </div>
+
+                <div class="conclusion-card">
+                    <h4><i class="fas fa-target" style="margin-right: 8px;"></i> Madurez ASG progresiva</h4>
+                    <p>
+                        Evolucionar de sistemas básicos a integración estratégica requiere governance clara.
+                        Requiere 12–18 meses de implementación según priorización.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <a href="index.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>InnerData</h2>
+                    <p>Analítica y Gestión para el mundo empresarial moderno.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="index.html#servicios">Analítica de Datos</a></li>
+                            <li><a href="index.html#servicios">Sostenibilidad</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Compañía</h4>
+                        <ul>
+                            <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+                            <li><a href="index.html#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InnerData. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
+            themeVariables: {
+                primaryColor: '#0c2444',
+                tertiaryColor: '#F8FAFC',
+                edgeLabelBackground: '#ffffff'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'stepAfter'
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
