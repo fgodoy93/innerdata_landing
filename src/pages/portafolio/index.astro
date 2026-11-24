@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const featured = {
+  filterGroup: 'web',
+  category: 'Desarrollo Web · Logística',
+  impact: 'Miami → Chillán · End-to-End',
+  title: 'Aukabox – Plataforma de Casilla Internacional',
+  description:
+    'Desarrollo de aplicación web para logística internacional y servicio de casillero en Miami para clientes en Chillán y Chile, integrando compras asistidas y flujo de envíos.',
+  image: '/assets/portfolio-aukabox-site.png',
+  alt: 'Captura real de la plataforma web Aukabox (www.aukabox.cl)',
+  badges: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Cloudflare'],
+  href: '/portafolio/aukabox/',
+};
+
+const projects = [
+  {
+    filterGroup: 'data',
+    category: 'Data Science · Finance',
+    impact: '×1.9 retorno · 0.95 corr. S&P',
+    title: 'Fondos de Pensiones y Volatilidad',
+    description:
+      'Análisis de la evolución del Fondo A de AFP chilenas (2019-2024), identificando patrones de dependencia y riesgo real frente a índices bursátiles globales.',
+    image: '/assets/SerieTiempoInner.webp',
+    alt: 'Análisis de Fondos de Pensiones',
+    badges: ['Python', 'Pandas', 'Series de Tiempo', 'yfinance'],
+    href: '/portafolio/pensiones/',
+  },
+  {
+    filterGroup: 'processes',
+    category: 'Procesos · Simulación',
+    impact: '-50–75% espera C4 · 95% conf.',
+    title: 'Optimización de Urgencias SAR',
+    description:
+      'Simulación estocástica para optimizar el flujo de pacientes en un Servicio de Urgencia de Alta Resolutividad, reduciendo tiempos de espera y mejorando la asignación de recursos.',
+    image: '/assets/graficos.webp',
+    alt: 'Simulación de Procesos de Urgencia',
+    badges: ['SIMIO 10', 'Optimización', 'Procesos', 'Estadística'],
+    href: '/portafolio/simulacion/',
+  },
+  {
+    filterGroup: 'processes',
+    category: 'Sostenibilidad · Pesquero',
+    impact: '15+ KPIs ASG · 4 etapas',
+    title: 'Gestión Hídrica y ASG para Empresa Pesquera',
+    description:
+      'Estudio integral de sostenibilidad para empresa pesquero-industrial: normalización de KPIs, huella hídrica y hoja de ruta para integración ASG en operaciones.',
+    image: '/assets/portfolio-pesquera.jpg',
+    alt: 'Gestión Hídrica y Sostenibilidad ASG Pesquera',
+    badges: ['ASG', 'Huella Hídrica', 'KPIs', 'Dashboards'],
+    href: '/portafolio/pesquera/',
+  },
+  {
+    filterGroup: 'web',
+    category: 'Sistemas Digitales · Finanzas',
+    impact: '0 hrs cierre manual · SII',
+    title: 'Mini ERP – Control de Flujo de Caja',
+    description:
+      'Desarrollo integral de una aplicación web para el control financiero, integrando gestión de ingresos, egresos, conciliación bancaria y visualización de flujo de caja en tiempo real.',
+    image: '/assets/portfolio-mini-erp.jpg',
+    alt: 'Mini ERP Control de Flujo de Caja en Laptop',
+    badges: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
+    href: '/portafolio/mini-erp/',
+  },
+];
+
+const filters = [
+  { id: 'all', label: 'Todos (5)' },
+  { id: 'web', label: 'Desarrollo Web' },
+  { id: 'data', label: 'Analítica & Datos' },
+  { id: 'processes', label: 'Simulación & Procesos' },
+];
+---
+
+<BaseLayout title="Portafolio | Proyectos Destacados - InnerData">
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1 bg-slate-50 pt-32 pb-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+          Casos de Éxito
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-navy-900 mb-4">
+          Nuestro Portafolio
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Una selección de proyectos donde la analítica avanzada, la simulación y el desarrollo web han generado valor medible para nuestros clientes.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12" role="group" aria-label="Filtrar proyectos por área">
+        {filters.map((f, idx) => (
+          <button
+            type="button"
+            data-filter={f.id}
+            aria-pressed={idx === 0 ? 'true' : 'false'}
+            class={`portfolio-filter-btn min-h-10 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+              idx === 0
+                ? 'bg-navy-900 text-white shadow-sm'
+                : 'bg-white text-slate-600 border border-slate-200 hover:border-copper-500/50 hover:text-navy-900'
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Featured Card: Aukabox -->
+      <article
+        data-category={featured.filterGroup}
+        class="portfolio-item group mb-8 overflow-hidden rounded-3xl border border-slate-200/90 ring-1 ring-navy-900/[0.04] bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-copper-500/45 grid grid-cols-1 lg:grid-cols-12"
+      >
+        <div class="lg:col-span-7 relative bg-slate-100 p-4 sm:p-6 flex items-center justify-center overflow-hidden">
+          <div class="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-white">
+            <div class="flex items-center gap-1.5 bg-navy-900 px-3.5 py-2">
+              <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              <span class="ml-2 font-mono text-[11px] text-slate-300">www.aukabox.cl</span>
+            </div>
+            <div class="h-60 sm:h-72 overflow-hidden">
+              <img
+                src={featured.image}
+                alt={featured.alt}
+                class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 p-7 sm:p-9 flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span class="rounded-full bg-copper-500/15 border border-copper-500/30 px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider text-copper-600">
+                Proyecto Destacado
+              </span>
+              <span class="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">
+                {featured.category}
+              </span>
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mb-3 leading-tight">
+              {featured.title}
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+              {featured.description}
+            </p>
+            <div class="inline-flex items-center gap-2 rounded-lg bg-emerald-50 border border-emerald-200 px-3 py-1.5 text-xs font-mono font-semibold text-emerald-700 mb-5">
+              <i class="fas fa-bolt text-emerald-500" aria-hidden="true"></i>
+              {featured.impact}
+            </div>
+            <div class="flex flex-wrap gap-2 mb-7">
+              {featured.badges.map((badge) => (
+                <span class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-mono font-medium text-navy-900">
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <a
+            href={featured.href}
+            class="group/btn btn-enterprise-primary w-full min-h-12 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm sm:text-base font-semibold"
+          >
+            Ver Caso de Estudio
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- 2x2 Grid for Remaining Case Studies -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7 mb-16">
+        {projects.map((project) => (
+          <article
+            data-category={project.filterGroup}
+            class="portfolio-item group overflow-hidden rounded-2xl border border-slate-200/90 ring-1 ring-navy-900/[0.04] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-copper-500/45 flex flex-col"
+          >
+            <div class="h-56 overflow-hidden relative">
+              <img
+                src={project.image}
+                alt={project.alt}
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-3.5 left-3.5 rounded-full bg-navy-950/75 backdrop-blur-md border border-white/15 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-white">
+                {project.category}
+              </span>
+            </div>
+
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="inline-flex self-start items-center gap-1.5 rounded-md bg-copper-500/10 border border-copper-500/20 px-2.5 py-1 font-mono text-[11px] font-semibold text-copper-600 mb-3">
+                <i class="fas fa-chart-line text-[10px]" aria-hidden="true"></i>
+                {project.impact}
+              </div>
+
+              <h2 class="font-display text-2xl font-bold text-navy-900 mb-3">{project.title}</h2>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 flex-1">
+                {project.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.badges.map((badge) => (
+                  <span class="rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-mono font-medium text-navy-900">
+                    {badge}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.href}
+                class="group/btn btn-enterprise-navy w-full min-h-11 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold"
+              >
+                Ver Caso de Estudio
+                <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover/btn:translate-x-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Bottom Conversion Banner -->
+      <div class="rounded-3xl bg-navy-900 p-8 sm:p-12 text-white relative overflow-hidden shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div aria-hidden="true" class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-copper-500/20 blur-3xl"></div>
+        <div class="relative z-10 text-center lg:text-left">
+          <span class="font-mono text-xs font-semibold uppercase tracking-wider text-copper-400 block mb-2">
+            Siguiente Paso
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-2">
+            ¿Tienes un desafío similar en tu empresa?
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base max-w-xl">
+            Agenda un diagnóstico gratuito de 30 minutos y revisamos cómo aplicar analítica, simulación o desarrollo web en tu operación.
+          </p>
+        </div>
+        <a
+          href="/contacto/"
+          class="group/cta btn-enterprise-primary relative z-10 shrink-0 min-h-12 inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm sm:text-base font-semibold"
+        >
+          Agendar Diagnóstico
+          <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover/cta:translate-x-1" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer isHome={false} />
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.portfolio-filter-btn');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          buttons.forEach((b) => {
+            const active = b === btn;
+            b.setAttribute('aria-pressed', String(active));
+            b.className = active
+              ? 'portfolio-filter-btn min-h-10 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-navy-900 text-white shadow-sm'
+              : 'portfolio-filter-btn min-h-10 rounded-full px-4 py-2 text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-white text-slate-600 border border-slate-200 hover:border-copper-500/50 hover:text-navy-900';
+          });
+
+          items.forEach((item) => {
+            const cat = item.getAttribute('data-category');
+            const show = filter === 'all' || cat === filter;
+            item.classList.toggle('hidden', !show);
+          });
+        });
+      });
+    });
+  </script>
+</BaseLayout>

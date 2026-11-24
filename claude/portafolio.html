@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Portafolio | Proyectos Detacados - InnerData</title>
+    <meta name="title" content="Portafolio | Proyectos Detacados - InnerData">
+    <meta name="description"
+        content="Explora nuestros proyectos destacados en Ciencia de Datos, Simulación de Procesos y Optimización Operacional. Casos de éxito con impacto real en la toma de decisiones.">
+    <meta name="author" content="InnerData">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portafolio-responsive.css">
+</head>
+
+<body>
+
+    <!-- Header (standardized to index navbar) -->
+    <header class="glass-header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="InnerData Logo" style="height: 40px; margin-right: 10px;">
+                    Inner<span>Data</span>
+                </a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="portafolio.html">Portafolio</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li class="cta-nav"><a href="index.html#contacto" class="btn btn-primary">Agendar Reunión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56956678642" target="_blank" class="floating-cta" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Portfolio Header -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <span class="section-label">Casos de Éxito</span>
+                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Nuestro Portafolio</h1>
+                <p>Una selección de proyectos donde la analítica avanzada y la ingeniería de procesos han generado valor real para nuestros clientes.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Pensiones -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/SerieTiempoInner.webp" alt="Análisis de Fondos de Pensiones">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Data Science · Finance</span>
+                        <h3>Fondos de Pensiones y Volatilidad</h3>
+                        <p>Análisis de la evolución del Fondo A de AFP chilenas (2019-2024), identificando patrones de dependencia y riesgo real frente a índices bursátiles globales.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Series de Tiempo</span>
+                            <span class="tech-badge">yfinance</span>
+                        </div>
+                        <a href="portafolio-pensiones.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Simulación SAR -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/graficos.webp" alt="Simulación de Procesos de Urgencia">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Procesos · Simulación</span>
+                        <h3>Optimización de Urgencias SAR</h3>
+                        <p>Simulación estocástica para optimizar el flujo de pacientes en un Servicio de Urgencia de Alta Resolutividad, reduciendo tiempos de espera y mejorando la asignación de recursos.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">SIMIO 10</span>
+                            <span class="tech-badge">Optimización</span>
+                            <span class="tech-badge">Procesos</span>
+                            <span class="tech-badge">Estadística</span>
+                        </div>
+                        <a href="portafolio-simulacion.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Pesquero (Resumen Card) -->
+                <article class="project-card fade-in">
+                    <div class="project-image" style="background: linear-gradient(135deg, rgba(12,36,68,0.9), rgba(30,41,59,0.9)); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-fish" style="color: white; font-size: 3.25rem;"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Sostenibilidad · Pesquero</span>
+                        <h3>Gestión Hídrica y ASG para Empresa Pesquera</h3>
+                        <p>Estudio integral de sostenibilidad para empresa pesquero-industrial: normalización de KPIs, huella hídrica y hoja de ruta para integración ASG en operaciones.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">ASG</span>
+                            <span class="tech-badge">Huella Hídrica</span>
+                            <span class="tech-badge">KPIs</span>
+                            <span class="tech-badge">Dashboards</span>
+                        </div>
+                        <a href="portafolio-pesquera.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+
+                <!-- Project 4: Mini ERP -->
+                <article class="project-card fade-in">
+                    <div class="project-image" style="background: linear-gradient(135deg, rgba(30,58,138,0.9), rgba(15,23,42,0.9)); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-laptop-code" style="color: white; font-size: 3.25rem;"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Sistemas Digitales · Finanzas</span>
+                        <h3>Mini ERP – Control de Flujo de Caja</h3>
+                        <p>Desarrollo integral de una aplicación web para el control financiero, integrando gestión de ingresos, egresos, conciliación bancaria y visualización de flujo de caja en tiempo real.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <a href="portafolio-mini-erp-v2.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>InnerData</h2>
+                    <p>Analítica y Gestión para el mundo empresarial moderno.</p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                        <a href="https://www.linkedin.com/company/innerdatacl/" target="_blank" title="LinkedIn"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:contacto@innerdata.cl" title="Contacto"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="index.html#servicios">Analítica de Datos</a></li>
+                            <li><a href="index.html#servicios">Ingeniería</a></li>
+                            <li><a href="index.html#servicios">Optimización</a></li>
+                            <li><a href="index.html#servicios">Consultoría</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Compañía</h4>
+                        <ul>
+                            <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+                            <li><a href="index.html#contacto">Contacto</a></li>
+                            <li><a href="portafolio.html">Portafolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InnerData. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+---
+const groups = [
+  {
+    label: 'Ciencia de Datos, ML & Visualización',
+    items: [
+      { icon: 'fab fa-python', name: 'Python' },
+      { icon: 'fas fa-table', name: 'Pandas' },
+      { icon: 'fas fa-cubes', name: 'NumPy' },
+      { icon: 'fas fa-brain', name: 'Scikit-learn' },
+      { icon: 'fas fa-network-wired', name: 'TensorFlow' },
+      { icon: 'fas fa-square-root-variable', name: 'SciPy' },
+      { icon: 'fas fa-chart-line', name: 'Matplotlib' },
+      { icon: 'fas fa-chart-area', name: 'Seaborn' },
+      { icon: 'fab fa-r-project', name: 'R Studio' },
+    ],
+  },
+  {
+    label: 'Desarrollo Web, Datos & Cloud',
+    items: [
+      { icon: 'fas fa-bolt', name: 'Next.js' },
+      { icon: 'fab fa-react', name: 'React' },
+      { icon: 'fas fa-code', name: 'TypeScript' },
+      { icon: 'fas fa-wind', name: 'Tailwind CSS' },
+      { icon: 'fas fa-rocket', name: 'Astro' },
+      { icon: 'fab fa-node-js', name: 'Node.js' },
+      { icon: 'fas fa-database', name: 'SQL & PostgreSQL' },
+      { icon: 'fas fa-cloud', name: 'Cloudflare' },
+      { icon: 'fab fa-aws', name: 'AWS Cloud' },
+    ],
+  },
+  {
+    label: 'Business Intelligence & Simulación',
+    items: [
+      { icon: 'fas fa-chart-column', name: 'Power BI' },
+      { icon: 'fab fa-google', name: 'Looker Studio' },
+      { icon: 'fas fa-project-diagram', name: 'Simio Simulation' },
+      { icon: 'fas fa-sitemap', name: 'Microsoft Visio' },
+    ],
+  },
+];
+---
+
+<section class="py-14 bg-white border-y border-slate-200">
+  <div class="mx-auto max-w-6xl px-6 space-y-8">
+    <div class="text-center">
+      <p class="font-mono text-xs font-semibold uppercase tracking-widest text-copper-500">
+        Tecnologías que dominamos
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {groups.map((group) => (
+        <div class="text-center">
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-3">
+            {group.label}
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2.5">
+            {group.items.map((tech) => (
+              <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-navy-900 transition-all hover:-translate-y-0.5 hover:border-copper-500/50 hover:bg-white hover:shadow-sm">
+                <i class={`${tech.icon} text-copper-500 text-sm`} aria-hidden="true"></i>
+                <span>{tech.name}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Mini ERP – Control de Flujo de Caja — InnerData</title>
+    <meta name="description" content="Sistema web de gestión financiera para pequeñas empresas. Controla tus ingresos, gastos e inversiones con reportes automáticos, filtros avanzados y exportación directa al contador.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/portafolio-mini-erp-v2.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+<!-- ══ Header ══ -->
+<header class="glass-header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="InnerData Logo" style="height:40px;margin-right:10px;">
+                Inner<span>Data</span>
+            </a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li class="cta-nav"><a href="index.html#contacto" class="btn btn-primary">Agendar Reunión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/56956678642" target="_blank" class="floating-cta" title="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ══ Hero ══ -->
+<section class="portfolio-hero">
+    <div id="particles-js"></div>
+    <div class="container hero-content">
+        <div class="hero-tags-wrapper">
+            <span class="portfolio-tag tag-blue"><i class="fas fa-coins"></i> Flujo de Caja</span>
+            <span class="portfolio-tag tag-amber"><i class="fas fa-chart-bar"></i> Reportes Automáticos</span>
+            <span class="portfolio-tag tag-green"><i class="fas fa-building"></i> PyMEs</span>
+        </div>
+        <h1>Deja de administrar tu empresa<br>desde una planilla de Excel</h1>
+        <p>Un sistema web que centraliza todos tus movimientos financieros — ingresos, gastos e inversiones — y te entrega reportes listos para el contador en un clic.</p>
+        <div class="hero-actions">
+            <a href="#impacto" class="btn btn-primary">
+                <i class="fas fa-arrow-down"></i> Ver cómo funciona
+            </a>
+            <a href="index.html#contacto" class="btn btn-secondary">
+                <i class="fas fa-calendar"></i> Quiero este sistema
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="hero-stats-bar">
+    <div class="container">
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Horas de trabajo manual en reportes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1 clic</div>
+                <div class="stat-label">Para exportar informe al contador</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">De tus movimientos en un solo lugar</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">SII</div>
+                <div class="stat-label">Compatible con normativa tributaria</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Antes / Después ══ -->
+<section class="fade-in" style="padding-top:4rem;padding-bottom:4rem;">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 2rem;">
+            <span class="section-label">El problema real</span>
+            <h2>Cómo gestionan sus finanzas la mayoría de las PyMEs hoy</h2>
+            <p>No es falta de esfuerzo — es falta de herramientas adecuadas. La diferencia entre operar con y sin este sistema es concreta y medible.</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-col">
+                <div class="comparison-header before">
+                    <i class="fas fa-times-circle"></i> Sin el sistema
+                </div>
+                <div class="comparison-body">
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Planillas de Excel con fórmulas frágiles que se rompen cuando alguien edita algo</span>
+                    </div>
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Cada cierre mensual requiere horas de consolidar datos dispersos en múltiples archivos</span>
+                    </div>
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Para encontrar una transacción específica hay que revisar todo el registro manualmente</span>
+                    </div>
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>El reporte al contador se prepara copiando datos a mano — con riesgo de errores</span>
+                    </div>
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Las categorías de gasto no tienen estándar — cada mes se nombran distinto</span>
+                    </div>
+                    <div class="comparison-item bad">
+                        <i class="fas fa-times-circle"></i>
+                        <span>No hay visibilidad del flujo de caja sin abrir y cruzar múltiples archivos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-col">
+                <div class="comparison-header after">
+                    <i class="fas fa-check-circle"></i> Con el Mini ERP
+                </div>
+                <div class="comparison-body">
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sistema web centralizado — todos los movimientos registrados en un único lugar seguro</span>
+                    </div>
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>El cierre mensual se hace en minutos filtrando por período y exportando en un clic</span>
+                    </div>
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Búsqueda instantánea por fecha, categoría, monto o descripción — resultados en segundos</span>
+                    </div>
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Reporte PDF o Excel generado automáticamente con el formato que necesita el contador</span>
+                    </div>
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Categorías personalizables y estandarizadas — con código SII integrado desde el primer día</span>
+                    </div>
+                    <div class="comparison-item good">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Flujo de caja disponible en pantalla en todo momento, sin abrir ningún archivo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Dashboard mock ══ -->
+<section class="fade-in" style="padding-top:3rem;padding-bottom:4rem;background-color:var(--bg-body);">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 1.5rem;">
+            <span class="section-label">El sistema en acción</span>
+            <h2>Todo lo que necesitas, visible en una sola pantalla</h2>
+            <p>Panel de control web accesible desde cualquier dispositivo. Sin instalaciones, sin licencias por computador.</p>
+        </div>
+
+        <div class="dashboard-preview">
+            <div class="dash-topbar">
+                <div class="dash-topbar-dots">
+                    <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+                </div>
+                <div class="dash-topbar-title">Mini ERP · Panel de Gastos · Marzo 2026</div>
+            </div>
+            <div class="dash-body">
+                <div class="dash-sidebar">
+                    <div class="dash-logo">Mini ERP</div>
+                    <div class="dash-nav-label">Resumen</div>
+                    <div class="dash-nav-item"><i class="fas fa-gauge-high"></i> Flujo de Caja</div>
+                    <div class="dash-nav-label">Movimientos</div>
+                    <div class="dash-nav-item"><i class="fas fa-arrow-up" style="color:#22c55e;"></i> Ingresos</div>
+                    <div class="dash-nav-item active"><i class="fas fa-arrow-down" style="color:#ef4444;"></i> Gastos</div>
+                    <div class="dash-nav-item"><i class="fas fa-chart-pie"></i> Inversiones</div>
+                    <div class="dash-nav-label">Gestión</div>
+                    <div class="dash-nav-item"><i class="fas fa-tag"></i> Categorías</div>
+                    <div class="dash-nav-label">Reportes</div>
+                    <div class="dash-nav-item"><i class="fas fa-file-export"></i> Exportar</div>
+                </div>
+
+                <div class="dash-main">
+                    <div class="dash-header-row">
+                        <div class="dash-title">Gastos — Marzo 2026</div>
+                        <div class="export-btns-row">
+                            <div class="export-btn pdf"><i class="fas fa-file-pdf"></i> PDF</div>
+                            <div class="export-btn excel"><i class="fas fa-file-excel"></i> Excel</div>
+                            <div class="export-btn print"><i class="fas fa-print"></i> Imprimir</div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Total Gastos Mes</div>
+                            <div class="kpi-value">$4.2M</div>
+                            <div class="kpi-delta kpi-down"><i class="fas fa-arrow-up"></i> +8% vs feb.</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Mayor Categoría</div>
+                            <div class="kpi-value">Sueldos</div>
+                            <div class="kpi-delta" style="color:var(--secondary);">$1.8M · SII 101</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Registros</div>
+                            <div class="kpi-value">47</div>
+                            <div class="kpi-delta kpi-up">3 filtrados activos</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Saldo Acumulado</div>
+                            <div class="kpi-value">$620K</div>
+                            <div class="kpi-delta kpi-up"><i class="fas fa-arrow-up"></i> Positivo</div>
+                        </div>
+                    </div>
+
+                    <div class="filter-panel-mock">
+                        <div class="filter-panel-header">
+                            <div class="filter-panel-title"><i class="fas fa-filter" style="margin-right:6px;color:var(--accent);"></i> Filtros activos</div>
+                            <span class="filter-badge">3 aplicados · 3 de 47 resultados</span>
+                        </div>
+                        <div class="filter-grid">
+                            <div class="filter-input-mock filled">Desde: 01/03/2026</div>
+                            <div class="filter-input-mock filled">Hasta: 31/03/2026</div>
+                            <div class="filter-input-mock filled">Categoría: Sueldos</div>
+                            <div class="filter-input-mock">Buscar por descripción…</div>
+                        </div>
+                    </div>
+
+                    <div style="background:var(--bg-white);border-radius:10px;border:1px solid var(--border-color);overflow:hidden;box-shadow:var(--shadow-sm);">
+                        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                        <table class="mini-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                    <th>Categoría</th>
+                                    <th>Cód. SII</th>
+                                    <th>Monto (CLP)</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>05/03/2026</td>
+                                    <td>Sueldos equipo comercial</td>
+                                    <td>Sueldos</td>
+                                    <td>101</td>
+                                    <td>$850.000</td>
+                                    <td><span class="status-pill sp-gas">Gasto</span></td>
+                                </tr>
+                                <tr>
+                                    <td>12/03/2026</td>
+                                    <td>Sueldo administración</td>
+                                    <td>Sueldos</td>
+                                    <td>101</td>
+                                    <td>$620.000</td>
+                                    <td><span class="status-pill sp-gas">Gasto</span></td>
+                                </tr>
+                                <tr>
+                                    <td>28/03/2026</td>
+                                    <td>Comisiones vendedores</td>
+                                    <td>Sueldos</td>
+                                    <td>101</td>
+                                    <td>$330.000</td>
+                                    <td><span class="status-pill sp-gas">Gasto</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div style="padding:.75rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--secondary);border-top:1px solid var(--border-color);">
+                            Mostrando 3 de 47 registros · Filtro activo: Sueldos / marzo 2026 — exportación respeta este filtro
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Beneficios profundos ══ -->
+<section id="impacto" class="fade-in" style="padding-top:4rem;padding-bottom:4rem;">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 2rem;">
+            <span class="section-label">Por qué usar este sistema</span>
+            <h2>Seis cambios concretos en la forma en que operas</h2>
+            <p>No es solo un software — es una nueva forma de relacionarte con los números de tu negocio. Cada funcionalidad existe porque resuelve un problema real que le cuesta tiempo y dinero a las PyMEs.</p>
+        </div>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-tag"></i></div>
+                <h4>Tus categorías, a tu medida — con respaldo tributario</h4>
+                <p>Cada empresa tiene su propio lenguaje para nombrar sus gastos e ingresos. El sistema te permite crear y organizar categorías que reflejan exactamente tu operación: "Comisión vendedores", "Arriendo bodega norte", "Publicidad redes sociales" — las que necesites, como las necesites.</p>
+                <p>Y porque operamos en Chile, cada categoría puede tener su código SII integrado. Eso significa que cuando llegue la auditoría o el cierre tributario, tu información ya está ordenada bajo la nomenclatura oficial — sin traducir ni recodificar nada.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: cero doble trabajo entre tu registro interno y lo que exige el SII.</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-filter"></i></div>
+                <h4>Encuentra cualquier movimiento en segundos, no en horas</h4>
+                <p>Cuando necesitas auditar un gasto específico, preparar una rendición o responder una consulta del contador, el tiempo que pierdes buscando en planillas tiene un costo real. Con el sistema puedes filtrar por fecha exacta, por categoría, por rango de montos o buscar directamente por descripción — y los resultados aparecen de inmediato.</p>
+                <p>Los filtros se combinan entre sí: puedes ver todos los gastos de marzo en la categoría "Arriendos" entre $200.000 y $500.000 en un solo movimiento. Y lo mejor: cuando exportas, el archivo descargado contiene exactamente lo que tienes en pantalla, sin una fila de más ni de menos.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: lo que antes tomaba 30 minutos de búsqueda toma 20 segundos.</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-file-export"></i></div>
+                <h4>El reporte listo para el contador en un clic, sin reformatear</h4>
+                <p>El trabajo más repetitivo y frustrante en la gestión financiera de una PyME es preparar la información mensual para el contador. Copiar datos, formatear columnas, ajustar fechas, convertir montos — todo eso desaparece.</p>
+                <p>El sistema genera el archivo directamente desde la misma pantalla donde trabajas. En PDF con tablas formateadas listas para imprimir o archivar. En Excel con las columnas correctas para que el contador pueda trabajar directamente. Fechas en dd/mm/yyyy, montos en pesos chilenos, nombre del archivo con la fecha automática. No hay nada que ajustar.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: el cierre mensual pasa de ser una tarea de horas a ser un trámite de minutos.</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>Visión completa del flujo de caja sin abrir ningún archivo</h4>
+                <p>El flujo de caja es el indicador de salud más importante para una PyME — y también el más difícil de mantener actualizado cuando se gestiona en planillas. Con el sistema, el estado financiero consolidado está siempre disponible en pantalla, calculado automáticamente sobre los registros que ya ingresaste.</p>
+                <p>Ingresos, gastos e inversiones separados en módulos propios pero visibles de forma consolidada en el resumen de flujo. Ves el saldo acumulado, los movimientos del período y la evolución por categoría sin necesidad de cruzar archivos ni recalcular fórmulas.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: tomas decisiones con información actualizada, no con datos de hace dos semanas.</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
+                <h4>Tu información protegida, accesible solo para quien corresponde</h4>
+                <p>Las planillas compartidas en Drive o enviadas por WhatsApp no tienen control de acceso real. Cualquiera con el link puede ver, modificar o borrar información financiera sensible de tu empresa. El sistema tiene autenticación integrada — cada usuario accede con sus credenciales y tiene visibilidad solo de lo que le corresponde.</p>
+                <p>Todos los cambios quedan registrados. Si alguien modifica o elimina una categoría, existe un rastro auditable. Eso no solo protege la información — te da tranquilidad operacional y te prepara para procesos de due diligence o auditorías externas.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: información financiera protegida con los mismos estándares que usan empresas grandes.</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                <h4>Listo en días, no en meses — y crece con tu empresa</h4>
+                <p>Implementar un ERP tradicional puede tomar meses de configuración y cientos de miles de pesos en licencias. Este sistema está diseñado para que una PyME esté operativa en días. La instalación es guiada, hay scripts automáticos para Windows y Mac, y el onboarding está documentado paso a paso.</p>
+                <p>Y cuando tu operación crezca, el sistema crece contigo. La arquitectura está preparada para agregar gráficos de tendencias, presupuestos por categoría, importación masiva de datos y soporte multi-moneda — sin tener que migrar a una plataforma distinta ni perder el historial que ya construiste.</p>
+                <div class="benefit-result"><i class="fas fa-bolt" style="color:var(--accent);margin-right:6px;"></i>Resultado: inversión que se amortiza desde el primer cierre mensual que ahorras.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Pull Quote ══ -->
+<section class="fade-in" style="padding-top:3rem;padding-bottom:3rem;">
+    <div class="container">
+        <blockquote class="pull-quote">
+            <p>"La mayoría de las PyMEs no tiene un problema de datos — tiene un problema de acceso a sus propios datos. Toda la información existe, pero está dispersa, sin formato y llega tarde. Este sistema resuelve exactamente eso: pone tus números donde los necesitas, cuando los necesitas."</p>
+            <cite>— InnerData · Consultoría de Analítica y Gestión</cite>
+        </blockquote>
+    </div>
+</section>
+
+<!-- ══ Casos de uso ══ -->
+<section class="fade-in" style="padding-top:4rem;padding-bottom:4rem;background-color:var(--bg-body);">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 2rem;">
+            <span class="section-label">Cómo se usa en el día a día</span>
+            <h2>Tres flujos de trabajo que cambian desde el primer día</h2>
+            <p>No es teoría — son las situaciones concretas que ocurren todos los meses en una empresa y que con este sistema se resuelven en minutos.</p>
+        </div>
+
+        <div class="usecase-grid">
+            <div class="usecase-card">
+                <div class="usecase-persona persona-owner"><i class="fas fa-user-tie"></i> Dueño o gerente</div>
+                <h4>Cierre mensual y entrega al contador</h4>
+                <ul class="usecase-steps">
+                    <li><i class="fas fa-circle-dot"></i><span>Abre el módulo de Gastos</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Filtra por el mes que corresponde (ej: 01/03 al 31/03)</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Revisa que los registros estén completos en pantalla</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Hace clic en "Excel" — se descarga el archivo listo</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Envía el archivo al contador por email</span></li>
+                </ul>
+                <span class="usecase-time"><i class="fas fa-clock" style="margin-right:5px;"></i> 5 minutos · antes tomaba 2–3 horas</span>
+            </div>
+
+            <div class="usecase-card">
+                <div class="usecase-persona persona-counter"><i class="fas fa-calculator"></i> Contador o auditor</div>
+                <h4>Auditoría de gastos por categoría</h4>
+                <ul class="usecase-steps">
+                    <li><i class="fas fa-circle-dot"></i><span>Ingresa al módulo de Gastos</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Selecciona la categoría a auditar (ej: "Arriendos")</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Define el rango de montos si hay un umbral sospechoso</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Revisa los registros filtrados en pantalla</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Exporta a PDF como evidencia para el expediente</span></li>
+                </ul>
+                <span class="usecase-time"><i class="fas fa-clock" style="margin-right:5px;"></i> 10 minutos · con evidencia descargable</span>
+            </div>
+
+            <div class="usecase-card">
+                <div class="usecase-persona persona-admin"><i class="fas fa-user-gear"></i> Administrador</div>
+                <h4>Reporte formal de flujo de caja</h4>
+                <ul class="usecase-steps">
+                    <li><i class="fas fa-circle-dot"></i><span>Accede a la sección "Flujo de Caja"</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>El resumen consolidado ya está calculado automáticamente</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Revisa ingresos, gastos e inversiones del período</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Hace clic en "PDF" para generar el reporte formal</span></li>
+                    <li><i class="fas fa-circle-dot"></i><span>Imprime o envía para presentación a directorio o banco</span></li>
+                </ul>
+                <span class="usecase-time"><i class="fas fa-clock" style="margin-right:5px;"></i> 3 minutos · formato listo para presentar</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Impacto en números ══ -->
+<section class="fade-in" style="padding-top:4rem;padding-bottom:4rem;">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 2rem;">
+            <span class="section-label">Impacto medible</span>
+            <h2>Lo que cambia desde el primer mes de uso</h2>
+        </div>
+        <div class="indicator-grid">
+            <div class="indicator-card c-green">
+                <span class="indicator-label c-green">Tiempo</span>
+                <h4>Reducción en carga administrativa</h4>
+                <div class="indicator-metric">−78%</div>
+                <p>Las horas que hoy se invierten en consolidar, formatear y preparar reportes financieros se eliminan casi por completo. Ese tiempo se redirige a decisiones de negocio.</p>
+            </div>
+            <div class="indicator-card c-amber">
+                <span class="indicator-label c-amber">Velocidad</span>
+                <h4>Tiempo para encontrar una transacción</h4>
+                <div class="indicator-metric">20 seg.</div>
+                <p>Con los filtros avanzados, encontrar cualquier movimiento — por fecha, categoría, monto o descripción — toma segundos. En planillas, el mismo proceso podía tomar 20–30 minutos.</p>
+            </div>
+            <div class="indicator-card c-blue">
+                <span class="indicator-label c-blue">Reportes</span>
+                <h4>Clics para entregar informe al contador</h4>
+                <div class="indicator-metric">1 clic</div>
+                <p>Filtras el período, haces clic en PDF o Excel, y el archivo se descarga listo para enviar. Sin copiar datos, sin ajustar formatos, sin riesgo de errores de transcripción.</p>
+            </div>
+            <div class="indicator-card c-navy">
+                <span class="indicator-label c-navy">Adopción</span>
+                <h4>Tiempo para operar con autonomía</h4>
+                <div class="indicator-metric">3 semanas</div>
+                <p>El equipo completo — dueño, administrador y contador — puede operar el sistema de forma autónoma en menos de un mes, con documentación paso a paso incluida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Capacidades ══ -->
+<section class="fade-in" style="padding-top:3rem;padding-bottom:3rem;">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 2rem;">
+            <span class="section-label">Qué incluye el sistema</span>
+            <h2>Módulos y capacidades disponibles hoy</h2>
+        </div>
+        <div class="tech-row">
+            <span class="tech-pill"><i class="fas fa-arrow-up" style="margin-right:6px;color:#22c55e;"></i>Registro de Ingresos</span>
+            <span class="tech-pill"><i class="fas fa-arrow-down" style="margin-right:6px;color:#ef4444;"></i>Registro de Gastos</span>
+            <span class="tech-pill"><i class="fas fa-chart-pie" style="margin-right:6px;color:#3b82f6;"></i>Registro de Inversiones</span>
+            <span class="tech-pill"><i class="fas fa-tag" style="margin-right:6px;color:var(--accent);"></i>Categorías personalizables</span>
+            <span class="tech-pill"><i class="fas fa-receipt" style="margin-right:6px;"></i>Código SII integrado</span>
+            <span class="tech-pill"><i class="fas fa-filter" style="margin-right:6px;"></i>6 filtros combinables</span>
+            <span class="tech-pill"><i class="fas fa-magnifying-glass" style="margin-right:6px;"></i>Búsqueda por descripción</span>
+            <span class="tech-pill"><i class="fas fa-file-excel" style="margin-right:6px;color:#16a34a;"></i>Exportación a Excel</span>
+            <span class="tech-pill"><i class="fas fa-file-pdf" style="margin-right:6px;color:#dc2626;"></i>Exportación a PDF</span>
+            <span class="tech-pill"><i class="fas fa-chart-line" style="margin-right:6px;"></i>Flujo de caja consolidado</span>
+            <span class="tech-pill"><i class="fas fa-shield-halved" style="margin-right:6px;color:#7c3aed;"></i>Autenticación por usuario</span>
+            <span class="tech-pill"><i class="fas fa-money-bill-wave" style="margin-right:6px;"></i>Moneda CLP nativa</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Conclusiones ══ -->
+<section class="fade-in" style="background-color:var(--primary);padding-top:5rem;padding-bottom:5rem;">
+    <div class="container">
+        <div class="section-header" style="max-width:800px;margin:0 auto 3rem;">
+            <span class="section-label" style="color:#4ade80;">¿Para quién es este sistema?</span>
+            <h2 style="color:#fff;">Es para ti si reconoces alguna de estas situaciones</h2>
+        </div>
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <h4><i class="fas fa-file-excel" style="margin-right:8px;"></i>"Tengo todo en Excel pero nadie más sabe usarlo"</h4>
+                <p>Un sistema web con interfaz clara que cualquier miembro del equipo puede operar desde el primer día, sin depender de que una sola persona sepa dónde están las fórmulas.</p>
+            </div>
+            <div class="conclusion-card">
+                <h4><i class="fas fa-clock" style="margin-right:8px;"></i>"El cierre mensual me toma días de trabajo manual"</h4>
+                <p>Con filtros por período y exportación en un clic, el proceso que hoy toma días pasa a ser una tarea de minutos. El contador recibe exactamente lo que necesita, con el formato correcto.</p>
+            </div>
+            <div class="conclusion-card">
+                <h4><i class="fas fa-search" style="margin-right:8px;"></i>"No encuentro transacciones cuando las necesito"</h4>
+                <p>Búsqueda instantánea por cualquier dimensión — fecha, categoría, monto o descripción. Lo que antes requería revisar cientos de filas ahora aparece en segundos con los filtros combinados.</p>
+            </div>
+            <div class="conclusion-card">
+                <h4><i class="fas fa-building" style="margin-right:8px;"></i>"Quiero ordenarme antes de que mi empresa crezca más"</h4>
+                <p>El mejor momento para implementar un sistema de gestión financiera es antes de que el volumen de operaciones haga el desorden insostenible. Este sistema escala contigo sin necesidad de migrar.</p>
+            </div>
+        </div>
+
+        <div style="margin-top:4rem;text-align:center;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html#contacto" class="btn btn-primary" style="padding:1rem 2rem;font-size:1.1rem;">
+                <i class="fas fa-calendar" style="margin-right:8px;"></i> Quiero implementar este sistema
+            </a>
+            <a href="index.html" class="btn btn-secondary" style="padding:1rem 2rem;font-size:1.1rem;">
+                <i class="fas fa-arrow-left" style="margin-right:8px;"></i> Volver al Inicio
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Footer ══ -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>InnerData</h2>
+                <p>Analítica y Gestión para el mundo empresarial moderno.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#servicios">Analítica de Datos</a></li>
+                        <li><a href="index.html#servicios">Sistemas Digitales</a></li>
+                        <li><a href="index.html#servicios">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 InnerData. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
+<script src="js/portafolio-mini-erp-v2.js"></script>
+</body>
+</html>

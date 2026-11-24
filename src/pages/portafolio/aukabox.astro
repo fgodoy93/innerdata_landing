@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PortfolioHero from '../../components/PortfolioHero.astro';
+import Footer from '../../components/Footer.astro';
+
+const modules = [
+  {
+    icon: 'fa-box-open',
+    badge: 'Módulo 01',
+    title: 'Casilla Internacional en Miami',
+    desc: 'Asignación automática de dirección física en Miami, Florida, para que clientes en Chillán y todo Chile reciban compras de Amazon, eBay y tiendas de EE. UU.',
+  },
+  {
+    icon: 'fa-cart-shopping',
+    badge: 'Módulo 02',
+    title: 'Flujo de Compras Asistidas',
+    desc: 'Sistema estructurado de solicitud, cotización transparente y gestión de compra en nombre del cliente sin necesidad de tarjeta internacional.',
+  },
+  {
+    icon: 'fa-plane-departure',
+    badge: 'Módulo 03',
+    title: 'Consolidación & Tracking',
+    desc: 'Control de recepción en bodega, consolidación de múltiples paquetes para optimizar flete aéreo/marítimo y trazabilidad hasta entrega final en Ñuble y regiones.',
+  },
+  {
+    icon: 'fa-headset',
+    badge: 'Módulo 04',
+    title: 'Portal Web Responsive & Contacto',
+    desc: 'Experiencia web rápida y clara orientada a conversión, con canales directos hacia contacto@aukabox.cl y atención personalizada.',
+  },
+];
+
+const architecture = [
+  { label: 'Frontend & SSR', value: 'Next.js (App Router), React, TypeScript & Tailwind CSS' },
+  { label: 'Infraestructura & Edge', value: 'Cloudflare CDN, HTTPS estricto & optimización de activos' },
+  { label: 'Operación Logística', value: 'Flujo Miami (FL) → Aduana → Chillán / Centro-Sur de Chile' },
+  { label: 'Experiencia de Usuario', value: 'Cotizador interactivo, compras asistidas y seguimiento de estado' },
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Plataforma Web Aukabox | InnerData"
+  description="Desarrollo de aplicación web para Aukabox (www.aukabox.cl): logística internacional, casilla en Miami, compras asistidas y trazabilidad para Chillán y Chile."
+  includeParticles={true}
+>
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1">
+    <PortfolioHero
+      tags={[
+        { icon: 'fas fa-globe', label: 'Desarrollo Web', color: 'copper' },
+        { icon: 'fas fa-boxes-stacked', label: 'Logística Internacional', color: 'blue' },
+        { icon: 'fas fa-cart-shopping', label: 'Casilla Miami · Chile', color: 'emerald' },
+      ]}
+      title="Aukabox — Plataforma Web"
+      highlight="de Logística Internacional y Casilla"
+      subtitle="Diseño y desarrollo de aplicación web para Aukabox (www.aukabox.cl), conectando compras en EE. UU. con clientes de Chillán y el centro-sur de Chile."
+      primaryCta={{ label: 'Ver Arquitectura', href: '#arquitectura', icon: 'fa-arrow-down' }}
+      secondaryCta={{ label: 'Visitar aukabox.cl', href: 'https://www.aukabox.cl', icon: 'fa-external-link-alt', external: true }}
+      stats={[
+        { value: 'Miami', label: 'Casilla física gratuita en Florida, EE. UU.' },
+        { value: 'Chillán', label: 'Base operacional en Región de Ñuble' },
+        { value: '100%', label: 'Diseño Web Responsive Multi-dispositivo' },
+        { value: 'End-to-End', label: 'Recepción, consolidación y entrega final' },
+      ]}
+    />
+
+    <!-- Desafío y Solución -->
+    <section class="py-16 bg-white border-b border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500">
+            El Desafío
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">
+            Digitalizar la experiencia de importación y casilla internacional
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Comprar en tiendas internacionales desde regiones de Chile suele implicar incertidumbre sobre costos de envío, consolidación, aduana y tiempos de entrega. Aukabox necesitaba una plataforma web clara, confiable y rápida que explicara sus servicios y guiara al usuario desde el registro hasta la recepción.
+          </p>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 border-l-4 border-l-copper-500">
+            <p class="text-sm font-medium text-navy-900">
+              Objetivo central: unificar la propuesta de valor de <strong class="text-copper-600">Casilla en Miami</strong>, <strong class="text-copper-600">Compras Asistidas</strong> y <strong class="text-copper-600">Consolidación Logística</strong> en una aplicación web moderna enfocada en conversión.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento Preview Mockup -->
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-navy-900 text-white shadow-2xl">
+            <div class="flex items-center justify-between border-b border-white/10 px-5 py-3.5 bg-navy-950/60">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              </div>
+              <span class="font-mono text-xs text-slate-300">www.aukabox.cl</span>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-mono text-[11px] uppercase tracking-wider text-copper-400">Flujo Logístico</p>
+                  <p class="font-display text-lg font-bold">Miami (EE. UU.) → Chillán (Chile)</p>
+                </div>
+                <span class="rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs font-mono text-emerald-300">
+                  Operativo
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3.5">
+                  <i class="fas fa-warehouse text-copper-400 text-lg mb-1.5" aria-hidden="true"></i>
+                  <p class="text-xs font-semibold">1. Recepción</p>
+                  <p class="text-[11px] text-slate-400">Bodega Miami</p>
+                </div>
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3.5">
+                  <i class="fas fa-boxes-packing text-sky-400 text-lg mb-1.5" aria-hidden="true"></i>
+                  <p class="text-xs font-semibold">2. Consolida</p>
+                  <p class="text-[11px] text-slate-400">Aéreo / Marítimo</p>
+                </div>
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3.5">
+                  <i class="fas fa-truck-fast text-emerald-400 text-lg mb-1.5" aria-hidden="true"></i>
+                  <p class="text-xs font-semibold">3. Entrega</p>
+                  <p class="text-[11px] text-slate-400">Ñuble &amp; Chile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulos de la Aplicación Web -->
+    <section id="arquitectura" class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Arquitectura Funcional
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">
+            Capacidades implementadas en la plataforma
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+          {modules.map((m) => (
+            <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:border-copper-500/40">
+              <div class="flex items-center justify-between mb-4">
+                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-copper-500/10 text-copper-500 text-xl">
+                  <i class={`fas ${m.icon}`} aria-hidden="true"></i>
+                </span>
+                <span class="font-mono text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">{m.badge}</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-navy-900 mb-2">{m.title}</h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{m.desc}</p>
+            </article>
+          ))}
+        </div>
+
+        <!-- Ficha Técnica -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-7 sm:p-8 shadow-sm mb-12">
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-5">Ficha Técnica del Proyecto</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {architecture.map((item) => (
+              <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                <p class="font-mono text-xs font-semibold uppercase tracking-wider text-copper-500 mb-1">{item.label}</p>
+                <p class="text-sm font-medium text-navy-900">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Testimonio Cliente -->
+        <blockquote class="rounded-2xl border border-slate-200 border-l-4 border-l-copper-500 bg-white p-7 sm:p-8 shadow-sm mb-12">
+          <p class="font-display text-lg italic text-navy-900 leading-relaxed mb-3">
+            "Con InnerData logramos llevar la operación de Aukabox a una plataforma web clara y rápida. Hoy nuestros clientes en Chillán y todo Chile entienden el flujo de su casilla en Miami y cotizan compras asistidas sin fricción."
+          </p>
+          <cite class="not-italic font-mono text-xs font-bold uppercase tracking-wider text-copper-500">
+            — Rodolfo Osses Z., Aukabox (www.aukabox.cl)
+          </cite>
+        </blockquote>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="/contacto/"
+            class="group btn-enterprise-primary inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold"
+          >
+            Cotizar una solución similar
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.aukabox.cl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-enterprise-navy inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold"
+          >
+            Visitar www.aukabox.cl
+            <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+          </a>
+          <a
+            href="/portafolio/"
+            class="btn-enterprise-ghost inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold"
+          >
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
+            Volver al Portafolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer isHome={false} />
+</BaseLayout>

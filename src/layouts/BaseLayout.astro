@@ -1,0 +1,126 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  includeParticles?: boolean;
+  includeEmailJS?: boolean;
+}
+
+const {
+  title,
+  description = 'Consultora en Analítica Avanzada, Ciencia de Datos, Optimización de Procesos y Desarrollo Web en Chile. Transformamos datos en rentabilidad.',
+  keywords = 'Consultoría Analítica Avanzada Chile, Ciencia de Datos, Machine Learning, Optimización de Procesos, Business Intelligence, Desarrollo Web a Medida, Simulación SIMIO, InnerData',
+  ogImage = 'https://www.innerdata.cl/assets/og-image.jpg',
+  includeParticles = false,
+  includeEmailJS = false,
+} = Astro.props;
+
+const siteOrigin = Astro.site?.origin ?? 'https://www.innerdata.cl';
+const pathname = Astro.url.pathname === '/index.html' ? '/' : Astro.url.pathname;
+const canonicalUrl = new URL(pathname, siteOrigin).href;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'InnerData',
+  alternateName: 'Inner Data',
+  url: siteOrigin,
+  logo: `${siteOrigin}/assets/logo.png`,
+  image: ogImage,
+  description,
+  areaServed: {
+    '@type': 'Country',
+    name: 'Chile',
+  },
+  sameAs: ['https://www.linkedin.com/company/innerdatacl/'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'contacto@innerdata.cl',
+    telephone: '+56956678642',
+    contactType: 'customer service',
+    areaServed: 'CL',
+    availableLanguage: ['Spanish', 'English'],
+  },
+  knowsAbout: [
+    'Analítica Avanzada',
+    'Ciencia de Datos',
+    'Machine Learning',
+    'Optimización de Procesos',
+    'Simulación de Eventos Discretos',
+    'Business Intelligence',
+    'Desarrollo de Aplicaciones Web',
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="InnerData" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="InnerData" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased flex flex-col min-h-screen overflow-x-hidden">
+    <slot />
+
+    <!-- WhatsApp Floating CTA -->
+    <a
+      href="https://wa.me/56956678642"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contáctanos por WhatsApp"
+      title="Contáctanos por WhatsApp"
+      class="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white text-2xl shadow-lg shadow-emerald-950/25 transition-transform duration-200 hover:scale-110 hover:bg-[#128C7E]"
+    >
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    {includeEmailJS && (
+      <script is:inline src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    )}
+    {includeParticles && (
+      <script is:inline src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    )}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

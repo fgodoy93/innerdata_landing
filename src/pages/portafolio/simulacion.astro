@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PortfolioHero from '../../components/PortfolioHero.astro';
+import Footer from '../../components/Footer.astro';
+
+const kpis = [
+  { day: 'LUN', c4: '68 min', c5: '95 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'MAR', c4: '61 min', c5: '90 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'MIÉ', c4: '57 min', c5: '86 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'JUE', c4: '73 min', c5: '83 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'VIE', c4: '58 min', c5: '83 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'SÁB', c4: '34 min', c5: '63 min', limit: '180 min', status: '✓ Cumple' },
+  { day: 'DOM', c4: '26 min', c5: '53 min', limit: '180 min', status: '✓ Cumple' },
+];
+
+const scenarios = [
+  { code: 'E1', badge: '✓ Base', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200', title: 'Escenario actual', desc: 'Línea base validada con datos históricos reales. Cumple MINSAL holgadamente.' },
+  { code: 'E2', badge: '✓ Cumple MINSAL', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200', title: '30% C4 · 70% C5', desc: 'Simula un brote infeccioso o evento traumático en las inmediaciones.' },
+  { code: 'E3', badge: '✓ Mejor caso posible', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200', title: '100% Pacientes C5', desc: 'El máximo semanal C5 llega a 114 min, muy lejos del límite de 480 min.' },
+  { code: 'E4', badge: '⚠ Falla domingo', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200', title: '+25% Demanda', desc: 'Aumento de volumen conservando la mezcla. Resiste 6 de 7 días.' },
+  { code: 'E5', badge: '✗ Colapso', badgeClass: 'bg-red-50 text-red-700 border-red-200', title: '70% C4', desc: 'Predominio de complejidad grave. El sistema colapsa sistémicamente.' },
+  { code: 'E6', badge: '✓ Mejora sustancial', badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200', title: '3 médicos fijos', desc: 'Sin cambios estructurales, reduce tiempos de espera C4 en un 50–75%.' },
+];
+
+const steps = [
+  { num: '1', color: 'border-sky-500 text-sky-600', title: 'Llegada y Admisión', desc: 'Registro inicial y toma de datos administrativos.' },
+  { num: '2', color: 'border-copper-500 text-copper-500', title: 'Categorización (Triage)', desc: 'Clasificación clínica en gravedad C4 o C5.' },
+  { num: '3', color: 'border-emerald-500 text-emerald-600', title: 'Atención Médica', desc: 'Evaluación en box y solicitud de exámenes o procedimientos.' },
+  { num: '4', color: 'border-amber-500 text-amber-600', title: 'Tratamiento / Alta', desc: 'Procedimientos de enfermería, despacho o derivación.' },
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Simulación SAR | InnerData"
+  description="Optimización del flujo de pacientes en un Servicio de Urgencia de Alta Resolutividad (SAR) mediante simulación de eventos discretos con SIMIO 10."
+  includeParticles={true}
+>
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1">
+    <PortfolioHero
+      tags={[
+        { icon: 'fas fa-project-diagram', label: 'SIMIO 10', color: 'blue' },
+        { icon: 'fas fa-stopwatch', label: 'Eventos Discretos', color: 'emerald' },
+        { icon: 'fas fa-hospital-user', label: 'Salud Pública', color: 'copper' },
+        { icon: 'fas fa-layer-group', label: 'Optimización', color: 'amber' },
+      ]}
+      title="Optimización del flujo en un"
+      highlight="Servicio de Urgencia de Alta Resolutividad SAR"
+      subtitle="Modelamiento estocástico y análisis de capacidad operacional para reducir tiempos de espera y evaluar escenarios críticos en salud pública."
+      primaryCta={{ label: 'Ver KPIs Simulados', href: '#analisis', icon: 'fa-arrow-down' }}
+      secondaryCta={{ label: 'Otros Proyectos', href: '/portafolio/', icon: 'fa-arrow-left' }}
+      stats={[
+        { value: '133k', label: 'Personas cubiertas por el sistema' },
+        { value: '7', label: 'Modelos diarios calibrados' },
+        { value: '6', label: 'Escenarios de estrés testeados' },
+        { value: '95%', label: 'Nivel de confianza en validación' },
+      ]}
+    />
+
+    <!-- Contexto -->
+    <section class="py-16 bg-white border-b border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500">
+            Contexto
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 leading-tight">
+            El problema de la saturación hospitalaria
+          </h2>
+          <p class="border-l-4 border-copper-500 pl-4 text-navy-900 font-medium text-base sm:text-lg">
+            Un hospital público de referencia regional registraba un promedio de 2.500 atenciones semanales de urgencia, incluyendo consultas de baja complejidad.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Para descongestionar, se inauguró el SAR. Con 42 funcionarios, atiende entre 130 y 200 pacientes diarios de mediana (C4) y baja (C5) complejidad.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-mono text-xs font-bold uppercase text-copper-500 mb-1">Categoría C4</p>
+              <p class="font-display text-2xl font-bold text-navy-900">180 <span class="text-sm font-normal text-slate-500">min máx.</span></p>
+              <p class="text-xs text-slate-600 mt-1">Urgencia moderada</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-mono text-xs font-bold uppercase text-emerald-600 mb-1">Categoría C5</p>
+              <p class="font-display text-2xl font-bold text-navy-900">480 <span class="text-sm font-normal text-slate-500">min máx.</span></p>
+              <p class="text-xs text-slate-600 mt-1">Consulta ambulatoria</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=900&q=80"
+              alt="Servicio de Urgencia SAR"
+              class="w-full h-[360px] object-cover block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flujo del sistema -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Flujo del Sistema
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-3">
+            El recorrido del paciente de entrada a alta
+          </h2>
+          <p class="text-slate-600">
+            Cada etapa modela un proceso real con distribuciones estadísticas calibradas con datos históricos del SAR.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {steps.map((s) => (
+            <div class={`rounded-2xl bg-white p-6 border border-slate-200 border-t-4 ${s.color.split(' ')[0]} shadow-sm`}>
+              <span class={`font-mono text-xs font-bold uppercase ${s.color.split(' ')[1]}`}>Etapa 0{s.num}</span>
+              <h3 class="font-display text-lg font-bold text-navy-900 mt-1 mb-2">{s.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- KPIs Simulados -->
+    <section id="analisis" class="py-16 bg-white border-y border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            KPIs Simulados
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">El sistema cumple. Con holgura.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-navy-900 font-mono text-xs uppercase tracking-wider">
+                  <th class="p-3.5">Día</th>
+                  <th class="p-3.5">Espera C4</th>
+                  <th class="p-3.5">Espera C5</th>
+                  <th class="p-3.5">Límite C4</th>
+                  <th class="p-3.5">Estado</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                {kpis.map((row) => (
+                  <tr class="hover:bg-slate-50">
+                    <td class="p-3.5 font-mono font-bold text-navy-900">{row.day}</td>
+                    <td class="p-3.5 text-slate-700">{row.c4}</td>
+                    <td class="p-3.5 text-slate-700">{row.c5}</td>
+                    <td class="p-3.5 text-slate-500">{row.limit}</td>
+                    <td class="p-3.5 font-semibold text-emerald-600">{row.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="lg:col-span-5 space-y-4">
+            <div class="rounded-2xl border border-slate-200 border-l-4 border-l-emerald-500 bg-slate-50 p-6">
+              <p class="font-mono text-xs font-bold uppercase text-emerald-600 mb-2">✓ Hallazgo central</p>
+              <p class="text-sm sm:text-base text-navy-900 leading-relaxed">
+                En todos los días simulados, los tiempos de espera C4 permanecen muy por debajo del límite de 180 min. El mejor día es el domingo (26 min) y el más exigido el jueves (73 min).
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 border-l-4 border-l-amber-500 bg-slate-50 p-6">
+              <p class="font-mono text-xs font-bold uppercase text-amber-600 mb-2">⏰ Período de presión</p>
+              <p class="text-sm sm:text-base text-navy-900 leading-relaxed">
+                El peak de demanda ocurre entre las 18:00 y 20:45 hrs, cuando converge el cambio de turno médico con la mayor tasa de llegadas del día.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Análisis de Escenarios -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Evaluación de Estrés
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-2">Análisis de Escenarios</h2>
+          <p class="text-slate-600">¿Qué pasa si la demanda cambia radicalmente? Recreamos picos hospitalarios.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {scenarios.map((sc) => (
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+              <div class="flex items-center justify-between mb-4">
+                <span class="rounded-md bg-navy-900 px-2.5 py-1 font-mono text-xs font-bold text-white">{sc.code}</span>
+                <span class={`rounded-full border px-2.5 py-0.5 text-xs font-semibold ${sc.badgeClass}`}>{sc.badge}</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-navy-900 mb-2">{sc.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{sc.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusiones -->
+    <section class="py-16 bg-navy-900 text-white reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block rounded-full bg-copper-500/20 border border-copper-400/30 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-400 mb-3">
+            Conclusiones
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-white">Lo que los datos demuestran</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          <div class="rounded-2xl bg-white/5 border border-white/10 border-t-4 border-t-emerald-400 p-6">
+            <h3 class="font-display text-base font-bold text-white mb-2">El SAR cumple su misión</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">Atiende dentro de los plazos exigidos los 7 días, con holguras del 60–85% respecto al límite MINSAL.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 border-t-4 border-t-red-400 p-6">
+            <h3 class="font-display text-base font-bold text-white mb-2">Límite de resiliencia</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">Absorbe hasta un 60% más demanda. El domingo es vulnerable ante aumentos del 25%.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 border-t-4 border-t-amber-400 p-6">
+            <h3 class="font-display text-base font-bold text-white mb-2">Mezcla C4/C5 crítica</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">No es solo volumen, sino proporción: con más de 70% de pacientes C4 el sistema colapsa.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 border-t-4 border-t-copper-400 p-6">
+            <h3 class="font-display text-base font-bold text-white mb-2">Palanca médica</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">Mantener 3 médicos activos de forma continua reduce las esperas en un 50–75% sin obra civil.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contacto/" class="group btn-enterprise-primary inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold">
+            Cotizar una solución similar
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a href="/portafolio/" class="inline-flex items-center justify-center gap-2 min-h-12 rounded-xl border border-white/25 bg-white/10 px-7 py-3 text-base font-semibold text-white transition-all hover:bg-white hover:text-navy-900">
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
+            Volver al Portafolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer isHome={false} />
+  <script is:inline src="/js/portafolio-simulacion.js"></script>
+</BaseLayout>

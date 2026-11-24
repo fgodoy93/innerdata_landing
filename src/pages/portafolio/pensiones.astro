@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PortfolioHero from '../../components/PortfolioHero.astro';
+import Footer from '../../components/Footer.astro';
+
+const findings = [
+  {
+    value: '×1.9',
+    title: 'Crecimiento de 5 años',
+    description: 'La cuota pasó de ~$40k a ~$75k entre 2020 y 2024, casi duplicándose pese a dos correcciones significativas.',
+    accent: 'border-t-copper-500 text-copper-500',
+  },
+  {
+    value: '0.95',
+    title: 'Correlación con S&P 500',
+    description: 'La correlación más alta del conjunto. Prácticamente cada movimiento del S&P 500 se replica en el fondo chileno.',
+    accent: 'border-t-emerald-500 text-emerald-600',
+  },
+  {
+    value: '−0.43',
+    title: 'Hang Seng Tech',
+    description: 'Único índice con correlación negativa, lo que lo convierte en un diversificador natural excepcional para el portafolio.',
+    accent: 'border-t-sky-500 text-sky-600',
+  },
+];
+
+const techStack = [
+  { icon: 'fab fa-python', color: 'text-sky-600', name: 'Pandas' },
+  { icon: 'fas fa-chart-area', color: 'text-emerald-600', name: 'Seaborn' },
+  { icon: 'fas fa-chart-bar', color: 'text-amber-500', name: 'Matplotlib' },
+  { icon: 'fas fa-database', color: 'text-indigo-500', name: 'yfinance' },
+  { icon: 'fas fa-calculator', color: 'text-copper-500', name: 'Estadística Descriptiva' },
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Fondos de Pensiones | InnerData"
+  description="Análisis de series de tiempo y correlación del Fondo A de AFP chilenas frente a índices globales (S&P 500, Nasdaq, Nikkei, Hang Seng Tech)."
+  includeParticles={true}
+>
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1">
+    <PortfolioHero
+      tags={[
+        { icon: 'fab fa-python', label: 'Python · Pandas', color: 'copper' },
+        { icon: 'fas fa-project-diagram', label: 'Correlación', color: 'emerald' },
+        { icon: 'fas fa-chart-line', label: 'Series de Tiempo', color: 'blue' },
+        { icon: 'fas fa-chart-pie', label: 'Finanzas Chile', color: 'amber' },
+      ]}
+      title="Fondos de Pensiones"
+      highlight="en la era de la volatilidad global"
+      subtitle="Análisis de la evolución del Fondo A de AFP chilenas (2019–2024) frente a los principales índices bursátiles internacionales: S&P 500, Nasdaq, Nikkei y Hang Seng Tech."
+      primaryCta={{ label: 'Ver Visualizaciones', href: '#analisis', icon: 'fa-arrow-down' }}
+      secondaryCta={{ label: 'Otros Proyectos', href: '/portafolio/', icon: 'fa-arrow-left' }}
+      stats={[
+        { value: '×1.9', label: 'Crecimiento Cuota Fondo A (2020–2024)' },
+        { value: '0.95', label: 'Correlación directa con S&P 500' },
+        { value: '−0.43', label: 'Descorrelación Hang Seng Tech' },
+        { value: '5 años', label: 'Ventana de series de tiempo analizada' },
+      ]}
+    />
+
+    <!-- Intro -->
+    <section class="py-16 bg-white border-b border-slate-200 reveal-block">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+          Introducción al Proyecto
+        </span>
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-navy-900 mb-6">
+          ¿De qué forma afectan los indicadores internacionales al ahorro previsional chileno?
+          <span class="block text-copper-500 mt-1">Más de lo que imaginas.</span>
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-4">
+          Este proyecto analiza la evolución del Fondo A de AFP chilenas entre 2019 y 2024, comparando su comportamiento con cuatro índices bursátiles internacionales: <strong class="text-navy-900">S&amp;P 500, Nasdaq, Nikkei y Hang Seng Tech</strong>.
+        </p>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          A través de análisis de correlación, series de tiempo y distribuciones estadísticas, se identifican los patrones de dependencia que definen el riesgo real del portafolio para los afiliados.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hallazgos Clave -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Resultados
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">Hallazgos Clave</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {findings.map((f) => (
+            <div class={`rounded-2xl bg-white p-7 border border-slate-200 border-t-4 ${f.accent.split(' ')[0]} shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg`}>
+              <div class={`font-mono text-4xl font-bold mb-3 ${f.accent.split(' ')[1]}`}>{f.value}</div>
+              <h3 class="font-display text-xl font-bold text-navy-900 mb-2">{f.title}</h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{f.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizaciones -->
+    <section id="analisis" class="py-16 bg-white border-y border-slate-200 reveal-block">
+      <div class="mx-auto max-w-5xl px-6 space-y-10">
+        <div class="text-center mb-8">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Análisis Detallado
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">Visualizaciones del Análisis</h2>
+        </div>
+
+        <!-- Chart 1 -->
+        <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-sm space-y-6">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-copper-500/15 text-copper-500 text-xl">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+            </span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-navy-900">
+              Evolución temporal de Cuota Fondo A (2019–2024)
+            </h3>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            La serie revela tres fases: la <strong class="text-navy-900">caída de 2020</strong> por la pandemia (~$40k mínimo), una recuperación sostenida hasta 2022 y una meseta de 18 meses por el ciclo de alzas de la Fed. Desde 2024 la cuota retomó la senda alcista superando los <strong class="text-navy-900">$75k</strong>, casi duplicando el valor respecto al piso pandémico.
+          </p>
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+            <img src="/assets/SerieTiempoInner.webp" alt="Evolución temporal de Cuota Fondo A" class="w-full h-auto block" />
+          </div>
+        </article>
+
+        <!-- Chart 2 -->
+        <article class="rounded-2xl border border-slate-200 border-l-4 border-l-emerald-500 bg-slate-50 p-6 sm:p-8 shadow-sm space-y-6">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 text-xl">
+              <i class="fas fa-th-large" aria-hidden="true"></i>
+            </span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-navy-900">
+              Mapa de correlación entre variables de mercado
+            </h3>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            La matriz muestra correlaciones <strong class="text-navy-900">superiores a 0.90</strong> entre el Fondo A, S&amp;P 500 (0.95), Nikkei (0.92) y Nasdaq (0.90): prácticamente el mismo riesgo sistémico. La excepción es el <strong class="text-navy-900">Hang Seng Tech (−0.43)</strong>, cuyo ciclo divergente genera una descorrelación real y medible para reducir volatilidad de portafolio.
+          </p>
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+            <img src="/assets/HeatMapInner.webp" alt="Mapa de correlación entre variables" class="w-full h-auto block" />
+          </div>
+        </article>
+
+        <!-- Chart 3 -->
+        <article class="rounded-2xl border border-slate-200 border-l-4 border-l-sky-500 bg-slate-50 p-6 sm:p-8 shadow-sm space-y-6">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 text-xl">
+              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            </span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-navy-900">
+              Distribución del Hang Seng Tech
+            </h3>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            El histograma evidencia una distribución <strong class="text-navy-900">asimétrica positiva</strong>: masa concentrada entre 3k–5k puntos y cola derecha hasta 11k (boom tech chino, 2021). El boxplot confirma <strong class="text-navy-900">múltiples outliers al alza</strong>, posicionándolo como activo de cobertura con potencial de alfa.
+          </p>
+          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+            <img src="/assets/HistogramaHangInner.webp" alt="Distribución del Hang Seng Tech" class="w-full h-auto block" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pull Quote & Stack -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-4xl px-6">
+        <blockquote class="rounded-2xl border border-slate-200 border-l-4 border-l-copper-500 bg-white p-8 sm:p-10 shadow-sm mb-14">
+          <p class="font-display text-lg sm:text-xl italic text-navy-900 leading-relaxed mb-4">
+            "La diversificación tradicional geográfica no es suficiente cuando los mercados globales se mueven al unísono. Identificar activos descorrelacionados con asimetría positiva es fundamental para la construcción de carteras resilientes."
+          </p>
+          <cite class="not-italic font-mono text-xs font-bold uppercase tracking-wider text-copper-500">
+            — Conclusión del Proyecto
+          </cite>
+        </blockquote>
+
+        <div class="text-center mb-8">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Tecnologías Utilizadas
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900">Stack Analítico</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          {techStack.map((t) => (
+            <span class="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-navy-900 shadow-sm">
+              <i class={`${t.icon} ${t.color} text-base`} aria-hidden="true"></i>
+              {t.name}
+            </span>
+          ))}
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="/contacto/"
+            class="group btn-enterprise-primary inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold"
+          >
+            Cotizar una solución similar
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a
+            href="/portafolio/"
+            class="btn-enterprise-ghost inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold"
+          >
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
+            Volver al Portafolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer isHome={false} />
+</BaseLayout>

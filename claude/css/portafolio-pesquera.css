@@ -1,0 +1,89 @@
+/* Portfolio Tags */
+.portfolio-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+.tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+.tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+/* Framework/Methodology Display */
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.framework-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.framework-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(200, 117, 51, 0.12); transform: translateY(-2px); }
+.framework-card h4 { color: var(--primary); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em; }
+.framework-card p { font-size: 0.9rem; color: var(--secondary); line-height: 1.6; }
+
+/* Indicators Section */
+.indicator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.indicator-card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.75rem; border-left: 4px solid transparent; transition: all 0.3s ease; }
+.indicator-card.environmental { border-left-color: var(--accent); }
+.indicator-card.social { border-left-color: var(--primary); }
+.indicator-card.governance { border-left-color: var(--secondary); }
+.indicator-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.indicator-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+.indicator-label.environmental { color: var(--accent); }
+.indicator-label.social { color: var(--primary); }
+.indicator-label.governance { color: var(--secondary); }
+.indicator-card h4 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--primary); }
+.indicator-metric { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; font-family: 'IBM Plex Mono', monospace; }
+.indicator-card p { font-size: 0.9rem; color: var(--secondary); line-height: 1.6; }
+
+/* Roadmap Section */
+.roadmap-container { margin: 3rem 0; }
+.roadmap-step { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-bottom: 1.5rem; position: relative; display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; transition: all 0.3s ease; }
+.roadmap-step:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+.roadmap-step-number { font-size: 2.5rem; font-weight: 700; color: var(--primary); font-family: 'IBM Plex Mono', monospace; min-width: 80px; }
+.roadmap-step-content h4 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--primary); }
+.roadmap-step-content p { font-size: 0.95rem; color: var(--secondary); line-height: 1.7; margin-bottom: 0.75rem; }
+.priority-badge { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.75rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.5rem; }
+.priority-alta { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+.priority-media { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+
+/* Pull Quote */
+.pull-quote { background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%); border-left: 4px solid var(--primary); padding: 2rem; margin: 3rem 0; border-radius: 8px; font-style: italic; font-size: 1.1rem; color: var(--primary); line-height: 1.8; }
+.pull-quote cite { display: block; font-style: normal; font-size: 0.9rem; color: var(--secondary); margin-top: 1rem; }
+
+/* Methodology Pills */
+.tech-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0; }
+.tech-pill { background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500; color: var(--primary); font-family: 'IBM Plex Mono', monospace; transition: all 0.2s ease; }
+.tech-pill:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Results Table */
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--bg-white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); margin: 2rem 0; }
+thead tr { background: var(--bg-body); color: var(--primary); }
+thead th { padding: 1rem; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; border-bottom: 2px solid var(--border-color); }
+tbody tr { border-bottom: 1px solid var(--border-color); transition: background 0.2s; }
+tbody tr:hover { background: #f8fafc; }
+tbody td { padding: 1rem; color: var(--secondary); font-weight: 400; }
+tbody td:first-child { font-weight: 600; color: var(--primary); font-family: 'IBM Plex Mono', monospace; }
+
+/* Conclusion Cards */
+.conclusion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.conclusion-card { background: rgba(255, 255, 255, 0.05); padding: 1.75rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid #22c55e; transition: all 0.3s ease; }
+.conclusion-card:nth-child(2) { border-top-color: #3b82f6; }
+.conclusion-card:nth-child(3) { border-top-color: #f59e0b; }
+.conclusion-card:nth-child(4) { border-top-color: var(--accent); }
+.conclusion-card:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-4px); }
+.conclusion-card h4 { color: var(--bg-white); font-size: 1.05rem; margin-bottom: 1rem; font-weight: 600; }
+.conclusion-card p { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; }

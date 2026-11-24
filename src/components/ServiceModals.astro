@@ -1,0 +1,84 @@
+---
+const modals = [
+  {
+    id: 'modal-analytics',
+    title: 'Analítica y Ciencia de Datos',
+    intro: 'Transformamos volúmenes dispersos de datos en activos estratégicos. Nuestro enfoque combina rigor estadístico con conocimiento profundo de tu negocio.',
+    heading: '¿Qué incluye este servicio?',
+    bullets: [
+      { label: 'Modelos Predictivos y Machine Learning', text: 'Proyección de demanda, detección de anomalías, scoring y prevención de fuga de clientes.' },
+      { label: 'Segmentación y Análisis Avanzado', text: 'Clusterización de clientes para estrategias comerciales personalizadas.' },
+      { label: 'Arquitectura y Preparación de Datos', text: 'Limpieza, estructuración y pipelines ETL automatizados para garantizar la calidad del dato.' },
+      { label: 'Auditoría de Madurez Analítica', text: 'Diagnóstico completo de tus capacidades actuales y hoja de ruta de implementación.' },
+    ],
+  },
+  {
+    id: 'modal-processes',
+    title: 'Control de Gestión y Procesos',
+    intro: 'Optimizamos la columna vertebral de tu empresa. Diseñamos procesos claros y sistemas de control que aseguran la ejecución de tu estrategia.',
+    heading: 'Metodología de Trabajo',
+    bullets: [
+      { label: 'Sistemas de Control de Gestión', text: 'Implementación de Balanced Scorecard y tableros de comando alineados a objetivos.' },
+      { label: 'Mapeo y Rediseño (AS-IS / TO-BE)', text: 'Levantamiento detallado bajo estándar BPMN, eliminación de cuellos de botella y retrabajos.' },
+      { label: 'Gestión por Indicadores (KPIs)', text: 'Definición de métricas críticas de desempeño con metas claras y responsables.' },
+      { label: 'Documentación Operativa', text: 'Manuales de procedimientos y políticas internas para asegurar la continuidad operacional.' },
+    ],
+  },
+  {
+    id: 'modal-simulation',
+    title: 'Simulación y Optimización',
+    intro: 'Reducimos la incertidumbre en tus decisiones críticas mediante laboratorios digitales y modelos matemáticos exactos.',
+    heading: 'Capacidades Técnicas',
+    bullets: [
+      { label: 'Optimización Matemática', text: 'Programación lineal y entera mixta para asignación óptima de turnos, rutas y presupuestos.' },
+      { label: 'Simulación de Eventos Discretos', text: 'Modelamiento en SIMIO de plantas, urgencias y centros logísticos para probar cambios sin riesgo real.' },
+      { label: 'Network Design & Logística', text: 'Ubicación óptima de instalaciones y optimización de redes de distribución.' },
+      { label: 'Modelos de Inventarios', text: 'Cálculo estocástico de stocks de seguridad y políticas de reabastecimiento.' },
+    ],
+  },
+  {
+    id: 'modal-digital',
+    title: 'Sistemas Digitales y Automatización',
+    intro: 'Tu presencia digital y tus herramientas internas deben estar a la altura de tu operación. Desarrollamos aplicaciones web, portales y automatizaciones a medida.',
+    heading: 'Servicios Especializados',
+    bullets: [
+      { label: 'Aplicaciones Web a Medida', text: 'Desarrollo de plataformas con React, Astro, Node.js y PostgreSQL adaptadas a tus flujos.' },
+      { label: 'Business Intelligence y Dashboards', text: 'Tableros ejecutivos en Power BI y Looker Studio conectados directamente a tus datos.' },
+      { label: 'Automatización de Reportes y Flujos', text: 'Eliminación de planillas manuales y consolidación automática de información.' },
+      { label: 'Integración de Sistemas y APIs', text: 'Conexión segura entre tus sistemas actuales, ERP, CRM y servicios en la nube (AWS).' },
+    ],
+  },
+];
+---
+
+{modals.map((modal) => (
+  <div id={modal.id} class="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-navy-950/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby={`${modal.id}-title`}>
+    <div class="modal-panel relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-7 sm:p-8 shadow-2xl border border-slate-200">
+      <button
+        type="button"
+        aria-label="Cerrar modal"
+        class="modal-close absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 hover:text-copper-500 transition-colors cursor-pointer"
+      >
+        <i class="fas fa-times text-lg" aria-hidden="true"></i>
+      </button>
+
+      <div class="border-b border-slate-200 pb-4 mb-5 pr-8">
+        <h3 id={`${modal.id}-title`} class="font-display text-xl sm:text-2xl font-bold text-navy-900">
+          {modal.title}
+        </h3>
+      </div>
+
+      <div class="space-y-4 text-sm sm:text-base text-slate-600">
+        <p class="leading-relaxed">{modal.intro}</p>
+        <h4 class="font-display text-base font-bold text-navy-900 pt-2">{modal.heading}</h4>
+        <ul class="list-disc pl-5 space-y-2.5">
+          {modal.bullets.map((b) => (
+            <li>
+              <strong class="text-navy-900">{b.label}:</strong> {b.text}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+))}

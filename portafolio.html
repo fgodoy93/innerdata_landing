@@ -20,7 +20,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Icons -->
@@ -29,107 +29,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
-    <style>
-        .portfolio-gallery {
-            padding: 8rem 0 5rem;
-            background-color: var(--bg-body);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: var(--bg-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--border-color);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .project-image {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-content {
-            padding: 2rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-category {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .project-card p {
-            color: var(--secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-badge {
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            background: #F1F5F9;
-            color: var(--primary);
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 576px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/portafolio.css">
 </head>
 
 <body>
@@ -142,14 +42,14 @@
                     <img src="assets/logo.png" alt="InnerData Logo" style="height: 40px; margin-right: 10px;">
                     Inner<span>Data</span>
                 </a>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
+                <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="portfolio-nav-links">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul id="portfolio-nav-links" class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="portafolio.html">Portafolio</a></li>
+                    <li><a href="portafolio.html" aria-current="page">Portafolio</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                     <li class="cta-nav"><a href="index.html#contacto" class="btn btn-primary">Agendar Reunión</a></li>
                 </ul>
@@ -228,6 +128,25 @@
                         <a href="portafolio-pesquera.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
                     </div>
                 </article>
+
+                <!-- Project 4: Mini ERP -->
+                <article class="project-card fade-in">
+                    <div class="project-image" style="background: linear-gradient(135deg, rgba(30,58,138,0.9), rgba(15,23,42,0.9)); display:flex; align-items:center; justify-content:center;">
+                        <i class="fas fa-laptop-code" style="color: white; font-size: 3.25rem;"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Sistemas Digitales · Finanzas</span>
+                        <h3>Mini ERP – Control de Flujo de Caja</h3>
+                        <p>Desarrollo integral de una aplicación web para el control financiero, integrando gestión de ingresos, egresos, conciliación bancaria y visualización de flujo de caja en tiempo real.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <a href="portafolio-mini-erp-v2.html" class="btn btn-primary" style="width: 100%;">Ver Caso de Estudio</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -273,7 +192,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

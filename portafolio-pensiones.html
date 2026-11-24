@@ -29,58 +29,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 
-  <style>
-    .portfolio-tag {
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.4rem 1rem;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      backdrop-filter: blur(5px);
-    }
-
-    .tag-orange {
-      background: rgba(200, 117, 51, 0.15);
-      color: #f9b17a;
-      border: 1px solid rgba(200, 117, 51, 0.4);
-    }
-
-    .tag-teal {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.4);
-    }
-
-    .tag-blue {
-      background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.4);
-    }
-
-    .tag-gold {
-      background: rgba(245, 158, 11, 0.15);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.4);
-    }
-
-    .finding-value {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .chart-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
-    }
-  </style>
+  <link rel="stylesheet" href="css/portafolio-pensiones.css">
 </head>
 
 <body>
@@ -114,31 +63,26 @@
   </a>
 
   <!-- Hero Section -->
-  <section class="hero portfolio-hero fade-in"
-    style="background: linear-gradient(135deg, rgba(12, 36, 68, 0.95) 0%, rgba(30, 41, 59, 0.98) 100%);">
+  <section class="portfolio-hero fade-in">
     <div id="particles-js"></div>
-    <div class="container" style="position: relative; z-index: 2;">
-      <div class="hero-content" style="max-width: 900px; margin: 0 auto; text-align: center;">
-        <div style="display: flex; gap: 10px; margin-bottom: 2rem; justify-content: center; flex-wrap: wrap;">
-          <span class="portfolio-tag tag-orange"><i class="fab fa-python"></i> Python · Pandas</span>
-          <span class="portfolio-tag tag-teal"><i class="fas fa-project-diagram"></i> Correlación</span>
-          <span class="portfolio-tag tag-blue"><i class="fas fa-chart-line"></i> Series de tiempo</span>
-          <span class="portfolio-tag tag-gold"><i class="fas fa-chart-pie"></i> Finanzas Chile</span>
-        </div>
-        <h1>Fondos de Pensiones <br><span
-            class="text-gradient-copper">en la era de la volatilidad global</span></h1>
-        <p style="color: #cbd5e1; font-weight: 500; margin: 0 auto;">Proyecto de Análisis Documentado
-        </p>
+    <div class="container hero-content">
+      <div class="hero-tags-wrapper">
+        <span class="portfolio-tag tag-orange"><i class="fab fa-python"></i> Python · Pandas</span>
+        <span class="portfolio-tag tag-teal"><i class="fas fa-project-diagram"></i> Correlación</span>
+        <span class="portfolio-tag tag-blue"><i class="fas fa-chart-line"></i> Series de tiempo</span>
+        <span class="portfolio-tag tag-gold"><i class="fas fa-chart-pie"></i> Finanzas Chile</span>
       </div>
+      <h1>Fondos de Pensiones <br><span class="text-gradient-copper">en la era de la volatilidad global</span></h1>
+      <p>Proyecto de Análisis Documentado</p>
     </div>
   </section>
 
   <!-- Intro Section -->
   <section class="about fade-in" style="background-color: var(--bg-white); padding-top: 5rem; padding-bottom: 3rem;">
     <div class="container">
-      <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+      <div class="section-header">
         <span class="section-label">Introducción al Proyecto</span>
-        <h2 style="font-size: 2.2rem; line-height: 1.3;">¿De qué forma afecta el ahorro previsional chileno de
+        <h2>¿De qué forma afecta el ahorro previsional chileno de
           Indicadores Internacionales? <br><span style="color: var(--accent);">Más de lo que imagina.</span></h2>
       </div>
       <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -161,23 +105,20 @@
         <h2>Hallazgos Clave</h2>
       </div>
       <div class="grid-responsive">
-        <div class="why-card glass-panel"
-          style="padding: 2.5rem 2rem; border-radius: 12px; text-align: center; border-bottom: 4px solid var(--accent); background: var(--bg-white);">
-          <div class="finding-value" style="color: var(--accent);">×1.9</div>
+        <div class="why-card glass-panel highlight highlight-accent">
+          <div class="finding-value">×1.9</div>
           <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Crecimiento de 5 años</h3>
           <p style="color: var(--secondary); font-size: 0.95rem;">La cuota pasó de ~$40k a ~$75k entre 2020 and 2024, casi
             duplicándose pese a dos correcciones significativas.</p>
         </div>
-        <div class="why-card glass-panel"
-          style="padding: 2.5rem 2rem; border-radius: 12px; text-align: center; border-bottom: 4px solid #10b981; background: var(--bg-white);">
-          <div class="finding-value" style="color: #10b981;">0.95</div>
+        <div class="why-card glass-panel highlight highlight-green">
+          <div class="finding-value">0.95</div>
           <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Correlación con S&P 500</h3>
           <p style="color: var(--secondary); font-size: 0.95rem;">La correlación más alta del conjunto. Prácticamente
             cada movimiento del S&P 500 se replica en el fondo chileno.</p>
         </div>
-        <div class="why-card glass-panel"
-          style="padding: 2.5rem 2rem; border-radius: 12px; text-align: center; border-bottom: 4px solid #3b82f6; background: var(--bg-white);">
-          <div class="finding-value" style="color: #3b82f6;">−0.43</div>
+        <div class="why-card glass-panel highlight highlight-blue">
+          <div class="finding-value">−0.43</div>
           <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Hang Seng Tech</h3>
           <p style="color: var(--secondary); font-size: 0.95rem;">Único índice con correlación negativa, lo que lo
             convierte en un diversificador natural excepcional para el portafolio.</p>
@@ -196,8 +137,7 @@
 
       <div style="display: flex; flex-direction: column; gap: 4rem; max-width: 1000px; margin: 0 auto;">
         <!-- Chart 1 -->
-        <div class="service-card"
-          style="display: flex; flex-direction: column; gap: 2rem; padding: 2rem; border-top: none; border-left: 4px solid var(--accent); background: var(--bg-body);">
+        <div class="service-card analysis-row">
           <div>
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
               <div class="service-icon" style="margin-bottom: 0; width: 50px; height: 50px; flex-shrink: 0;"><i

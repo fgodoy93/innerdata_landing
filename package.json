@@ -1,0 +1,29 @@
+{
+  "name": "consulting_landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "astro dev --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --port 4321"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgodoy93/innerdata_landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fgodoy93/innerdata_landing/issues"
+  },
+  "homepage": "https://github.com/fgodoy93/innerdata_landing#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.13",
+    "lucide-astro": "^0.556.0",
+    "tailwindcss": "^4.3.5"
+  }
+}

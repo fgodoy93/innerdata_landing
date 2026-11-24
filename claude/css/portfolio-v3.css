@@ -1,0 +1,147 @@
+/* 
+   V3 AGGRESSIVE HERO FIX 
+   Designed to override any conflicting styles and ensure 100% visibility/alignment.
+*/
+
+.portfolio-hero {
+    min-height: 80vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 180px 0 100px 0 !important;
+    background: linear-gradient(135deg, #0c2444 0%, #1e3a63 100%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    color: white !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+.portfolio-content {
+    display: grid !important;
+    grid-template-columns: 1.2fr 0.8fr !important;
+    gap: 4rem !important;
+    align-items: center !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.hero-text {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+    height: auto !important;
+    min-height: 1px !important;
+}
+
+.hero-tags-wrapper {
+    margin-bottom: 2.5rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem !important;
+    line-height: 1.1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+.hero-text p {
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
+    color: #cbd5e1 !important;
+    margin-bottom: 2.5rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+.hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 1.25rem !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.hero-actions .btn {
+    padding: 0.85rem 1.75rem !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    width: auto !important;
+    justify-content: center !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.hero-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 5 !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+    .portfolio-content {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+        text-align: center !important;
+    }
+    .hero-tags-wrapper, .hero-actions {
+        justify-content: center !important;
+    }
+    .hero-text h1 { font-size: 2.8rem !important; }
+}
+
+@media (max-width: 768px) {
+    .portfolio-hero {
+        padding: 140px 20px 60px 20px !important;
+        min-height: auto !important;
+    }
+    .hero-text h1 { font-size: 2.22rem !important; }
+    .hero-text p { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+    .hero-actions {
+        flex-direction: column !important;
+    }
+    .hero-actions .btn {
+        width: 100% !important;
+    }
+    .hero-stats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-hero {
+        padding: 120px 15px 40px 15px !important;
+    }
+    .hero-text h1 { font-size: 1.85rem !important; }
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+    }
+}

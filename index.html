@@ -63,7 +63,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Icons -->
@@ -71,6 +71,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -80,14 +81,14 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <img src="assets/logo.png" alt="InnerData Logo" style="height: 40px; margin-right: 10px;">
+                    <img src="assets/logo.png" alt="InnerData Logo" class="nav-logo-img">
                     Inner<span>Data</span>
                 </a>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
+                <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav-links">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul id="primary-nav-links" class="nav-links">
+                    <li><a href="#inicio" aria-current="page">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="portafolio.html">Portafolio</a></li>
@@ -108,13 +109,14 @@
         <div id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 style="margin-bottom: 0.5rem;">InnerData</h1>
-                <p class="text-gradient-copper" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 600;">
+                <span class="hero-eyebrow"><i class="fas fa-compass" aria-hidden="true"></i> Ingeniería · Analítica · IA</span>
+                <h1 class="hero-title">InnerData</h1>
+                <p class="text-gradient-copper hero-subtitle">
                     Transformamos <span id="typing-text" class="typing">la complejidad</span> en ventaja competitiva</p>
                 <p>Somos tu socio estratégico en ingeniería, analítica y gestión. Elevamos el estándar de tu operación
                     con rigor técnico y metodologías de vanguardia.</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Hablemos</a>
+                    <a href="#contacto" class="btn btn-primary">Hablemos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
                 </div>
             </div>
@@ -124,7 +126,7 @@
 
 
     <!-- Why InnerData Section -->
-    <section class="why-innerdata fade-in" style="background-color: #F8FAFC;">
+    <section class="why-innerdata fade-in section-light-bg">
         <!-- ... content remains ... -->
         <div class="container">
             <div class="section-header">
@@ -134,31 +136,31 @@
             </div>
             <div class="why-grid">
                 <!-- Card 1 -->
-                <div class="why-card glass-panel" style="padding: 2rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"><i
+                <div class="why-card glass-panel why-card-inner">
+                    <div class="why-icon-wrapper"><i
                             class="fas fa-chart-pie"></i></div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Resultados Tangibles</h3>
-                    <p style="color: var(--secondary); font-size: 0.95rem;">Creemos en resultados que pueden observarse
+                    <h3 class="why-title">Resultados Tangibles</h3>
+                    <p class="why-desc">Creemos en resultados que pueden observarse
                         y medirse.
                         Cada proyecto se estructura en torno a indicadores relevantes para el contexto operativo y
                         estratégico de la organización.</p>
                 </div>
                 <!-- Card 2 -->
-                <div class="why-card glass-panel" style="padding: 2rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"><i
+                <div class="why-card glass-panel why-card-inner">
+                    <div class="why-icon-wrapper"><i
                             class="fas fa-shield-alt"></i></div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Confidencialidad Total</h3>
-                    <p style="color: var(--secondary); font-size: 0.95rem;">La información es uno de los activos más
+                    <h3 class="why-title">Confidencialidad Total</h3>
+                    <p class="why-desc">La información es uno de los activos más
                         sensibles de una organización.
                         Operamos bajo acuerdos de confidencialidad estrictos y estándares rigurosos de gestión de datos.
                     </p>
                 </div>
                 <!-- Card 3 -->
-                <div class="why-card glass-panel" style="padding: 2rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"><i
+                <div class="why-card glass-panel why-card-inner">
+                    <div class="why-icon-wrapper"><i
                             class="fas fa-handshake"></i></div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Socios, no Proveedores</h3>
-                    <p style="color: var(--secondary); font-size: 0.95rem;">Buscamos relaciones a largo plazo. Nos
+                    <h3 class="why-title">Socios, no Proveedores</h3>
+                    <p class="why-desc">Buscamos relaciones a largo plazo. Nos
                         integramos en su Slack, Teams y cultura como un miembro más de su equipo.</p>
                 </div>
             </div>
@@ -204,10 +206,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image"
-                    style="border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md);">
-                    <img src="assets/graficos.webp" alt="Gráficos y Visualización de Datos InnerData"
-                        style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div class="about-image about-img-wrapper">
+                    <img src="assets/graficos.webp" alt="Gráficos y Visualización de Datos InnerData" class="about-img">
                 </div>
             </div>
         </div>
@@ -232,21 +232,19 @@
                     <h3>Analítica y Ciencia de Datos</h3>
                     <p>Convertimos datos en conocimiento estratégico para la toma de decisiones.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Modelos Predictivos y Machine Learning
                         </li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Segmentación y Análisis Avanzado</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Arquitectura y Preparación de Datos</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Auditoría de Madurez Analítica</li>
                     </ul>
-                    <div class="service-meta" style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline btn-sm" data-modal="modal-analytics"
-                            style="color:var(--accent); border-color:var(--accent);">Ver Detalles</button>
-                        <a href="portafolio-pensiones.html" class="btn btn-primary btn-sm"
-                            style="text-decoration: none;">Ver Portafolio</a>
+                    <div class="service-meta service-meta-actions">
+                        <button class="btn btn-outline btn-sm service-outline-btn" data-modal="modal-analytics">Ver Detalles</button>
+                        <a href="portafolio-pensiones.html" class="btn btn-primary btn-sm service-link-btn">Ver Portafolio</a>
                     </div>
                 </div>
 
@@ -256,20 +254,18 @@
                     <h3>Control de Gestión y Procesos</h3>
                     <p>Diseño y mejora del desempeño organizacional para aumentar eficiencia.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Sistemas de Control de Gestión</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Mapeo y Rediseño de Procesos (AS-IS / TO-BE)</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Gestión por Indicadores y KPIs</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Estandarización y Documentación Operativa</li>
                     </ul>
-                    <div class="service-meta" style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline btn-sm" data-modal="modal-processes"
-                            style="color:var(--accent); border-color:var(--accent);">Ver Detalles</button>
-                        <a href="portafolio-pesquera.html" class="btn btn-primary btn-sm"
-                            style="text-decoration: none;">Ver Portafolio</a>
+                    <div class="service-meta service-meta-actions">
+                        <button class="btn btn-outline btn-sm service-outline-btn" data-modal="modal-processes">Ver Detalles</button>
+                        <a href="portafolio-pesquera.html" class="btn btn-primary btn-sm service-link-btn">Ver Portafolio</a>
                     </div>
                 </div>
 
@@ -279,20 +275,18 @@
                     <h3>Simulación y Optimización</h3>
                     <p>Análisis operacional avanzado para evaluar escenarios y optimizar recursos.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Optimización Matemática de Recursos</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Simulación de Sistemas y Escenarios</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Optimización Logística y Network Design</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Modelos Estocásticos de Inventarios</li>
                     </ul>
-                    <div class="service-meta" style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline btn-sm" data-modal="modal-simulation"
-                            style="color:var(--accent); border-color:var(--accent);">Ver Detalles</button>
-                        <a href="portafolio-simulacion.html" class="btn btn-primary btn-sm"
-                            style="text-decoration: none;">Ver Portafolio</a>
+                    <div class="service-meta service-meta-actions">
+                        <button class="btn btn-outline btn-sm service-outline-btn" data-modal="modal-simulation">Ver Detalles</button>
+                        <a href="portafolio-simulacion.html" class="btn btn-primary btn-sm service-link-btn">Ver Portafolio</a>
                     </div>
                 </div>
 
@@ -302,18 +296,18 @@
                     <h3>Sistemas Digitales y Automatización</h3>
                     <p>Presencia digital profesional alineada a objetivos de negocio.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Business Intelligence y Visualización Ejecutiva</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Automatización de Procesos e Integraciones</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Aplicaciones Web a Medida</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--accent); margin-right:5px;"></i>
+                        <li><i class="fas fa-check-circle service-list-icon"></i>
                             Integración de Sistemas y APIs</li>
                     </ul>
-                    <div class="service-meta">
-                        <button class="btn btn-outline btn-sm" data-modal="modal-digital"
-                            style="color:var(--accent); border-color:var(--accent);">Ver Detalles</button>
+                    <div class="service-meta service-meta-actions">
+                        <button class="btn btn-outline btn-sm service-outline-btn" data-modal="modal-digital">Ver Detalles</button>
+                        <a href="portafolio-mini-erp-v2.html" class="btn btn-primary btn-sm service-link-btn">Ver Portafolio</a>
                     </div>
                 </div>
 
@@ -326,57 +320,52 @@
         <div class="container">
             <p class="tech-heading">Tecnologías que dominamos</p>
             <div class="tech-logos">
-                <i class="fab fa-python" data-name="Python"></i>
-                <i class="fab fa-r-project" data-name="R Studio"></i>
-                <i class="fas fa-database" data-name="SQL Server"></i>
-                <i class="fas fa-chart-column" data-name="Power BI"></i>
-                <i class="fab fa-google" data-name="Looker Studio"></i>
-                <i class="fab fa-aws" data-name="AWS Cloud"></i>
-                <i class="fas fa-project-diagram" data-name="Microsoft Visio"></i>
-                <i class="fas fa-network-wired" data-name="Simio Simulation"></i>
+                <span class="tech-pill-item"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+                <span class="tech-pill-item"><i class="fab fa-r-project" aria-hidden="true"></i> R Studio</span>
+                <span class="tech-pill-item"><i class="fas fa-database" aria-hidden="true"></i> SQL Server</span>
+                <span class="tech-pill-item"><i class="fas fa-chart-column" aria-hidden="true"></i> Power BI</span>
+                <span class="tech-pill-item"><i class="fab fa-google" aria-hidden="true"></i> Looker Studio</span>
+                <span class="tech-pill-item"><i class="fab fa-aws" aria-hidden="true"></i> AWS Cloud</span>
+                <span class="tech-pill-item"><i class="fas fa-project-diagram" aria-hidden="true"></i> Microsoft Visio</span>
+                <span class="tech-pill-item"><i class="fas fa-network-wired" aria-hidden="true"></i> Simio Simulation</span>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonios" class="testimonials fade-in" style="background-color: white;">
+    <section id="testimonios" class="testimonials fade-in section-white-bg">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Confianza</span>
                 <h2>Lo que dicen nuestros clientes</h2>
             </div>
-            <div class="testimonials-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="testimonial-card"
-                    style="padding: 2rem; background: #F8FAFC; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <p style="font-style: italic; color: var(--secondary); margin-bottom: 1.5rem;">"InnerData
+            <div class="testimonials-grid testimonials-grid-layout">
+                <div class="testimonial-card testimonial-card-style">
+                    <p class="testimonial-quote">"InnerData
                         transformó
                         nuestra capacidad de ver el negocio. Pasamos de reportes manuales mensuales a un dashboard
                         en
                         tiempo real que nos ahorra 40 horas al mes."</p>
-                    <div class="client-info" style="display: flex; align-items: center; gap: 1rem;">
-                        <div
-                            style="width: 40px; height: 40px; background: #cbd5e1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">
+                    <div class="client-info client-info-wrapper">
+                        <div class="client-avatar">
                             JP</div>
                         <div>
-                            <h5 style="margin: 0; font-size: 0.95rem; color: var(--primary);">Juan Pérez</h5>
-                            <span style="font-size: 0.85rem; color: var(--secondary);">Gerente de Operaciones,
+                            <h5 class="client-name">Juan Pérez</h5>
+                            <span class="client-role">Gerente de Operaciones,
                                 Retail</span>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card"
-                    style="padding: 2rem; background: #F8FAFC; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <p style="font-style: italic; color: var(--secondary); margin-bottom: 1.5rem;">"El modelo de
+                <div class="testimonial-card testimonial-card-style">
+                    <p class="testimonial-quote">"El modelo de
                         optimización logística que desarrollaron redujo nuestros costos de distribución en un 12% el
                         primer año. El ROI fue inmediato."</p>
-                    <div class="client-info" style="display: flex; align-items: center; gap: 1rem;">
-                        <div
-                            style="width: 40px; height: 40px; background: #cbd5e1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">
+                    <div class="client-info client-info-wrapper">
+                        <div class="client-avatar">
                             MA</div>
                         <div>
-                            <h5 style="margin: 0; font-size: 0.95rem; color: var(--primary);">María Álvarez</h5>
-                            <span style="font-size: 0.85rem; color: var(--secondary);">Directora de Logística,
+                            <h5 class="client-name">María Álvarez</h5>
+                            <span class="client-role">Directora de Logística,
                                 Distribuidora Nacional</span>
                         </div>
                     </div>
@@ -392,28 +381,33 @@
             <div class="contact-container">
                 <span class="section-label">Conversemos</span>
                 <h2>¿Listo para optimizar su negocio?</h2>
-                <p style="margin-bottom: 1rem; color: var(--secondary);">Agenda una reunión de diagnóstico gratuita
+                <p class="contact-subtitle">Agenda una reunión de diagnóstico gratuita
                     para
                     evaluar sus necesidades.</p>
 
-                <p style="margin-bottom: 2rem; color: var(--secondary);">O escríbenos directamente a: <a
-                        href="mailto:contacto@innerdata.cl"
-                        style="color: var(--primary); font-weight: 600;">contacto@innerdata.cl</a></p>
+                <p class="contact-subtitle-alt">O escríbenos directamente a: <a href="mailto:contacto@innerdata.cl" class="contact-email-link">contacto@innerdata.cl</a></p>
 
-                <form id="contact-form" action="javascript:void(0);" method="post"
-                    style="text-align: left; display: grid; gap: 1rem;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required
-                            style="padding: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%;">
-                        <input type="email" id="email" name="email" placeholder="Correo Corporativo" required
-                            style="padding: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%;">
+                <form id="contact-form" action="javascript:void(0);" method="post" class="contact-form-layout">
+                    <div class="contact-form-row">
+                        <div>
+                            <label for="nombre" class="sr-only">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required class="contact-form-input">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Correo Corporativo</label>
+                            <input type="email" id="email" name="email" placeholder="Correo Corporativo" required class="contact-form-input">
+                        </div>
                     </div>
-                    <input type="text" id="empresa_cargo" name="empresa_cargo" placeholder="Empresa / Cargo"
-                        style="padding: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%;">
-                    <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarle?" rows="4" required
-                        style="padding: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 100%;"></textarea>
+                    <div>
+                        <label for="empresa_cargo" class="sr-only">Empresa / Cargo</label>
+                        <input type="text" id="empresa_cargo" name="empresa_cargo" placeholder="Empresa / Cargo" class="contact-form-input">
+                    </div>
+                    <div>
+                        <label for="mensaje" class="sr-only">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarle?" rows="4" required class="contact-form-input"></textarea>
+                    </div>
 
-                    <button type="submit" class="btn btn-primary contact-btn" style="width: 100%;">Enviar
+                    <button type="submit" class="btn btn-primary contact-btn w-100">Enviar
                         Mensaje</button>
                 </form>
             </div>
@@ -427,7 +421,7 @@
                 <div class="footer-brand">
                     <h2>InnerData</h2>
                     <p>Analítica y Gestión para el mundo empresarial moderno.</p>
-                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                    <div class="footer-social-wrapper">
                         <a href="https://www.linkedin.com/company/innerdatacl/" target="_blank" title="LinkedIn"><i
                                 class="fab fa-linkedin fa-lg"></i></a>
                         <a href="mailto:contacto@innerdata.cl" title="Contacto"><i
@@ -578,7 +572,7 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

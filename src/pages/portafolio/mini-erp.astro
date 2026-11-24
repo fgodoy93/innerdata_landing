@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PortfolioHero from '../../components/PortfolioHero.astro';
+import Footer from '../../components/Footer.astro';
+
+const beforeItems = [
+  'Planillas de Excel con fórmulas frágiles que se rompen cuando alguien edita algo',
+  'Cada cierre mensual requiere horas de consolidar datos dispersos en múltiples archivos',
+  'Para encontrar una transacción específica hay que revisar todo el registro manualmente',
+  'El reporte al contador se prepara copiando datos a mano — con riesgo de errores',
+  'Las categorías de gasto no tienen estándar — cada mes se nombran distinto',
+  'No hay visibilidad del flujo de caja sin abrir y cruzar múltiples archivos',
+];
+
+const afterItems = [
+  'Sistema web centralizado — todos los movimientos registrados en un único lugar seguro',
+  'El cierre mensual se hace en minutos filtrando por período y exportando en un clic',
+  'Búsqueda instantánea por fecha, categoría, monto o descripción en segundos',
+  'Reporte PDF o Excel generado automáticamente con el formato que necesita el contador',
+  'Categorías personalizables y estandarizadas — con código SII integrado desde el día 1',
+  'Flujo de caja disponible en pantalla en todo momento, sin abrir ningún archivo',
+];
+
+const benefits = [
+  { icon: 'fa-file-export', title: 'Exportación en 1 clic', desc: 'Genera el informe mensual en PDF o Excel listo para enviar al contador sin copiar ni pegar filas.' },
+  { icon: 'fa-filter', title: 'Búsqueda y filtros reales', desc: 'Filtra por rango de fechas, tipo de movimiento, categoría SII, centro de costo o texto libre.' },
+  { icon: 'fa-shield-halved', title: 'Datos protegidos y auditables', desc: 'Cada movimiento queda respaldado en base de datos con historial de cambios y respaldo automático.' },
+  { icon: 'fa-chart-line', title: 'Flujo de caja en tiempo real', desc: 'Visualiza ingresos, egresos, inversiones y saldo neto proyectado en un solo tablero ejecutivo.' },
+  { icon: 'fa-tags', title: 'Homologación tributaria SII', desc: 'Estructura pensada para cuadrar con las categorías y documentos tributarios chilenos.' },
+  { icon: 'fa-globe', title: '100% Web y Multi-dispositivo', desc: 'Accede desde oficina, casa o teléfono sin licencias por computador ni archivos locales.' },
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Mini ERP PyMEs | InnerData"
+  description="Aplicación web a medida para centralizar flujo de caja, ingresos, egresos y reportes contables automáticos para PyMEs."
+  includeParticles={true}
+>
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1">
+    <PortfolioHero
+      tags={[
+        { icon: 'fas fa-coins', label: 'Flujo de Caja', color: 'blue' },
+        { icon: 'fas fa-chart-bar', label: 'Reportes Automáticos', color: 'amber' },
+        { icon: 'fas fa-building', label: 'PyMEs', color: 'emerald' },
+      ]}
+      title="Deja de administrar tu empresa"
+      highlight="desde una planilla de Excel"
+      subtitle="Un sistema web que centraliza todos tus movimientos financieros — ingresos, gastos e inversiones — y te entrega reportes listos para el contador en un clic."
+      primaryCta={{ label: 'Ver cómo funciona', href: '#impacto', icon: 'fa-arrow-down' }}
+      secondaryCta={{ label: 'Quiero este sistema', href: '/contacto/', icon: 'fa-calendar' }}
+      stats={[
+        { value: '0 hrs', label: 'Trabajo manual en reportes mensuales' },
+        { value: '1 clic', label: 'Para exportar informe al contador' },
+        { value: '100%', label: 'De tus movimientos en un solo lugar' },
+        { value: 'SII', label: 'Compatible con normativa tributaria' },
+      ]}
+    />
+
+    <!-- Antes / Después -->
+    <section id="impacto" class="py-16 bg-white border-b border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            El Problema Real
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-3">
+            Cómo gestionan sus finanzas la mayoría de las PyMEs hoy
+          </h2>
+          <p class="text-slate-600">
+            No es falta de esfuerzo — es falta de herramientas adecuadas. La diferencia entre operar con y sin este sistema es concreta y medible.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="overflow-hidden rounded-2xl border border-red-200 bg-white shadow-sm">
+            <div class="bg-red-50 border-b border-red-200 px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-red-700 flex items-center gap-2">
+              <i class="fas fa-times-circle" aria-hidden="true"></i> Sin el sistema
+            </div>
+            <ul class="divide-y divide-slate-100 p-6 space-y-3">
+              {beforeItems.map((item) => (
+                <li class="flex items-start gap-3 pt-3 first:pt-0 text-sm text-slate-600">
+                  <i class="fas fa-times-circle text-red-500 mt-0.5 shrink-0" aria-hidden="true"></i>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl border border-emerald-200 bg-white shadow-sm">
+            <div class="bg-emerald-50 border-b border-emerald-200 px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-2">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Con el Mini ERP
+            </div>
+            <ul class="divide-y divide-slate-100 p-6 space-y-3">
+              {afterItems.map((item) => (
+                <li class="flex items-start gap-3 pt-3 first:pt-0 text-sm text-navy-900 font-medium">
+                  <i class="fas fa-check-circle text-emerald-500 mt-0.5 shrink-0" aria-hidden="true"></i>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Mockup -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            El Sistema en Acción
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-2">
+            Todo lo que necesitas, visible en una sola pantalla
+          </h2>
+          <p class="text-slate-600">Panel de control web accesible desde cualquier dispositivo.</p>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+          <div class="bg-navy-900 px-5 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-red-500"></span>
+              <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+              <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+            </div>
+            <span class="font-mono text-xs uppercase tracking-widest text-slate-300">Mini ERP · Flujo de Caja</span>
+          </div>
+
+          <div class="p-6 sm:p-8 bg-slate-100/70 space-y-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="font-mono text-[11px] uppercase text-slate-500">Ingresos Mes</p>
+                <p class="font-mono text-xl font-bold text-navy-900 mt-1">$18.450.000</p>
+                <p class="text-xs font-semibold text-emerald-600 mt-1">+14.2% vs mes ant.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="font-mono text-[11px] uppercase text-slate-500">Egresos Mes</p>
+                <p class="font-mono text-xl font-bold text-navy-900 mt-1">$11.230.000</p>
+                <p class="text-xs font-semibold text-amber-600 mt-1">Controlado</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="font-mono text-[11px] uppercase text-slate-500">Flujo Neto</p>
+                <p class="font-mono text-xl font-bold text-emerald-600 mt-1">+$7.220.000</p>
+                <p class="text-xs font-semibold text-emerald-600 mt-1">Margen 39.1%</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="font-mono text-[11px] uppercase text-slate-500">Cierre Contable</p>
+                <p class="font-mono text-xl font-bold text-copper-500 mt-1">Listo SII</p>
+                <p class="text-xs font-semibold text-slate-500 mt-1">Exportar PDF / XLSX</p>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead class="bg-slate-50 font-mono text-[11px] uppercase text-slate-500 border-b border-slate-200">
+                  <tr>
+                    <th class="p-3.5">Fecha</th>
+                    <th class="p-3.5">Descripción</th>
+                    <th class="p-3.5">Categoría SII</th>
+                    <th class="p-3.5">Tipo</th>
+                    <th class="p-3.5 text-right">Monto</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr>
+                    <td class="p-3.5 font-mono text-slate-500">2026-03-18</td>
+                    <td class="p-3.5 font-medium text-navy-900">Factura Electrónica #1042</td>
+                    <td class="p-3.5 text-slate-600">Ventas Servicios</td>
+                    <td class="p-3.5"><span class="rounded-full bg-emerald-100 text-emerald-700 px-2.5 py-0.5 font-mono text-xs font-semibold">Ingreso</span></td>
+                    <td class="p-3.5 text-right font-mono font-semibold text-emerald-600">+$3.250.000</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-mono text-slate-500">2026-03-17</td>
+                    <td class="p-3.5 font-medium text-navy-900">Infraestructura Cloud AWS</td>
+                    <td class="p-3.5 text-slate-600">Gastos Operacionales</td>
+                    <td class="p-3.5"><span class="rounded-full bg-red-100 text-red-700 px-2.5 py-0.5 font-mono text-xs font-semibold">Egreso</span></td>
+                    <td class="p-3.5 text-right font-mono font-semibold text-red-600">-$420.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Beneficios -->
+    <section class="py-16 bg-white border-t border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Beneficios Operacionales
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">
+            Seis cambios concretos en la forma en que operas
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {benefits.map((b) => (
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-7 transition-all hover:-translate-y-1 hover:shadow-md">
+              <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-copper-500/10 text-copper-500 text-lg">
+                <i class={`fas ${b.icon}`} aria-hidden="true"></i>
+              </span>
+              <h3 class="font-display text-lg font-bold text-navy-900 mb-2">{b.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7 mb-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-wider text-copper-500 mb-1">Arquitectura Técnica</p>
+            <p class="text-sm font-medium text-navy-900">Stack moderno, seguro y escalable en la nube</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {['React', 'Node.js', 'PostgreSQL', 'AWS'].map((tech) => (
+              <span class="rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 font-mono text-xs font-semibold text-navy-900 shadow-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contacto/" class="group btn-enterprise-primary inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold">
+            Cotizar una solución similar
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a href="/portafolio/" class="btn-enterprise-ghost inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold">
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
+            Volver al Portafolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer isHome={false} />
+</BaseLayout>

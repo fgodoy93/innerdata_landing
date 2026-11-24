@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PortfolioHero from '../../components/PortfolioHero.astro';
+import Footer from '../../components/Footer.astro';
+
+const indicators = [
+  { dim: 'Ambiental', color: 'border-l-copper-500 text-copper-500', title: 'Intensidad Energética', metric: '42.5 kWh/ton', desc: 'Consumo eléctrico normalizado. Benchmark industrial: 38–50 kWh/ton. Meta de reducción del 15%.' },
+  { dim: 'Ambiental', color: 'border-l-copper-500 text-copper-500', title: 'Huella Hídrica', metric: '1,280 L/ton', desc: 'Consumo de agua en proceso productivo y circuitos de refrigeración. Oportunidad en recirculación.' },
+  { dim: 'Ambiental', color: 'border-l-copper-500 text-copper-500', title: 'Cumplimiento Normativo', metric: '94%', desc: 'Estándares ambientales cumplidos según auditorías internas. Brechas en monitoreo de efluentes.' },
+  { dim: 'Social', color: 'border-l-navy-900 text-navy-900', title: 'Productividad Laboral', metric: '8.2 ton/persona', desc: 'Ratio de producción por trabajador como indicador de eficiencia operacional.' },
+  { dim: 'Social', color: 'border-l-navy-900 text-navy-900', title: 'Retención de Talento', metric: '87%', desc: 'Tasa de permanencia anual. Oportunidad de vincular incentivos a objetivos ASG.' },
+  { dim: 'Social', color: 'border-l-navy-900 text-navy-900', title: 'Seguridad Operacional', metric: '2.1 / 200k hrs', desc: 'Índice TRIFR dentro de estándares, con foco en capacitación continua ASG.' },
+  { dim: 'Gobernanza', color: 'border-l-slate-500 text-slate-600', title: 'Madurez ASG', metric: 'Nivel 2/5', desc: 'Sistemas básicos implementados. Transición hacia integración estratégica de indicadores.' },
+  { dim: 'Gobernanza', color: 'border-l-slate-500 text-slate-600', title: 'Visibilidad Datos', metric: '62%', desc: 'Cobertura de recopilación de datos. Requiere estandarización y automatización de reportería.' },
+  { dim: 'Gobernanza', color: 'border-l-slate-500 text-slate-600', title: 'Integración Estratégica', metric: 'Iniciando', desc: 'Vinculación de objetivos ASG a desempeño organizacional y alineación ejecutiva.' },
+];
+
+const roadmap = [
+  { num: '01', title: 'Eficiencia energética y control de insumos', desc: 'Sistematizar el monitoreo de consumo eléctrico y combustibles con metas de reducción del 15% mediante dashboards en tiempo real por línea.', meta: 'Dimensión: Ambiental / Gobernanza · ODS: 7, 9, 12', badge: 'Prioridad Alta', badgeClass: 'bg-red-50 text-red-600 border-red-200' },
+  { num: '02', title: 'Gestión hídrica como ventaja competitiva', desc: 'Formalizar seguimiento del indicador L/ton con políticas preventivas, sistemas de recirculación y baseline internacional.', meta: 'Dimensión: Ambiental · ODS: 6, 12', badge: 'Prioridad Media-Alta', badgeClass: 'bg-amber-50 text-amber-700 border-amber-200' },
+  { num: '03', title: 'Integración ASG en toma de decisiones', desc: 'Vincular indicadores a objetivos operacionales, desempeño de capital humano y reportes GRI 302-1 y 303-5.', meta: 'Dimensión: Gobernanza / Social · ODS: 8, 12, 16', badge: 'Prioridad Media', badgeClass: 'bg-sky-50 text-sky-700 border-sky-200' },
+];
+
+const mermaidDiagrams = [
+  `graph TD
+  classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+  classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+  classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+  classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+  A(["ETAPA 1: RECEPCIÓN"]):::titulo --> B["Pesca Materia Prima"]:::etapa
+  B --> C["Llegada Embarcación"]:::etapa
+  C --> D{¿Muelle?}:::decision
+  D -->|No| E["Espera Puerto"]:::espera --> D
+  D -->|Sí| F["Inspección Calidad"]:::etapa`,
+
+  `graph TD
+  classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+  classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+  classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+  classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+  A(["ETAPA 2: LOGÍSTICA"]):::titulo --> B{¿Camiones?}:::decision
+  B -->|No| C["Espera Transporte"]:::espera --> B
+  B -->|Sí| D["Carga y Transporte"]:::etapa
+  D --> E["Almacenaje Temporal"]:::etapa`,
+
+  `graph TD
+  classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+  classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+  classDef espera fill:#fff9f5,stroke:#a05a2c,stroke-width:1px,stroke-dasharray: 5 5,color:#7a3e20;
+  classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+  A(["ETAPA 3: PROCESAMIENTO"]):::titulo --> B{¿Capacidad?}:::decision
+  B -->|No| C["Espera Planta"]:::espera --> B
+  B -->|Sí| D["Descarga Pozas"]:::etapa --> E["Tratamiento Preliminar"]:::etapa --> F["Procesamiento Térmico"]:::etapa --> G["Separación Fases"]:::etapa`,
+
+  `graph TD
+  classDef etapa fill:#e3f2fd,stroke:#0c2444,stroke-width:2px,color:#0c2444,font-weight:bold;
+  classDef decision fill:#ffe4cc,stroke:#c87533,stroke-width:2px,color:#7a3e20;
+  classDef finish fill:#0c2444,stroke:#c87533,stroke-width:3px,color:#fff;
+  classDef titulo fill:#0c2444,stroke:#c87533,color:#fff,font-weight:bold;
+  A(["ETAPA 4: PRODUCTO"]):::titulo --> B{¿Línea?}:::decision
+  B -->|Harina| C["Molienda y Ensacado"]:::etapa --> D(["Despacho Harina"]):::finish
+  B -->|Aceite| E["Refinado y Tanques"]:::etapa --> F(["Exportación Aceite"]):::finish`,
+];
+---
+
+<BaseLayout
+  title="Caso de Estudio: Sostenibilidad Pesquera | InnerData"
+  description="Estudio integral de sostenibilidad, huella hídrica e indicadores ASG normalizados para empresa pesquero-industrial."
+  includeParticles={true}
+>
+  <Navbar currentPage="portfolio" />
+
+  <main class="flex-1">
+    <PortfolioHero
+      tags={[
+        { icon: 'fas fa-leaf', label: 'Sostenibilidad', color: 'emerald' },
+        { icon: 'fas fa-industry', label: 'Pesquero-Industrial', color: 'blue' },
+      ]}
+      title="Sostenibilidad Organizacional"
+      highlight="y Gestión Hídrica ASG"
+      subtitle="Análisis integral de indicadores ASG, huella hídrica y mapeo de cadena de valor para empresa procesadora en el sector pesquero-industrial."
+      primaryCta={{ label: 'Ver Análisis', href: '#metodologia', icon: 'fa-arrow-down' }}
+      secondaryCta={{ label: 'Otros Proyectos', href: '/portafolio/', icon: 'fa-arrow-left' }}
+      stats={[
+        { value: '4', label: 'Pilares de Sostenibilidad' },
+        { value: '15+', label: 'Indicadores Analizados' },
+        { value: '3 años', label: 'Horizonte de Data Histórica' },
+        { value: '100%', label: 'Cobertura Operacional' },
+      ]}
+    />
+
+    <!-- Contexto -->
+    <section class="py-16 bg-white border-b border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Contexto
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">
+            El desafío de la sostenibilidad en la industria pesquera
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+            <span class="inline-block rounded-md bg-emerald-600 px-2.5 py-1 font-mono text-xs font-bold text-white mb-4">Ambiental</span>
+            <h3 class="font-display text-lg font-bold text-navy-900 mb-2">Presión regulatoria creciente</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Regulaciones estrictas sobre consumo de agua, energía y emisiones exigen monitoreo continuo para cumplimiento normativo.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+            <span class="inline-block rounded-md bg-sky-600 px-2.5 py-1 font-mono text-xs font-bold text-white mb-4">Social</span>
+            <h3 class="font-display text-lg font-bold text-navy-900 mb-2">Competitividad internacional</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Clientes globales demandan transparencia en prácticas ASG. La producción sostenible protege márgenes y mercados.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+            <span class="inline-block rounded-md bg-amber-500 px-2.5 py-1 font-mono text-xs font-bold text-white mb-4">Gobernanza</span>
+            <h3 class="font-display text-lg font-bold text-navy-900 mb-2">Visibilidad operacional</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Datos desagregados sin estándares homogéneos impedían tomar decisiones estratégicas basadas en evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cadena de Valor & Mermaid -->
+    <section id="metodologia" class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Análisis Detallado
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900 mb-3">
+            Flujo de Proceso Industrial: Cadena de Valor Harina y Aceite
+          </h2>
+          <p class="text-slate-600">
+            Mapeo completo desde la recepción de materia prima hasta el despacho de productos terminados, identificando cuellos de botella y oportunidades de optimización.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {mermaidDiagrams.map((diagram) => (
+              <div class="overflow-x-auto rounded-xl border border-slate-100 bg-slate-50/70 p-4">
+                <pre class="mermaid bg-transparent m-0" set:html={diagram}></pre>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Baseline ASG -->
+    <section class="py-16 bg-white border-y border-slate-200 reveal-block">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Indicadores Clave
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">Baseline de desempeño ASG</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {indicators.map((ind) => (
+            <article class={`rounded-2xl border border-slate-200 border-l-4 ${ind.color.split(' ')[0]} bg-slate-50 p-6 shadow-sm`}>
+              <span class={`font-mono text-xs font-bold uppercase tracking-wider ${ind.color.split(' ')[1]}`}>{ind.dim}</span>
+              <h3 class="font-display text-lg font-bold text-navy-900 mt-1 mb-1">{ind.title}</h3>
+              <p class="font-mono text-2xl font-bold text-navy-900 mb-2">{ind.metric}</p>
+              <p class="text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="py-16 bg-slate-50 reveal-block">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block rounded-full bg-copper-500/10 border border-copper-500/25 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-copper-500 mb-3">
+            Hoja de Ruta
+          </span>
+          <h2 class="font-display text-3xl font-extrabold text-navy-900">3 pasos priorizados de sostenibilidad</h2>
+        </div>
+
+        <div class="space-y-5">
+          {roadmap.map((step) => (
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-6 items-start">
+              <div class="font-mono text-4xl font-extrabold text-copper-500">{step.num}</div>
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <h3 class="font-display text-xl font-bold text-navy-900">{step.title}</h3>
+                  <span class={`rounded-full border px-3 py-1 text-xs font-mono font-semibold ${step.badgeClass}`}>{step.badge}</span>
+                </div>
+                <p class="text-slate-600 leading-relaxed mb-3">{step.desc}</p>
+                <p class="font-mono text-xs text-slate-500">{step.meta}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contacto/" class="group btn-enterprise-primary inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold">
+            Cotizar una solución similar
+            <i class="fas fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a href="/portafolio/" class="btn-enterprise-ghost inline-flex items-center justify-center gap-2 min-h-12 rounded-xl px-7 py-3 text-base font-semibold">
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
+            Volver al Portafolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer isHome={false} />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script is:inline>
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    }
+  </script>
+</BaseLayout>

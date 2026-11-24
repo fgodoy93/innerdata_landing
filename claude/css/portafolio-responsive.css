@@ -1,0 +1,1373 @@
+/* 
+   ==========================================================================
+   PORTFOLIO PAGES - RESPONSIVE MODULAR STYLES
+   ==========================================================================
+   
+   This file extends the base styles.css with portfolio-specific improvements
+   for better responsivity and visual hierarchy across all portfolio pages.
+   
+   Applies to:
+   - portafolio-pensiones.html
+   - portafolio-pesquera.html
+   - portafolio-simulacion.html
+   - portafolio-mini-erp-v2.html
+   
+   ==========================================================================
+*/
+
+/* ========================================================================
+   PORTFOLIO HERO SECTION - ENHANCED RESPONSIVE
+   ======================================================================== */
+
+.portfolio-hero {
+    background: linear-gradient(135deg, rgba(12, 36, 68, 0.95) 0%, rgba(30, 41, 59, 0.98) 100%);
+    position: relative;
+    padding: 160px 0 100px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(200, 117, 51, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.portfolio-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.portfolio-hero p {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Portfolio Tags */
+.hero-tags-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.portfolio-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.tag-orange {
+    background: rgba(200, 117, 51, 0.15);
+    color: #f9b17a;
+    border: 1px solid rgba(200, 117, 51, 0.4);
+}
+
+.tag-teal {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.tag-blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.tag-gold {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.tag-green {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.tag-amber {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+/* ========================================================================
+   PORTFOLIO FINDING CARDS
+   ======================================================================== */
+
+.finding-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.highlight {
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    background: var(--bg-white);
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+}
+
+.highlight-accent {
+    border-bottom-color: var(--accent);
+}
+
+.highlight-green {
+    border-bottom-color: #10b981;
+}
+
+.highlight-blue {
+    border-bottom-color: #3b82f6;
+}
+
+/* ========================================================================
+   CHART & IMAGE CONTAINERS
+   ======================================================================== */
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.chart-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+/* ========================================================================
+   ANALYSIS ROW - FLEXIBLE LAYOUT
+   ======================================================================== */
+
+.analysis-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border-top: none;
+    border-left: 4px solid var(--accent);
+    background: var(--bg-body);
+    border-radius: 8px;
+}
+
+.analysis-row > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+    background: rgba(200, 117, 51, 0.1);
+    border-radius: 8px;
+}
+
+/* ========================================================================
+   FRAMEWORK & METHODOLOGY CARDS
+   ======================================================================== */
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.framework-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.framework-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(200, 117, 51, 0.12);
+    transform: translateY(-2px);
+}
+
+.framework-card h4 {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.framework-card p {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* ========================================================================
+   INDICATOR CARDS
+   ======================================================================== */
+
+.indicator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.indicator-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.75rem;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.indicator-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.indicator-card.environmental {
+    border-left-color: var(--accent);
+}
+
+.indicator-card.social {
+    border-left-color: var(--primary);
+}
+
+.indicator-card.governance {
+    border-left-color: var(--secondary);
+}
+
+.indicator-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.indicator-label.environmental {
+    color: var(--accent);
+}
+
+.indicator-label.social {
+    color: var(--primary);
+}
+
+.indicator-label.governance {
+    color: var(--secondary);
+}
+
+.indicator-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.indicator-metric {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.indicator-card p {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* ========================================================================
+   ROADMAP SECTION
+   ======================================================================== */
+
+.roadmap-container {
+    margin: 3rem 0;
+}
+
+.roadmap-step {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+    transition: all 0.3s ease;
+}
+
+.roadmap-step:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.roadmap-step-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'IBM Plex Mono', monospace;
+    min-width: 80px;
+}
+
+.roadmap-step-content h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.roadmap-step-content p {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.priority-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+}
+
+.priority-alta {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.priority-media {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* ========================================================================
+   PULL QUOTES
+   ======================================================================== */
+
+.pull-quote {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-left: 4px solid var(--primary);
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--primary);
+    line-height: 1.8;
+}
+
+.pull-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-top: 1rem;
+}
+
+/* ========================================================================
+   TECH PILLS / BADGES
+   ======================================================================== */
+
+.tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+}
+
+.tech-pill {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary);
+    font-family: 'IBM Plex Mono', monospace;
+    transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ========================================================================
+   RESULTS TABLE
+   ======================================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin: 2rem 0;
+}
+
+thead tr {
+    background: var(--bg-body);
+    color: var(--primary);
+}
+
+thead th {
+    padding: 1rem;
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody td {
+    padding: 1rem;
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+tbody td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Status Indicators in Tables */
+.ok {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid;
+    display: inline-block;
+}
+
+.badge.pass {
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.badge.fail {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.badge.partial {
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================================================
+   PROCESS FLOW (Simio-style)
+   ======================================================================== */
+
+.pf-rail-wrap {
+    position: relative;
+    padding: 0 1rem;
+}
+
+.pf-rail {
+    position: absolute;
+    top: 44px;
+    left: calc(10% + 44px);
+    right: calc(10% + 44px);
+    height: 2px;
+    background: linear-gradient(90deg,
+        #3b82f6 0%,
+        #6366f1 25%,
+        #b83c2b 50%,
+        #f59e0b 75%,
+        #10b981 100%);
+    opacity: 0.35;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.pf-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.pf-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 130px;
+    position: relative;
+}
+
+.pf-icon {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--sc) 10%, var(--bg-body));
+    border: 2.5px solid var(--sc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--sc);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--sc) 8%, transparent),
+                0 6px 20px color-mix(in srgb, var(--sc) 20%, transparent);
+    z-index: 2;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    flex-shrink: 0;
+}
+
+.pf-step:hover .pf-icon {
+    transform: translateY(-5px) scale(1.07);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--sc) 12%, transparent),
+                0 12px 28px color-mix(in srgb, var(--sc) 35%, transparent);
+}
+
+.pf-num {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--sc);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bg-body);
+}
+
+.pf-card {
+    margin-top: 1.2rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--sc);
+    border-radius: 10px;
+    padding: 1.1rem 1rem;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.pf-step:hover .pf-card {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.pf-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+}
+
+.pf-card p {
+    font-size: 0.78rem;
+    color: var(--secondary);
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+}
+
+.pf-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sc);
+    background: color-mix(in srgb, var(--sc) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sc) 30%, transparent);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+}
+
+/* ========================================================================
+   MINI ERP SPECIFIC
+   ======================================================================== */
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.comparison-col {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-header {
+    padding: 1rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.comparison-header.before {
+    background: #fef2f2;
+    color: #dc2626;
+    border-bottom: 2px solid #fecaca;
+}
+
+.comparison-header.after {
+    background: #f0fdf4;
+    color: #16a34a;
+    border-bottom: 2px solid #bbf7d0;
+}
+
+.comparison-body {
+    padding: 1.5rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+}
+
+.comparison-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.comparison-item.bad {
+    color: #64748b;
+}
+
+.comparison-item.good {
+    color: #0c2444;
+    font-weight: 500;
+}
+
+.comparison-item.bad i {
+    color: #ef4444;
+}
+
+.comparison-item.good i {
+    color: #22c55e;
+}
+
+/* Dashboard Mock */
+.dashboard-preview {
+    background: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin: 3rem 0;
+}
+
+.dash-topbar {
+    background: var(--primary);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dash-topbar-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dash-topbar-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #22c55e; }
+
+.dash-topbar-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.dash-body {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    min-height: 500px;
+}
+
+.dash-sidebar {
+    background: #0f2d52;
+    padding: 1.5rem 0;
+}
+
+.dash-logo {
+    padding: 0 1.25rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fbbf24;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+    background: var(--bg-white);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.kpi-label {
+    font-size: 0.65rem;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 0.3rem;
+}
+
+.kpi-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.kpi-delta {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+}
+
+.kpi-up { color: #22c55e; }
+.kpi-warn { color: #f59e0b; }
+.kpi-down { color: #ef4444; }
+
+/* ========================================================================
+   CONCLUSION CARDS
+   ======================================================================== */
+
+.conclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.conclusion-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #22c55e;
+    transition: all 0.3s ease;
+}
+
+.conclusion-card:nth-child(2) {
+    border-top-color: #3b82f6;
+}
+
+.conclusion-card:nth-child(3) {
+    border-top-color: #f59e0b;
+}
+
+.conclusion-card:nth-child(4) {
+    border-top-color: var(--accent);
+}
+
+.conclusion-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+.conclusion-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+}
+
+.conclusion-card p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* ========================================================================
+   BENEFIT & USECASE CARDS
+   ======================================================================== */
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+    font-size: 0.92rem;
+    color: var(--secondary);
+    line-height: 1.75;
+}
+
+.usecase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.usecase-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+.usecase-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+/* ========================================================================
+   RESPONSIVE ADJUSTMENTS - TABLET (768px and below)
+   ======================================================================== */
+
+@media (max-width: 1024px) {
+    .framework-grid,
+    .indicator-grid,
+    .usecase-grid,
+    .benefit-grid,
+    .conclusion-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .roadmap-step {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-step-number {
+        min-width: auto;
+    }
+
+    .pf-rail {
+        display: none;
+    }
+}
+
+/* ========================================================================
+   RESPONSIVE ADJUSTMENTS - MOBILE (768px and below)
+   ======================================================================== */
+
+@media (max-width: 768px) {
+    .portfolio-hero {
+        padding: 120px 0 60px 0;
+        min-height: auto;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .portfolio-hero p {
+        font-size: 1rem;
+    }
+
+    .hero-tags-wrapper {
+        gap: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    .finding-value {
+        font-size: 2.5rem;
+    }
+
+    .highlight {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .chart-container {
+        margin: 1.5rem 0;
+    }
+
+    .analysis-row {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .framework-grid,
+    .indicator-grid,
+    .usecase-grid,
+    .benefit-grid,
+    .conclusion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-grid {
+        gap: 1.5rem;
+    }
+
+    .roadmap-step {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .roadmap-step-number {
+        font-size: 2rem;
+    }
+
+    .pull-quote {
+        padding: 1.5rem 1rem;
+        margin: 2rem 0;
+        font-size: 1rem;
+    }
+
+    .tech-row {
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .tech-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+        margin: 1.5rem 0;
+    }
+
+    thead th {
+        padding: 0.75rem;
+        font-size: 0.65rem;
+    }
+
+    tbody td {
+        padding: 0.75rem;
+    }
+
+    .dashboard-preview {
+        margin: 2rem 0;
+    }
+
+    .dash-body {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .dash-sidebar {
+        display: none;
+    }
+
+    .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .kpi-card {
+        padding: 0.75rem;
+    }
+
+    .kpi-label {
+        font-size: 0.6rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .kpi-value {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================================================
+   RESPONSIVE ADJUSTMENTS - SMALL MOBILE (480px and below)
+   ======================================================================== */
+
+@media (max-width: 480px) {
+    .portfolio-hero {
+        padding: 100px 0 40px 0;
+        min-height: auto;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.15;
+    }
+
+    .portfolio-hero p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .hero-tags-wrapper {
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 1rem;
+    }
+
+    .portfolio-tag {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+        gap: 0.3rem;
+    }
+
+    .portfolio-tag i {
+        font-size: 0.75rem;
+    }
+
+    .finding-value {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .highlight {
+        padding: 1.5rem 1rem;
+        border-bottom-width: 3px;
+    }
+
+    .highlight h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .chart-container img {
+        border-radius: 6px;
+    }
+
+    .analysis-row {
+        padding: 1.25rem;
+        gap: 1.25rem;
+        border-left-width: 3px;
+    }
+
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .framework-card,
+    .indicator-card,
+    .usecase-card,
+    .benefit-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .framework-card h4,
+    .indicator-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .framework-card p,
+    .indicator-card p {
+        font-size: 0.8rem;
+    }
+
+    .roadmap-step {
+        padding: 1.25rem;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 6px;
+    }
+
+    .roadmap-step-number {
+        font-size: 1.5rem;
+        min-width: auto;
+    }
+
+    .roadmap-step-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .roadmap-step-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .priority-badge {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .pull-quote {
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+        font-size: 0.95rem;
+        border-left-width: 3px;
+        line-height: 1.6;
+    }
+
+    .pull-quote cite {
+        font-size: 0.8rem;
+        margin-top: 0.75rem;
+    }
+
+    .tech-pill {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    table {
+        font-size: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    thead th {
+        padding: 0.5rem;
+        font-size: 0.6rem;
+    }
+
+    tbody td {
+        padding: 0.5rem;
+    }
+
+    .badge {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .kpi-row {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .kpi-card {
+        padding: 0.6rem;
+    }
+
+    .kpi-label {
+        font-size: 0.55rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .kpi-value {
+        font-size: 0.85rem;
+    }
+
+    .conclusion-card {
+        padding: 1.25rem 1rem;
+        border-top-width: 3px;
+    }
+
+    .conclusion-card h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .conclusion-card p {
+        font-size: 0.8rem;
+    }
+
+    .pf-steps {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .pf-step {
+        flex-direction: row;
+        align-items: flex-start;
+        min-width: unset;
+        padding: 1rem 0 1rem 0;
+        border-left: 2px solid var(--border-color);
+        margin-left: 44px;
+        gap: 1rem;
+    }
+
+    .pf-step:last-child {
+        border-left-color: transparent;
+    }
+
+    .pf-icon {
+        margin-left: calc(-44px - 1px);
+        flex-shrink: 0;
+    }
+
+    .pf-card {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .pf-badge {
+        font-size: 0.55rem;
+    }
+
+    .comparison-header {
+        padding: 0.75rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .comparison-body {
+        padding: 1rem;
+    }
+
+    .comparison-item {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+    }
+
+    .dash-topbar {
+        padding: 0.6rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .dash-topbar-title {
+        font-size: 0.65rem;
+    }
+
+    .dash-topbar-dots span {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* End of portafolio-responsive.css */
