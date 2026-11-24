@@ -126,9 +126,9 @@ const techStack = [
           <p class="text-slate-600 leading-relaxed">
             La serie revela tres fases: la <strong class="text-navy-900">caída de 2020</strong> por la pandemia (~$40k mínimo), una recuperación sostenida hasta 2022 y una meseta de 18 meses por el ciclo de alzas de la Fed. Desde 2024 la cuota retomó la senda alcista superando los <strong class="text-navy-900">$75k</strong>, casi duplicando el valor respecto al piso pandémico.
           </p>
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="/assets/SerieTiempoInner.webp" alt="Evolución temporal de Cuota Fondo A" class="w-full h-auto block" />
-          </div>
+          <button type="button" class="chart-lightbox-trigger w-full overflow-hidden rounded-xl border border-slate-200 bg-white cursor-zoom-in block" data-src="/assets/SerieTiempoInner.webp" data-alt="Evolución temporal de Cuota Fondo A">
+            <img src="/assets/SerieTiempoInner.webp" alt="Evolución temporal de Cuota Fondo A" class="w-full h-auto block transition-transform duration-300 hover:scale-[1.01]" />
+          </button>
         </article>
 
         <!-- Chart 2 -->
@@ -144,9 +144,9 @@ const techStack = [
           <p class="text-slate-600 leading-relaxed">
             La matriz muestra correlaciones <strong class="text-navy-900">superiores a 0.90</strong> entre el Fondo A, S&amp;P 500 (0.95), Nikkei (0.92) y Nasdaq (0.90): prácticamente el mismo riesgo sistémico. La excepción es el <strong class="text-navy-900">Hang Seng Tech (−0.43)</strong>, cuyo ciclo divergente genera una descorrelación real y medible para reducir volatilidad de portafolio.
           </p>
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="/assets/HeatMapInner.webp" alt="Mapa de correlación entre variables" class="w-full h-auto block" />
-          </div>
+          <button type="button" class="chart-lightbox-trigger w-full overflow-hidden rounded-xl border border-slate-200 bg-white cursor-zoom-in block" data-src="/assets/HeatMapInner.webp" data-alt="Mapa de correlación entre variables">
+            <img src="/assets/HeatMapInner.webp" alt="Mapa de correlación entre variables" class="w-full h-auto block transition-transform duration-300 hover:scale-[1.01]" />
+          </button>
         </article>
 
         <!-- Chart 3 -->
@@ -162,9 +162,9 @@ const techStack = [
           <p class="text-slate-600 leading-relaxed">
             El histograma evidencia una distribución <strong class="text-navy-900">asimétrica positiva</strong>: masa concentrada entre 3k–5k puntos y cola derecha hasta 11k (boom tech chino, 2021). El boxplot confirma <strong class="text-navy-900">múltiples outliers al alza</strong>, posicionándolo como activo de cobertura con potencial de alfa.
           </p>
-          <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <img src="/assets/HistogramaHangInner.webp" alt="Distribución del Hang Seng Tech" class="w-full h-auto block" />
-          </div>
+          <button type="button" class="chart-lightbox-trigger w-full overflow-hidden rounded-xl border border-slate-200 bg-white cursor-zoom-in block" data-src="/assets/HistogramaHangInner.webp" data-alt="Distribución del Hang Seng Tech">
+            <img src="/assets/HistogramaHangInner.webp" alt="Distribución del Hang Seng Tech" class="w-full h-auto block transition-transform duration-300 hover:scale-[1.01]" />
+          </button>
         </article>
       </div>
     </section>
@@ -218,4 +218,39 @@ const techStack = [
   </main>
 
   <Footer isHome={false} />
+
+  <!-- Chart Lightbox -->
+  <div id="chart-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/90 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Vista ampliada del gráfico">
+    <button type="button" id="chart-lightbox-close" aria-label="Cerrar vista ampliada" class="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white hover:bg-copper-500 transition-colors cursor-pointer">
+      <i class="fas fa-times text-lg" aria-hidden="true"></i>
+    </button>
+    <img id="chart-lightbox-img" src="" alt="" class="max-h-[88vh] max-w-full rounded-xl shadow-2xl border border-white/15 bg-white" />
+  </div>
+
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      const box = document.getElementById('chart-lightbox');
+      const img = document.getElementById('chart-lightbox-img');
+      const closeBtn = document.getElementById('chart-lightbox-close');
+      if (!box || !img) return;
+
+      const close = () => {
+        box.classList.add('hidden');
+        box.classList.remove('flex');
+      };
+
+      document.querySelectorAll('.chart-lightbox-trigger').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          img.src = btn.getAttribute('data-src') || '';
+          img.alt = btn.getAttribute('data-alt') || '';
+          box.classList.remove('hidden');
+          box.classList.add('flex');
+        });
+      });
+
+      closeBtn?.addEventListener('click', close);
+      box.addEventListener('click', (e) => { if (e.target === box) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    });
+  </script>
 </BaseLayout>

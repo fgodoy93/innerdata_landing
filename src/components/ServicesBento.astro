@@ -83,11 +83,11 @@ const services = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {services.map((service) => (
-        <article class="group relative overflow-hidden rounded-2xl border border-slate-200/90 ring-1 ring-navy-900/[0.04] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-copper-500/40 flex flex-col">
-          <!-- Subtle Copper Hover Radial Glow -->
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200/90 ring-1 ring-navy-900/[0.04] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_-12px_rgba(12,36,68,0.16)] hover:border-copper-500/45 flex flex-col">
+          <!-- Crisp Top Accent Bar on Hover -->
           <div
             aria-hidden="true"
-            class="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-copper-500/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
+            class="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-copper-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           ></div>
 
           <!-- Top Header: Number + Icon + Mini Visual -->

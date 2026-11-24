@@ -251,7 +251,7 @@ const filters = [
   <Footer isHome={false} />
 
   <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('astro:page-load', () => {
       const buttons = document.querySelectorAll('.portfolio-filter-btn');
       const items = document.querySelectorAll('.portfolio-item');
 

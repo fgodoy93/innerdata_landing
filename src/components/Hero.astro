@@ -46,17 +46,17 @@
           </a>
           <a
             href="/servicios/"
-            class="inline-flex items-center justify-center gap-2 min-h-12 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white hover:text-navy-900 active:scale-[0.98]"
+            class="inline-flex items-center justify-center gap-2 min-h-12 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-md transition-all hover:bg-white/15 hover:border-copper-400/60 active:scale-[0.98]"
           >
             Nuestros Servicios
           </a>
         </div>
       </div>
 
-      <!-- Right Column: Glassmorphic Executive Analytics Preview -->
+      <!-- Right Column: Interactive Glassmorphic Executive Panel -->
       <div class="lg:col-span-5">
         <div class="rounded-2xl border border-white/15 bg-white/[0.07] p-6 backdrop-blur-xl shadow-2xl shadow-navy-950/60">
-          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
             <div class="flex items-center gap-2.5">
               <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-copper-500/20 text-copper-400">
                 <i class="fas fa-chart-line text-sm" aria-hidden="true"></i>
@@ -72,47 +72,135 @@
             </span>
           </div>
 
-          <!-- Bento Mini KPI Grid -->
-          <div class="grid grid-cols-2 gap-3 mb-5">
-            <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
-              <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Ahorro Reportes</p>
-              <p class="font-display text-2xl font-bold text-white">40 hrs<span class="text-sm font-normal text-copper-400">/mes</span></p>
-              <p class="text-xs text-emerald-400 mt-1">Automatización BI</p>
+          <!-- Interactive Discipline Tabs -->
+          <div class="grid grid-cols-3 gap-1.5 rounded-xl bg-navy-950/60 p-1 mb-4 border border-white/10" role="tablist" aria-label="Áreas de impacto">
+            <button type="button" role="tab" aria-selected="true" data-hero-tab="analytics" class="hero-tab-btn rounded-lg py-1.5 px-2 text-xs font-mono font-semibold transition-colors bg-copper-500 text-white cursor-pointer">
+              Analítica
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-hero-tab="simulation" class="hero-tab-btn rounded-lg py-1.5 px-2 text-xs font-mono font-semibold transition-colors text-slate-300 hover:text-white cursor-pointer">
+              Simulación
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-hero-tab="web" class="hero-tab-btn rounded-lg py-1.5 px-2 text-xs font-mono font-semibold transition-colors text-slate-300 hover:text-white cursor-pointer">
+              Web Apps
+            </button>
+          </div>
+
+          <!-- Tab Content Panels -->
+          <div id="hero-panel-analytics" class="hero-tab-panel space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Ahorro Reportes</p>
+                <p class="font-display text-2xl font-bold text-white">40 hrs<span class="text-sm font-normal text-copper-400">/mes</span></p>
+                <p class="text-xs text-emerald-400 mt-1">Automatización BI</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Indicadores ASG</p>
+                <p class="font-display text-2xl font-bold text-white">15+</p>
+                <p class="text-xs text-emerald-400 mt-1">Normalizados L/ton</p>
+              </div>
             </div>
-            <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
-              <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Costos Logísticos</p>
-              <p class="font-display text-2xl font-bold text-white">-12%</p>
-              <p class="text-xs text-emerald-400 mt-1">Simulación & Redes</p>
+            <div class="rounded-xl border border-white/10 bg-navy-950/40 p-4 space-y-2.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Ciencia de Datos &amp; ML</span>
+                <span class="font-mono text-copper-400">Python · Pandas · Scikit-learn</span>
+              </div>
+              <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-[94%] rounded-full bg-copper-gradient"></div>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+              <span>Caso destacado: Fondos AFP &amp; Pesquera</span>
+              <a href="/portafolio/pensiones/" class="inline-flex items-center gap-1 font-semibold text-copper-400 hover:text-copper-300 transition-colors">
+                Ver caso →
+              </a>
             </div>
           </div>
 
-          <!-- Mini Pipeline / Capabilities Strip -->
-          <div class="rounded-xl border border-white/10 bg-navy-950/40 p-4 space-y-3">
-            <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-300 font-medium">Ciencia de Datos & ML</span>
-              <span class="font-mono text-copper-400">Python · R · SQL</span>
+          <div id="hero-panel-simulation" class="hero-tab-panel hidden space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Reducción Espera</p>
+                <p class="font-display text-2xl font-bold text-white">-50–75%</p>
+                <p class="text-xs text-emerald-400 mt-1">Urgencias SAR C4</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Costos Logísticos</p>
+                <p class="font-display text-2xl font-bold text-white">-12%</p>
+                <p class="text-xs text-emerald-400 mt-1">Network Design</p>
+              </div>
             </div>
-            <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-              <div class="h-full w-[92%] rounded-full bg-copper-gradient"></div>
+            <div class="rounded-xl border border-white/10 bg-navy-950/40 p-4 space-y-2.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Simulación de Eventos Discretos</span>
+                <span class="font-mono text-sky-300">SIMIO 10 · 95% conf.</span>
+              </div>
+              <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-[95%] rounded-full bg-sky-400"></div>
+              </div>
             </div>
-
-            <div class="flex items-center justify-between text-xs pt-1">
-              <span class="text-slate-300 font-medium">Optimización & Simulación</span>
-              <span class="font-mono text-sky-300">SIMIO · AS-IS/TO-BE</span>
-            </div>
-            <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-              <div class="h-full w-[88%] rounded-full bg-sky-400"></div>
+            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+              <span>Caso destacado: Urgencias SAR</span>
+              <a href="/portafolio/simulacion/" class="inline-flex items-center gap-1 font-semibold text-copper-400 hover:text-copper-300 transition-colors">
+                Ver caso →
+              </a>
             </div>
           </div>
 
-          <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
-            <span>5 casos de éxito publicados</span>
-            <a href="/portafolio/" class="inline-flex items-center gap-1 font-semibold text-copper-400 hover:text-copper-300 transition-colors">
-              Explorar portafolio <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
-            </a>
+          <div id="hero-panel-web" class="hero-tab-panel hidden space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Cierre Mensual</p>
+                <p class="font-display text-2xl font-bold text-white">0 hrs</p>
+                <p class="text-xs text-emerald-400 mt-1">Exportación 1 clic SII</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-navy-950/50 p-4">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Logística Web</p>
+                <p class="font-display text-2xl font-bold text-white">Aukabox</p>
+                <p class="text-xs text-emerald-400 mt-1">Miami → Chillán</p>
+              </div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-navy-950/40 p-4 space-y-2.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-300 font-medium">Aplicaciones Web &amp; Cloud</span>
+                <span class="font-mono text-copper-400">Next.js · React · PostgreSQL</span>
+              </div>
+              <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-[96%] rounded-full bg-emerald-400"></div>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+              <span>5 casos de éxito publicados</span>
+              <a href="/portafolio/" class="inline-flex items-center gap-1 font-semibold text-copper-400 hover:text-copper-300 transition-colors">
+                Explorar portafolio →
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const tabBtns = document.querySelectorAll('.hero-tab-btn');
+    const panels = document.querySelectorAll('.hero-tab-panel');
+    if (!tabBtns.length) return;
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-hero-tab');
+        tabBtns.forEach((b) => {
+          const active = b === btn;
+          b.setAttribute('aria-selected', String(active));
+          b.className = active
+            ? 'hero-tab-btn rounded-lg py-1.5 px-2 text-xs font-mono font-semibold transition-colors bg-copper-500 text-white cursor-pointer'
+            : 'hero-tab-btn rounded-lg py-1.5 px-2 text-xs font-mono font-semibold transition-colors text-slate-300 hover:text-white cursor-pointer';
+        });
+        panels.forEach((p) => {
+          p.classList.toggle('hidden', p.id !== `hero-panel-${target}`);
+        });
+      });
+    });
+  });
+</script>

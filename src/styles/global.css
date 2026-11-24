@@ -37,10 +37,26 @@
 }
 
 .btn-enterprise-primary {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, #e79051 0%, #c87533 50%, #a05a2c 100%);
   color: #ffffff;
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.28), 0 8px 20px -4px rgba(200, 117, 51, 0.35);
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-enterprise-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.28) 50%, transparent 75%);
+  transform: translateX(-110%);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.btn-enterprise-primary:hover::after {
+  transform: translateX(110%);
 }
 
 .btn-enterprise-primary:hover {
