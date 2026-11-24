@@ -1,64 +1,48 @@
 ---
 const groups = [
   {
+    code: '01',
     label: 'Ciencia de Datos, ML & Visualización',
-    items: [
-      { icon: 'fab fa-python', name: 'Python' },
-      { icon: 'fas fa-table', name: 'Pandas' },
-      { icon: 'fas fa-cubes', name: 'NumPy' },
-      { icon: 'fas fa-brain', name: 'Scikit-learn' },
-      { icon: 'fas fa-network-wired', name: 'TensorFlow' },
-      { icon: 'fas fa-square-root-variable', name: 'SciPy' },
-      { icon: 'fas fa-chart-line', name: 'Matplotlib' },
-      { icon: 'fas fa-chart-area', name: 'Seaborn' },
-      { icon: 'fab fa-r-project', name: 'R Studio' },
-    ],
+    items: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'SciPy', 'Matplotlib', 'Seaborn', 'R Studio'],
   },
   {
+    code: '02',
     label: 'Desarrollo Web, Datos & Cloud',
-    items: [
-      { icon: 'fas fa-bolt', name: 'Next.js' },
-      { icon: 'fab fa-react', name: 'React' },
-      { icon: 'fas fa-code', name: 'TypeScript' },
-      { icon: 'fas fa-wind', name: 'Tailwind CSS' },
-      { icon: 'fas fa-rocket', name: 'Astro' },
-      { icon: 'fab fa-node-js', name: 'Node.js' },
-      { icon: 'fas fa-database', name: 'SQL & PostgreSQL' },
-      { icon: 'fas fa-cloud', name: 'Cloudflare' },
-      { icon: 'fab fa-aws', name: 'AWS Cloud' },
-    ],
+    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Astro', 'Node.js', 'SQL & PostgreSQL', 'Cloudflare', 'AWS Cloud'],
   },
   {
+    code: '03',
     label: 'Business Intelligence & Simulación',
-    items: [
-      { icon: 'fas fa-chart-column', name: 'Power BI' },
-      { icon: 'fab fa-google', name: 'Looker Studio' },
-      { icon: 'fas fa-project-diagram', name: 'Simio Simulation' },
-      { icon: 'fas fa-sitemap', name: 'Microsoft Visio' },
-    ],
+    items: ['Power BI', 'Looker Studio', 'Simio Simulation', 'Microsoft Visio'],
   },
 ];
 ---
 
-<section class="py-14 bg-white border-y border-slate-200">
-  <div class="mx-auto max-w-6xl px-6 space-y-8">
-    <div class="text-center">
-      <p class="font-mono text-xs font-semibold uppercase tracking-widest text-copper-500">
-        Tecnologías que dominamos
-      </p>
+<section class="py-16 bg-slate-50 border-b border-slate-200">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-6 border-b border-slate-200 mb-8">
+      <div>
+        <span class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-copper-500 block mb-1">
+          Stack Técnico
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900">
+          Tecnologías que dominamos
+        </h2>
+      </div>
+      <span class="font-mono text-xs text-slate-500">22 herramientas en producción</span>
     </div>
 
-    <div class="space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 border border-slate-200 bg-slate-200 gap-px">
       {groups.map((group) => (
-        <div class="text-center">
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-3">
-            {group.label}
-          </p>
-          <div class="flex flex-wrap items-center justify-center gap-2.5">
-            {group.items.map((tech) => (
-              <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-navy-900 transition-all hover:-translate-y-0.5 hover:border-copper-500/50 hover:bg-white hover:shadow-sm">
-                <i class={`${tech.icon} text-copper-500 text-sm`} aria-hidden="true"></i>
-                <span>{tech.name}</span>
+        <div class="bg-white p-6 sm:p-7">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+            <h3 class="font-display text-sm font-bold text-navy-900">{group.label}</h3>
+            <span class="font-mono text-[11px] text-copper-500 font-semibold">{group.code}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            {group.items.map((name) => (
+              <span class="rounded border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-xs font-medium text-navy-900 hover:border-copper-500/50 transition-colors">
+                {name}
               </span>
             ))}
           </div>
